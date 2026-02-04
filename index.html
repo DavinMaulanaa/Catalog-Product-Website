@@ -12,6 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="collarbone.jpg">
   <script>
     tailwind.config = {
       theme: {
@@ -35,6 +36,7 @@
           animation: {
             'fade-up': 'fadeUp 0.8s ease-out',
             'slide-in': 'slideIn 0.4s ease-out',
+            'slide-out': 'slideOut 0.4s ease-in forwards',
           },
           keyframes: {
             fadeUp: {
@@ -44,6 +46,10 @@
             slideIn: {
               '0%': { transform: 'translateX(-100%)' },
               '100%': { transform: 'translateX(0)' },
+            },
+            slideOut: {
+              '0%': { transform: 'translateX(0)' },
+              '100%': { transform: 'translateX(-100%)' },
             },
           },
         },
@@ -132,7 +138,7 @@
   <div class="h-1.5 accent-bar"></div>
 
   <!-- Header -->
-  <header class="sticky top-0 z-50 bg-white shadow-xl">
+  <header class="sticky top-0 z-50 bg-white shadow-xl ">
     <div class="flex items-center justify-between px-6 lg:px-12 h-[4.5rem] border-b border-neutral-200">
       <!-- Logo -->
       <a href="/" class="flex items-center gap-1 tracking-[0.5em] text-sm font-medium">
@@ -186,11 +192,11 @@
     <nav id="mobileMenu"
       class="lg:hidden hidden absolute top-full left-0 right-0 bg-white border-b border-neutral-200 animate-slide-in">
       <div class="py-6 px-6 space-y-4">
-        <a href="/index.html"
+        <a href="index.html"
           class="block text-xs font-medium tracking-[0.15em] uppercase py-2 hover:text-neutral-500">Dashboard</a>
-        <a href="/new_arrivals.html"
+        <a href="new_arrivals.html"
           class="block text-xs font-medium tracking-[0.15em] uppercase py-2 hover:text-neutral-500">New Arrivals</a>
-        <a href="/categories.html"
+        <a href="categories.html"
           class="block text-xs font-medium tracking-[0.15em] uppercase py-2 hover:text-neutral-500">Categories</a>
       </div>
       </div>
@@ -324,7 +330,7 @@
           <h3 class="text-sm font-light mb-1 group-hover:text-neutral-500 transition-colors">Vintage Cap Cream</h3>
           <p class="text-sm">IDR 320,000</p>
           <div class="flex gap-2 mt-2 text-[10px] font-medium tracking-wider">
-            <span class="text-green-600">OS</span>
+            <span class="text-green-600">All Size</span>
           </div>
         </a>
         <!-- Product 4 -->
@@ -475,7 +481,24 @@
     const menuIcon = document.getElementById('menuIcon');
     const closeIcon = document.getElementById('closeIcon');
     menuToggle.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
+      const isHidden = mobileMenu.classList.contains('hidden');
+      if (isHidden) {
+        // Open
+        mobileMenu.classList.remove('hidden');
+        mobileMenu.classList.add('animate-slide-in');
+        mobileMenu.classList.remove('animate-slide-out');
+      } else {
+        // Close
+        mobileMenu.classList.add('animate-slide-out');
+        mobileMenu.classList.remove('animate-slide-in');
+
+        mobileMenu.addEventListener('animationend', () => {
+          if (mobileMenu.classList.contains('animate-slide-out')) {
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('animate-slide-out');
+          }
+        }, { once: true });
+      }
       menuIcon.classList.toggle('hidden');
       closeIcon.classList.toggle('hidden');
     });

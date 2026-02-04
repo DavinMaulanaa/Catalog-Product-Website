@@ -32,6 +32,20 @@
                             teal: '#2a9d9d',
                             charcoal: '#262626',
                         }
+                    },
+                    keyframes: {
+                        slideIn: {
+                            '0%': { transform: 'translateX(-100%)' },
+                            '100%': { transform: 'translateX(0)' },
+                        },
+                        slideOut: {
+                            '0%': { transform: 'translateX(0)' },
+                            '100%': { transform: 'translateX(-100%)' },
+                        }
+                    },
+                    animation: {
+                        'slide-in': 'slideIn 0.4s ease-out forwards',
+                        'slide-out': 'slideOut 0.4s ease-in forwards',
                     }
                 },
             },
@@ -133,26 +147,35 @@
                     (0)</button>
                 <button id="menuToggle" class="lg:hidden">
                     <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2">
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
                         <line x1="4" x2="20" y1="12" y2="12" />
                         <line x1="4" x2="20" y1="6" y2="6" />
                         <line x1="4" x2="20" y1="18" y2="18" />
                     </svg>
+                    <svg id="closeIcon" class="hidden" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M18 6 6 18" />
+                        <path d="m6 6 12 12" />
+                    </svg>
                 </button>
             </div>
         </div>
+        <!-- Mobile Menu (Hidden by default) -->
+        <nav id="mobileMenu"
+            class="lg:hidden hidden absolute top-full left-0 right-0 bg-white border-b border-neutral-200 animate-slide-in">
+            <div class="py-6 px-6 space-y-4">
+                <a href="index.html"
+                    class="block text-xs font-medium tracking-[0.15em] uppercase py-2 hover:text-neutral-500">Dashboard</a>
+                <a href="new_arrivals.html"
+                    class="block text-xs font-medium tracking-[0.15em] uppercase py-2 hover:text-neutral-500">New
+                    Arrivals</a>
+                <a href="categories.html"
+                    class="block text-xs font-medium tracking-[0.15em] uppercase py-2 hover:text-neutral-500">Categories</a>
+            </div>
+        </nav>
     </header>
-
-    <!-- Mobile Menu (Hidden by default) -->
- <nav id="mobileMenu"
-      class="lg:hidden hidden absolute top-full left-0 right-0 bg-white border-b border-neutral-200 animate-slide-in">
-      <div class="py-6 px-6 space-y-4">
-        <a href="/index.html" class="block text-xs font-medium tracking-[0.15em] uppercase py-2 hover:text-neutral-500">Dashboard</a>
-        <a href="/new_arrivals.html" class="block text-xs font-medium tracking-[0.15em] uppercase py-2 hover:text-neutral-500">New Arrivals</a>
-        <a href="/categories.html" class="block text-xs font-medium tracking-[0.15em] uppercase py-2 hover:text-neutral-500">Categories</a>
-        </div>
-      </div>
-    </nav>
 
     <!-- Main Content -->
     <main class="flex-1 w-full overflow-hidden">
@@ -316,7 +339,32 @@
 
         if (menuToggle && mobileMenu) {
             menuToggle.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
+                const isHidden = mobileMenu.classList.contains('hidden');
+                const menuIcon = document.getElementById('menuIcon');
+                const closeIcon = document.getElementById('closeIcon');
+
+                if (isHidden) {
+                    // Open
+                    mobileMenu.classList.remove('hidden');
+                    mobileMenu.classList.add('animate-slide-in');
+                    mobileMenu.classList.remove('animate-slide-out');
+                    if (menuIcon) menuIcon.classList.add('hidden');
+                    if (closeIcon) closeIcon.classList.remove('hidden');
+                } else {
+                    // Close
+                    mobileMenu.classList.add('animate-slide-out');
+                    mobileMenu.classList.remove('animate-slide-in');
+
+                    mobileMenu.addEventListener('animationend', () => {
+                        if (mobileMenu.classList.contains('animate-slide-out')) {
+                            mobileMenu.classList.add('hidden');
+                            mobileMenu.classList.remove('animate-slide-out');
+                        }
+                    }, { once: true });
+
+                    if (menuIcon) menuIcon.classList.remove('hidden');
+                    if (closeIcon) closeIcon.classList.add('hidden');
+                }
             });
         }
     </script>
