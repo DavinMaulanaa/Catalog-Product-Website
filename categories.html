@@ -118,17 +118,8 @@
     <!-- Header -->
     <header class="sticky top-0 z-50 bg-white shadow-xl">
         <div class="flex items-center justify-between px-6 lg:px-12 h-[4.5rem] border-b border-neutral-200">
-            <a href="/" class="flex items-center gap-1 tracking-[0.5em] text-sm font-medium">
-                <span
-                    class="w-6 h-6 rounded-full border border-neutral-900 flex items-center justify-center text-[10px]">O</span>
-                <span
-                    class="w-6 h-6 rounded-full border border-neutral-900 flex items-center justify-center text-[10px]">R</span>
-                <span
-                    class="w-6 h-6 rounded-full border border-neutral-900 flex items-center justify-center text-[10px]">B</span>
-                <span
-                    class="w-6 h-6 rounded-full border border-neutral-900 flex items-center justify-center text-[10px]">I</span>
-                <span
-                    class="w-6 h-6 rounded-full border border-neutral-900 flex items-center justify-center text-[10px]">S</span>
+            <a href="/" class="flex items-center">
+                <img src="img/collarbone.jpg" alt="Collarbone Logo" class="h-10 w-auto object-contain">
             </a>
 
             <nav class="hidden lg:flex items-center gap-8">
@@ -140,22 +131,21 @@
                 <a href="categories.html"
                     class="text-xs font-medium tracking-[0.15em] uppercase hover:text-neutral-500 transition-colors">Categories</a>
             </nav>
-                <button id="menuToggle" class="lg:hidden">
-                    <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <line x1="4" x2="20" y1="12" y2="12" />
-                        <line x1="4" x2="20" y1="6" y2="6" />
-                        <line x1="4" x2="20" y1="18" y2="18" />
-                    </svg>
-                    <svg id="closeIcon" class="hidden" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M18 6 6 18" />
-                        <path d="m6 6 12 12" />
-                    </svg>
-                </button>
-            </div>
+            <button id="menuToggle" class="lg:hidden">
+                <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="4" x2="20" y1="12" y2="12" />
+                    <line x1="4" x2="20" y1="6" y2="6" />
+                    <line x1="4" x2="20" y1="18" y2="18" />
+                </svg>
+                <svg id="closeIcon" class="hidden" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M18 6 6 18" />
+                    <path d="m6 6 12 12" />
+                </svg>
+            </button>
+        </div>
         </div>
         <!-- Mobile Menu (Hidden by default) -->
         <nav id="mobileMenu"
