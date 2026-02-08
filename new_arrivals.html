@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Collarbone - New Arrivals</title>
+  <link rel="icon" type="image/png" href="img/collarbone.jpg">
   <meta name="description" content="Contemporary streetwear from Jakarta. Minimal design, premium quality." />
 
   <!-- Tailwind CSS CDN -->
@@ -151,6 +152,24 @@
     .delay-300 {
       transition-delay: 300ms;
     }
+
+    /* Flip Card Styles */
+    .perspective-1000 {
+      perspective: 1000px;
+    }
+
+    .transform-style-3d {
+      transform-style: preserve-3d;
+    }
+
+    .backface-hidden {
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
+
+    .rotate-y-180 {
+      transform: rotateY(180deg);
+    }
   </style>
 </head>
 
@@ -213,7 +232,7 @@
 
     <!-- Hero Banner -->
     <section class="relative h-[50vh] w-full overflow-hidden">
-      <img src="https://images.unsplash.com/photo-1520029766669-e700e04f053e?q=80&w=2070&auto=format&fit=crop"
+      <img src="img/Wallpaper.jpeg"
         alt="New Collection" class="absolute inset-0 w-full h-full object-cover">
       <div class="absolute inset-0 bg-black/20"></div>
       <div class="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4">
@@ -259,81 +278,175 @@
       <div class="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-10 lg:gap-x-6 lg:gap-y-12">
 
         <!-- Product 1 -->
-        <article class="group cursor-pointer blur-in">
-          <div class="relative overflow-hidden aspect-product bg-neutral-100 mb-4">
-            <img src="Photo1.jpg" alt="Essential Oversized Tee" class="product-card-image w-full h-full object-cover">
-            <div
-              class="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-white/90 backdrop-blur-sm">
-              <h3 class="text-xs uppercase tracking-widest text-center text-black font-medium">Essential Oversized Tee
-              </h3>
+        <article class="group cursor-pointer blur-in perspective-1000">
+          <div class="relative transition-all duration-700 transform-style-3d w-full">
+            <!-- Front -->
+            <div class="relative backface-hidden bg-white">
+              <div class="relative overflow-hidden aspect-product bg-neutral-100 mb-4">
+                <img src="Photo1.jpg" alt="Essential Oversized Tee"
+                  class="product-card-image w-full h-full object-cover">
+                <div
+                  class="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-white/90 backdrop-blur-sm">
+                  <h3 class="text-xs uppercase tracking-widest text-center text-black font-medium">Essential Oversized
+                    Tee</h3>
+                </div>
+                <div class="absolute top-2 right-2 bg-white px-2 py-1 text-[8px] tracking-widest uppercase">New</div>
+              </div>
+              <div class="flex items-start justify-between">
+                <p class="text-xs text-neutral-500 pt-0.5">Rp 450.000</p>
+                <div class="flex flex-col items-end gap-2">
+                  <div class="flex gap-1">
+                    <span class="w-2 h-2 rounded-full bg-black border border-neutral-200"></span>
+                    <span class="w-2 h-2 rounded-full bg-neutral-200 border border-neutral-200"></span>
+                  </div>
+                  <button
+                     class="text-[10px] uppercase tracking-widest hover:text-neutral-500 border-b border-black pb-0.5 transition-colors details-btn bg-gray-200 w-[60px]">Details</button>
+                </div>
+              </div>
             </div>
-            <div class="absolute top-2 right-2 bg-white px-2 py-1 text-[8px] tracking-widest uppercase">New</div>
-          </div>
-          <div class="flex items-center justify-between">
-            <p class="text-xs text-neutral-500">Rp 450.000</p>
-            <div class="flex gap-1">
-              <span class="w-2 h-2 rounded-full bg-black border border-neutral-200"></span>
-              <span class="w-2 h-2 rounded-full bg-neutral-200 border border-neutral-200"></span>
+            <!-- Back -->
+            <div
+              class="absolute top-0 left-0 w-full h-full backface-hidden rotate-y-180 bg-white border border-neutral-100 p-6 flex flex-col items-center justify-center text-center">
+              <h3 class="text-xs font-medium uppercase tracking-widest mb-4">Essential Oversized Tee</h3>
+              <p class="text-xs text-neutral-500 leading-relaxed mb-6">Signature oversized fit tee crafted from
+                heavyweight cotton jersey. Features dropped shoulders and a ribbed crewneck for a relaxed, modern
+                silhouette.</p>
+              <button
+                class="text-[10px] border-b border-black pb-0.5 hover:text-neutral-500 transition-colors uppercase tracking-widest back-btn">Back</button>
             </div>
           </div>
         </article>
 
         <!-- Product 2 -->
-        <article class="group cursor-pointer blur-in delay-100">
-          <div class="relative overflow-hidden aspect-product bg-neutral-100 mb-4">
-            <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=800&auto=format&fit=crop"
-              alt="Cream Oversized Hoodie" class="product-card-image w-full h-full object-cover">
-            <div
-              class="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-white/90 backdrop-blur-sm">
-              <h3 class="text-xs uppercase tracking-widest text-center text-black font-medium">Cream Oversized Hoodie
-              </h3>
+        <article class="group cursor-pointer blur-in delay-100 perspective-1000">
+          <div class="relative transition-all duration-700 transform-style-3d w-full">
+            <!-- Front -->
+            <div class="relative backface-hidden bg-white">
+              <div class="relative overflow-hidden aspect-product bg-neutral-100 mb-4">
+                <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=800&auto=format&fit=crop"
+                  alt="Cream Oversized Hoodie" class="product-card-image w-full h-full object-cover">
+                <div
+                  class="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-white/90 backdrop-blur-sm">
+                  <h3 class="text-xs uppercase tracking-widest text-center text-black font-medium">Cream Oversized
+                    Hoodie</h3>
+                </div>
+              </div>
+              <div class="flex items-start justify-between">
+                <p class="text-xs text-neutral-500 pt-0.5">Rp 750.000</p>
+                <div class="flex flex-col items-end gap-2">
+                  <div class="flex gap-1">
+                    <span class="w-2 h-2 rounded-full bg-[#E5D0B1] border border-neutral-200"></span>
+                  </div>
+                  <button
+                     class="text-[10px] uppercase tracking-widest hover:text-neutral-500 border-b border-black pb-0.5 transition-colors details-btn bg-gray-200 w-[60px]">Details</button>
+                </div>
+              </div>
+              <div class="flex gap-2 mt-2 text-[10px] font-medium tracking-wider">
+                <span class="text-green-600">S</span>
+                <span class="text-green-600">M</span>
+                <span class="text-red-900">L</span>
+                <span class="text-green-600">XL</span>
+              </div>
             </div>
-          </div>
-          <div class="flex items-center justify-between">
-            <p class="text-xs text-neutral-500">Rp 750.000</p>
-            <div class="flex gap-1">
-              <span class="w-2 h-2 rounded-full bg-[#E5D0B1] border border-neutral-200"></span>
+            <!-- Back -->
+            <div
+              class="absolute top-0 left-0 w-full h-full backface-hidden rotate-y-180 bg-white border border-neutral-100 p-6 flex flex-col items-center justify-center text-center">
+              <h3 class="text-xs font-medium uppercase tracking-widest mb-4">Cream Oversized Hoodie</h3>
+              <p class="text-xs text-neutral-500 leading-relaxed mb-6">Premium heavyweight fleece hoodie in a
+                relaxed oversized cut. Double-layered hood and kangaroo pocket for maximum comfort and style.</p>
+              <button
+                class="text-[10px] border-b border-black pb-0.5 hover:text-neutral-500 transition-colors uppercase tracking-widest back-btn">Back</button>
             </div>
           </div>
         </article>
 
         <!-- Product 3 -->
-        <article class="group cursor-pointer blur-in delay-200">
-          <div class="relative overflow-hidden aspect-product bg-neutral-100 mb-4">
-            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=800&auto=format&fit=crop"
-              alt="Boxy Fit Tee" class="product-card-image w-full h-full object-cover">
-            <div
-              class="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-white/90 backdrop-blur-sm">
-              <h3 class="text-xs uppercase tracking-widest text-center text-black font-medium">Boxy Fit Tee - Charcoal
-              </h3>
+        <article class="group cursor-pointer blur-in delay-200 perspective-1000">
+          <div class="relative transition-all duration-700 transform-style-3d w-full">
+            <!-- Front -->
+            <div class="relative backface-hidden bg-white">
+              <div class="relative overflow-hidden aspect-product bg-neutral-100 mb-4">
+                <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=800&auto=format&fit=crop"
+                  alt="Boxy Fit Tee" class="product-card-image w-full h-full object-cover">
+                <div
+                  class="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-white/90 backdrop-blur-sm">
+                  <h3 class="text-xs uppercase tracking-widest text-center text-black font-medium">Boxy Fit Tee -
+                    Charcoal</h3>
+                </div>
+              </div>
+              <div class="flex items-start justify-between">
+                <p class="text-xs text-neutral-500 pt-0.5">Rp 490.000</p>
+                <div class="flex flex-col items-end gap-2">
+                  <div class="flex gap-1">
+                    <span class="w-2 h-2 rounded-full bg-neutral-800 border border-neutral-200"></span>
+                    <span class="w-2 h-2 rounded-full bg-neutral-500 border border-neutral-200"></span>
+                  </div>
+                  <button
+                      class="text-[10px] uppercase tracking-widest hover:text-neutral-500 border-b border-black pb-0.5 transition-colors details-btn bg-gray-200 w-[60px]">Details</button>
+                </div>
+              </div>
+              <div class="flex gap-2 mt-2 text-[10px] font-medium tracking-wider">
+                <span class="text-green-600">S</span>
+                <span class="text-green-600">M</span>
+                <span class="text-green-600">L</span>
+                <span class="text-green-600">XL</span>
+              </div>
             </div>
-          </div>
-          <div class="flex items-center justify-between">
-            <p class="text-xs text-neutral-500">Rp 490.000</p>
-            <div class="flex gap-1">
-              <span class="w-2 h-2 rounded-full bg-neutral-800 border border-neutral-200"></span>
-              <span class="w-2 h-2 rounded-full bg-neutral-500 border border-neutral-200"></span>
+            <!-- Back -->
+            <div
+              class="absolute top-0 left-0 w-full h-full backface-hidden rotate-y-180 bg-white border border-neutral-100 p-6 flex flex-col items-center justify-center text-center">
+              <h3 class="text-xs font-medium uppercase tracking-widest mb-4">Boxy Fit Tee</h3>
+              <p class="text-xs text-neutral-500 leading-relaxed mb-6">Boxy silhouette tee with a cropped length.
+                Garment-dyed for a vintage feel and soft hand-touch. Perfect for layering.</p>
+              <button
+                class="text-[10px] border-b border-black pb-0.5 hover:text-neutral-500 transition-colors uppercase tracking-widest back-btn">Back</button>
             </div>
           </div>
         </article>
 
         <!-- Product 4 -->
-        <article class="group cursor-pointer blur-in delay-300">
-          <div class="relative overflow-hidden aspect-product bg-neutral-100 mb-4">
-            <img src="https://images.unsplash.com/photo-1620799140408-ed5341cd2431?q=80&w=800&auto=format&fit=crop"
-              alt="Essential Sweatshirt" class="product-card-image w-full h-full object-cover">
-            <div
-              class="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-white/90 backdrop-blur-sm">
-              <h3 class="text-xs uppercase tracking-widest text-center text-black font-medium">Essential Sweatshirt</h3>
+        <article class="group cursor-pointer blur-in delay-300 perspective-1000">
+          <div class="relative transition-all duration-700 transform-style-3d w-full">
+            <!-- Front -->
+            <div class="relative backface-hidden bg-white">
+              <div class="relative overflow-hidden aspect-product bg-neutral-100 mb-4">
+                <img src="https://images.unsplash.com/photo-1620799140408-ed5341cd2431?q=80&w=800&auto=format&fit=crop"
+                  alt="Essential Sweatshirt" class="product-card-image w-full h-full object-cover">
+                <div
+                  class="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-white/90 backdrop-blur-sm">
+                  <h3 class="text-xs uppercase tracking-widest text-center text-black font-medium">Essential Sweatshirt
+                  </h3>
+                </div>
+                <div
+                  class="absolute top-2 right-2 bg-orbis-teal text-white px-2 py-1 text-[8px] tracking-widest uppercase">
+                  Selling Fast</div>
+              </div>
+              <div class="flex items-start justify-between">
+                <p class="text-xs text-neutral-500 pt-0.5">Rp 650.000</p>
+                <div class="flex flex-col items-end gap-2">
+                  <div class="flex gap-1">
+                    <span class="w-2 h-2 rounded-full bg-neutral-400 border border-neutral-200"></span>
+                    <span class="w-2 h-2 rounded-full bg-black border border-neutral-200"></span>
+                  </div>
+                  <button
+                      class="text-[10px] uppercase tracking-widest hover:text-neutral-500 border-b border-black pb-0.5 transition-colors details-btn bg-gray-200 w-[60px]">Details</button>
+                </div>
+              </div>
+              <div class="flex gap-2 mt-2 text-[10px] font-medium tracking-wider">
+                <span class="text-green-600">S</span>
+                <span class="text-red-900">M</span>
+                <span class="text-green-600">L</span>
+                <span class="text-green-600">XL</span>
+              </div>
             </div>
-            <div class="absolute top-2 right-2 bg-orbis-teal text-white px-2 py-1 text-[8px] tracking-widest uppercase">
-              Selling Fast</div>
-          </div>
-          <div class="flex items-center justify-between">
-            <p class="text-xs text-neutral-500">Rp 650.000</p>
-            <div class="flex gap-1">
-              <span class="w-2 h-2 rounded-full bg-neutral-400 border border-neutral-200"></span>
-              <span class="w-2 h-2 rounded-full bg-black border border-neutral-200"></span>
+            <!-- Back -->
+            <div
+              class="absolute top-0 left-0 w-full h-full backface-hidden rotate-y-180 bg-white border border-neutral-100 p-6 flex flex-col items-center justify-center text-center">
+              <h3 class="text-xs font-medium uppercase tracking-widest mb-4">Essential Sweatshirt</h3>
+              <p class="text-xs text-neutral-500 leading-relaxed mb-6">Classic crewneck sweatshirt reimagined with a
+                modern loose fit. Constructed from French Terry cotton with durable ribbed trims.</p>
+              <button
+                class="text-[10px] border-b border-black pb-0.5 hover:text-neutral-500 transition-colors uppercase tracking-widest back-btn">Back</button>
             </div>
           </div>
         </article>
@@ -348,82 +461,181 @@
               <p class="text-xs tracking-mega mb-2">LIMITED EDITION</p>
               <h2 class="text-3xl md:text-5xl font-light tracking-widest mb-6">THE MONOCHROME SERIES</h2>
               <button
-                class="px-8 py-3 bg-white text-black text-xs uppercase tracking-widest hover:bg-neutral-200 transition-colors">Explore
+                class="px-8 py-3 bg-white text-black text-xs uppercase tracking-widest hover:bg-transparent hover:text-white border border-black transition-colors">Explore
                 Collection</button>
             </div>
           </div>
         </div>
 
         <!-- Product 5 -->
-        <article class="group cursor-pointer blur-in">
-          <div class="relative overflow-hidden aspect-product bg-neutral-100 mb-4">
-            <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=800&auto=format&fit=crop"
-              alt="Vintage Wash Tee" class="product-card-image w-full h-full object-cover">
-            <div
-              class="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-white/90 backdrop-blur-sm">
-              <h3 class="text-xs uppercase tracking-widest text-center text-black font-medium">Vintage Wash Tee</h3>
+        <article class="group cursor-pointer blur-in perspective-1000">
+          <div class="relative transition-all duration-700 transform-style-3d w-full">
+            <!-- Front -->
+            <div class="relative backface-hidden bg-white">
+              <div class="relative overflow-hidden aspect-product bg-neutral-100 mb-4">
+                <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=800&auto=format&fit=crop"
+                  alt="Vintage Wash Tee" class="product-card-image w-full h-full object-cover">
+                <div
+                  class="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-white/90 backdrop-blur-sm">
+                  <h3 class="text-xs uppercase tracking-widest text-center text-black font-medium">Vintage Wash Tee</h3>
+                </div>
+              </div>
+              <div class="flex items-start justify-between">
+                <p class="text-xs text-neutral-500 pt-0.5">Rp 450.000</p>
+                <div class="flex flex-col items-end gap-2">
+                  <div class="flex gap-1">
+                    <span class="w-2 h-2 rounded-full bg-black border border-neutral-200"></span>
+                  </div>
+                  <button
+                    class="text-[10px] uppercase tracking-widest hover:text-neutral-500 border-b border-black pb-0.5 transition-colors details-btn bg-gray-200 w-[60px]">Details</button>
+                </div>
+              </div>
+              <div class="flex gap-2 mt-2 text-[10px] font-medium tracking-wider">
+                <span class="text-green-600">S</span>
+                <span class="text-green-600">M</span>
+                <span class="text-green-600">L</span>
+                <span class="text-green-600">XL</span>
+              </div>
             </div>
-          </div>
-          <div class="flex items-center justify-between">
-            <p class="text-xs text-neutral-500">Rp 450.000</p>
-            <div class="flex gap-1">
-              <span class="w-2 h-2 rounded-full bg-black border border-neutral-200"></span>
+            <!-- Back -->
+            <div
+              class="absolute top-0 left-0 w-full h-full backface-hidden rotate-y-180 bg-white border border-neutral-100 p-6 flex flex-col items-center justify-center text-center">
+              <h3 class="text-xs font-medium uppercase tracking-widest mb-4">Vintage Wash Tee</h3>
+              <p class="text-xs text-neutral-500 leading-relaxed mb-6">Achieve the perfect lived-in look with our
+                Vintage Wash Tee. Softened fabric and unique color treatments make each piece unique.</p>
+              <button
+                class="text-[10px] border-b border-black pb-0.5 hover:text-neutral-500 transition-colors uppercase tracking-widest back-btn">Back</button>
             </div>
           </div>
         </article>
 
         <!-- Product 6 -->
-        <article class="group cursor-pointer blur-in delay-100">
-          <div class="relative overflow-hidden aspect-product bg-neutral-100 mb-4">
-            <img src="https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?q=80&w=800&auto=format&fit=crop"
-              alt="Striped Tee" class="product-card-image w-full h-full object-cover">
-            <div
-              class="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-white/90 backdrop-blur-sm">
-              <h3 class="text-xs uppercase tracking-widest text-center text-black font-medium">Striped Daily Tee</h3>
+        <article class="group cursor-pointer blur-in delay-100 perspective-1000">
+          <div class="relative transition-all duration-700 transform-style-3d w-full">
+            <!-- Front -->
+            <div class="relative backface-hidden bg-white">
+              <div class="relative overflow-hidden aspect-product bg-neutral-100 mb-4">
+                <img src="https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?q=80&w=800&auto=format&fit=crop"
+                  alt="Striped Tee" class="product-card-image w-full h-full object-cover">
+                <div
+                  class="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-white/90 backdrop-blur-sm">
+                  <h3 class="text-xs uppercase tracking-widest text-center text-black font-medium">Striped Daily Tee
+                  </h3>
+                </div>
+              </div>
+              <div class="flex items-start justify-between">
+                <p class="text-xs text-neutral-500 pt-0.5">Rp 350.000</p>
+                <div class="flex flex-col items-end gap-2">
+                  <div class="flex gap-1">
+                    <span class="w-2 h-2 rounded-full bg-white border border-neutral-200"></span>
+                    <span class="w-2 h-2 rounded-full bg-blue-100 border border-neutral-200"></span>
+                  </div>
+                  <button
+                      class="text-[10px] uppercase tracking-widest hover:text-neutral-500 border-b border-black pb-0.5 transition-colors details-btn bg-gray-200 w-[60px]">Details</button>
+                </div>
+              </div>
+              <div class="flex gap-2 mt-2 text-[10px] font-medium tracking-wider">
+                <span class="text-green-600">S</span>
+                <span class="text-green-600">M</span>
+                <span class="text-green-600">L</span>
+                <span class="text-red-900">XL</span>
+              </div>
             </div>
-          </div>
-          <div class="flex items-center justify-between">
-            <p class="text-xs text-neutral-500">Rp 350.000</p>
-            <div class="flex gap-1">
-              <span class="w-2 h-2 rounded-full bg-white border border-neutral-200"></span>
-              <span class="w-2 h-2 rounded-full bg-blue-100 border border-neutral-200"></span>
+            <!-- Back -->
+            <div
+              class="absolute top-0 left-0 w-full h-full backface-hidden rotate-y-180 bg-white border border-neutral-100 p-6 flex flex-col items-center justify-center text-center">
+              <h3 class="text-xs font-medium uppercase tracking-widest mb-4">Striped Daily Tee</h3>
+              <p class="text-xs text-neutral-500 leading-relaxed mb-6">A versatile staple for any wardrobe. This
+                striped tee features a comfortable regular fit and is made from breathable cotton.</p>
+              <button
+                class="text-[10px] border-b border-black pb-0.5 hover:text-neutral-500 transition-colors uppercase tracking-widest back-btn">Back</button>
             </div>
           </div>
         </article>
 
         <!-- Product 7 -->
-        <article class="group cursor-pointer blur-in delay-200">
-          <div class="relative overflow-hidden aspect-product bg-neutral-100 mb-4">
-            <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=800&auto=format&fit=crop"
-              alt="Long Sleeve" class="product-card-image w-full h-full object-cover">
-            <div
-              class="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-white/90 backdrop-blur-sm">
-              <h3 class="text-xs uppercase tracking-widest text-center text-black font-medium">Graphic Long Sleeve</h3>
+        <article class="group cursor-pointer blur-in delay-200 perspective-1000">
+          <div class="relative transition-all duration-700 transform-style-3d w-full">
+            <!-- Front -->
+            <div class="relative backface-hidden bg-white">
+              <div class="relative overflow-hidden aspect-product bg-neutral-100 mb-4">
+                <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=800&auto=format&fit=crop"
+                  alt="Long Sleeve" class="product-card-image w-full h-full object-cover">
+                <div
+                  class="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-white/90 backdrop-blur-sm">
+                  <h3 class="text-xs uppercase tracking-widest text-center text-black font-medium">Graphic Long Sleeve
+                  </h3>
+                </div>
+              </div>
+              <div class="flex items-start justify-between">
+                <p class="text-xs text-neutral-500 pt-0.5">Rp 550.000</p>
+                <div class="flex flex-col items-end gap-2">
+                  <div class="flex gap-1">
+                    <span class="w-2 h-2 rounded-full bg-black border border-neutral-200"></span>
+                    <span class="w-2 h-2 rounded-full bg-gray-600 border border-neutral-200"></span>
+                  </div>
+                  <button
+                    class="text-[10px] uppercase tracking-widest hover:text-neutral-500 border-b border-black pb-0.5 transition-colors details-btn">Details</button>
+                </div>
+              </div>
+              <div class="flex gap-2 mt-2 text-[10px] font-medium tracking-wider">
+                <span class="text-green-600">S</span>
+                <span class="text-green-600">M</span>
+                <span class="text-green-600">L</span>
+                <span class="text-green-600">XL</span>
+              </div>
             </div>
-          </div>
-          <div class="flex items-center justify-between">
-            <p class="text-xs text-neutral-500">Rp 550.000</p>
-            <div class="flex gap-1">
-              <span class="w-2 h-2 rounded-full bg-black border border-neutral-200"></span>
-              <span class="w-2 h-2 rounded-full bg-gray-600 border border-neutral-200"></span>
+            <!-- Back -->
+            <div
+              class="absolute top-0 left-0 w-full h-full backface-hidden rotate-y-180 bg-white border border-neutral-100 p-6 flex flex-col items-center justify-center text-center">
+              <h3 class="text-xs font-medium uppercase tracking-widest mb-4">Graphic Long Sleeve</h3>
+              <p class="text-xs text-neutral-500 leading-relaxed mb-6">Statement long sleeve tee featuring bold
+                graphic prints. Perfect for transitional weather and layering under jackets.</p>
+              <button
+                class="text-[10px] border-b border-black pb-0.5 hover:text-neutral-500 transition-colors uppercase tracking-widest back-btn">Back</button>
             </div>
           </div>
         </article>
 
         <!-- Product 8 -->
-        <article class="group cursor-pointer blur-in delay-300">
-          <div class="relative overflow-hidden aspect-product bg-neutral-100 mb-4">
-            <img src="https://images.unsplash.com/photo-1503341455253-b2e72333dbdb?q=80&w=800&auto=format&fit=crop"
-              alt="Signature Tee" class="product-card-image w-full h-full object-cover">
-            <div
-              class="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-white/90 backdrop-blur-sm">
-              <h3 class="text-xs uppercase tracking-widest text-center text-black font-medium">Signature Logo Tee</h3>
+        <article class="group cursor-pointer blur-in delay-300 perspective-1000">
+          <div class="relative transition-all duration-700 transform-style-3d w-full">
+            <!-- Front -->
+            <div class="relative backface-hidden bg-white">
+              <div class="relative overflow-hidden aspect-product bg-neutral-100 mb-4">
+                <img src="https://images.unsplash.com/photo-1503341455253-b2e72333dbdb?q=80&w=800&auto=format&fit=crop"
+                  alt="Signature Tee" class="product-card-image w-full h-full object-cover">
+                <div
+                  class="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-white/90 backdrop-blur-sm">
+                  <h3 class="text-xs uppercase tracking-widest text-center text-black font-medium">Signature Logo Tee
+                  </h3>
+                </div>
+              </div>
+              <div class="flex items-start justify-between">
+                <p class="text-xs text-neutral-500 pt-0.5">Rp 450.000</p>
+                <div class="flex flex-col items-end gap-2">
+                  <div class="flex gap-1">
+                    <span class="w-2 h-2 rounded-full bg-white border border-neutral-200"></span>
+                  </div>
+                  <button
+  class="text-[10px] uppercase tracking-widest hover:text-neutral-500 border-b border-black pb-0.5 transition-colors details-btn bg-gray-200 w-[60px]">Details</button>
+                </div>
+              </div>
+              <div class="flex gap-2 mt-2 text-[10px] font-medium tracking-wider">
+                <span class="text-green-600">S</span>
+                <span class="text-green-600">M</span>
+                <span class="text-red-900">L</span>
+                <span class="text-red-900">XL</span>
+              </div>
             </div>
-          </div>
-          <div class="flex items-center justify-between">
-            <p class="text-xs text-neutral-500">Rp 450.000</p>
-            <div class="flex gap-1">
-              <span class="w-2 h-2 rounded-full bg-white border border-neutral-200"></span>
+            <!-- Back -->
+            <div
+              class="absolute top-0 left-0 w-full h-full backface-hidden rotate-y-180 bg-white border border-neutral-100 p-6 flex flex-col items-center justify-center text-center">
+              <h3 class="text-xs font-medium uppercase tracking-widest mb-4">Signature Logo Tee</h3>
+              <p class="text-xs text-neutral-500 leading-relaxed mb-6">Our iconic logo tee. Clean, minimal, and
+                essential. Made from 100% organic cotton for everyday comfort.</p>
+              <button
+                class="text-[10px] border-b border-black pb-0.5 hover:text-neutral-500 transition-colors uppercase tracking-widest back-btn">Back</button>
             </div>
           </div>
         </article>
@@ -553,6 +765,27 @@
     });
 
     document.querySelectorAll('.blur-in').forEach(el => observer.observe(el));
+
+    // Flip Card Interaction
+    document.querySelectorAll('.details-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation(); // Prevent any parent click events
+        const cardInner = btn.closest('.transform-style-3d');
+        if (cardInner) {
+          cardInner.classList.add('rotate-y-180');
+        }
+      });
+    });
+
+    document.querySelectorAll('.back-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const cardInner = btn.closest('.transform-style-3d');
+        if (cardInner) {
+          cardInner.classList.remove('rotate-y-180');
+        }
+      });
+    });
   </script>
 
 </body>

@@ -38,6 +38,7 @@
             'fade-up': 'fadeUp 0.8s ease-out',
             'slide-in': 'slideIn 0.4s ease-out',
             'slide-out': 'slideOut 0.4s ease-in forwards',
+            'marquee': 'marquee 40s linear infinite',
           },
           keyframes: {
             fadeUp: {
@@ -51,6 +52,10 @@
             slideOut: {
               '0%': { transform: 'translateX(0)' },
               '100%': { transform: 'translateX(-100%)' },
+            },
+            marquee: {
+              '0%': { transform: 'translateX(0)' },
+              '100%': { transform: 'translateX(-50%)' },
             },
           },
         },
@@ -226,41 +231,41 @@
       </div>
     </section>
     <!-- Collection Grid -->
-    <section class="py-16 lg:py-24 px-6 lg:px-12">
+    <section class="py-16 lg:py-24 px-6 lg:px-12 text-black">
       <div class="flex items-center justify-between mb-12 reveal">
         <h2 class="text-xl lg:text-2xl font-light tracking-orbis">COLLECTIONS</h2>
         <a href="#" class="text-xs font-medium tracking-[0.15em] uppercase hover:text-orbis-teal transition-colors">VIEW
           ALL</a>
       </div>
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6">
+      <div class="text-black grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6">
         <!-- Collection 1 -->
-        <a href="#" class="group relative aspect-[3/4] overflow-hidden reveal delay-100">
-          <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&q=80" alt="Apparel"
-            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+        <a href="#" class="group relative aspect-[3/4] overflow-hidden reveal delay-100 rounded-lg">
+          <img src="img/1.png" alt="Apparel"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 bg-gray-200">
           <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
           <div class="absolute bottom-6 left-6">
-            <p class="text-white text-xs tracking-orbis-wide mb-2">CATEGORY</p>
-            <h3 class="text-white text-xl lg:text-2xl font-light tracking-orbis">APPAREL</h3>
+            <p class="stroke-white text-xs tracking-orbis-wide mb-2">CATEGORY</p>
+            <h3 class=" text-xl lg:text-2xl font-light tracking-orbis">T-Shirt</h3>
           </div>
         </a>
         <!-- Collection 2 -->
-        <a href="#" class="group relative aspect-[3/4] overflow-hidden reveal delay-200">
-          <img src="https://images.unsplash.com/photo-1556306535-0f09a537f0a3?w=800&q=80" alt="Headwear"
-            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+        <a href="#" class="group relative aspect-[3/4] overflow-hidden reveal delay-200 rounded-lg">
+          <img src="img/merchBG.png" alt="Headwear"
+            class="bg-gray-200 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ">
           <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
           <div class="absolute bottom-6 left-6">
-            <p class="text-white text-xs tracking-orbis-wide mb-2">CATEGORY</p>
-            <h3 class="text-white text-xl lg:text-2xl font-light tracking-orbis">HEADWEAR</h3>
+            <p class=" text-xs tracking-orbis-wide mb-2">CATEGORY</p>
+            <h3 class=" text-xl lg:text-2xl font-light tracking-orbis">Pin Button</h3>
           </div>
         </a>
         <!-- Collection 3 -->
-        <a href="#" class="group relative aspect-[3/4] overflow-hidden reveal delay-300">
-          <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800&q=80" alt="Accessories"
-            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+        <a href="#" class="group relative aspect-[3/4] overflow-hidden reveal delay-300 bg-gray-200 rounded-lg">
+          <img src="img/9.png" alt="Accessories"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 bg-gray-200">
           <div class="absolute inset-0 bg-gradient-to- from-black/50 via-transparent to-transparent"></div>
           <div class="absolute bottom-6 left-6">
-            <p class="text-white text-xs tracking-orbis-wide mb-2">CATEGORY</p>
-            <h3 class="text-white text-xl lg:text-2xl font-light tracking-orbis">ACCESSORIES</h3>
+            <p class="text-xs tracking-orbis-wide mb-2">CATEGORY</p>
+            <h3 class="text-xl lg:text-2xl font-light tracking-orbis">T-Shirt </h3>
           </div>
         </a>
       </div>
@@ -269,7 +274,7 @@
     <section class="py-16 lg:py-24 px-6 lg:px-12">
       <div class="flex items-center justify-between mb-12 reveal">
         <h2 class="text-xl lg:text-2xl font-light tracking-orbis">FEATURED</h2>
-        <a href="#" class="text-xs font-medium tracking-[0.15em] uppercase hover:text-orbis-teal transition-colors">VIEW
+        <a href="#" class="text-xs font-medium tracking-[0.15em] uppercase transition-colors">VIEW
           ALL</a>
       </div>
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
@@ -373,6 +378,196 @@
       </div>
     </section>
   </main>
+
+  <!-- Testimonials Section -->
+  <section class="py-20 lg:py-28 bg-neutral-50 overflow-hidden">
+    <div class="px-6 lg:px-12 mb-16 text-center reveal">
+      <h2 class="text-3xl lg:text-5xl font-light tracking-orbis text-neutral-900 mb-4">What They Say
+        <br>About Our Products
+      </h2>
+    </div>
+
+    <div class="relative w-full">
+      <!-- Gradient Masks -->
+      <div
+        class="absolute inset-y-0 left-0 w-20 lg:w-40 bg-gradient-to-r from-neutral-50 to-transparent z-10 pointer-events-none">
+      </div>
+      <div
+        class="absolute inset-y-0 right-0 w-20 lg:w-40 bg-gradient-to-l from-neutral-50 to-transparent z-10 pointer-events-none">
+      </div>
+
+      <!-- Marquee Container -->
+      <div class="flex w-max animate-marquee hover:[animation-play-state:paused] items-stretch">
+        <!-- Testimonial Cards (Original) -->
+        <div class="flex gap-6 mx-3">
+          <!-- Card 1 -->
+          <div class="bg-white p-8 rounded-2xl shadow-sm w-[400px] flex-shrink-0 flex flex-col justify-between">
+            <div>
+              <svg class="w-10 h-10 text-orbis-teal mb-6 opacity-80" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.0166 21L5.0166 18C5.0166 16.8954 5.91203 16 7.0166 16H10.0166C10.5689 16 11.0166 15.5523 11.0166 15V9C11.0166 8.44772 10.5689 8 10.0166 8H6.0166C5.46432 8 5.0166 8.44772 5.0166 9V11C5.0166 11.5523 4.56889 12 4.0166 12H3.0166V5H13.0166V15C13.0166 18.3137 10.3303 21 7.0166 21H5.0166Z" />
+              </svg>
+              <p class="text-neutral-600 font-light leading-relaxed mb-8">"Exceeded our expectations with innovative
+                designs that brought our vision to life - a truly remarkable creative agency."</p>
+            </div>
+            <div class="flex items-center gap-4">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&q=80" alt="Samantha"
+                class="w-12 h-12 rounded-full object-cover">
+              <div>
+                <h4 class="font-medium text-sm text-neutral-900">Samantha Johnson</h4>
+                <p class="text-xs text-neutral-500">CEO of ABC Company</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="bg-white p-8 rounded-2xl shadow-sm w-[400px] flex-shrink-0 flex flex-col justify-between">
+            <div>
+              <svg class="w-10 h-10 text-orbis-teal mb-6 opacity-80" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.0166 21L5.0166 18C5.0166 16.8954 5.91203 16 7.0166 16H10.0166C10.5689 16 11.0166 15.5523 11.0166 15V9C11.0166 8.44772 10.5689 8 10.0166 8H6.0166C5.46432 8 5.0166 8.44772 5.0166 9V11C5.0166 11.5523 4.56889 12 4.0166 12H3.0166V5H13.0166V15C13.0166 18.3137 10.3303 21 7.0166 21H5.0166Z" />
+              </svg>
+              <p class="text-neutral-600 font-light leading-relaxed mb-8">"Their ability to capture our brand essence in
+                every project is unparalleled - an invaluable creative collaborator."</p>
+            </div>
+            <div class="flex items-center gap-4">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&q=80" alt="Isabella"
+                class="w-12 h-12 rounded-full object-cover">
+              <div>
+                <h4 class="font-medium text-sm text-neutral-900">Isabella Rodriguez</h4>
+                <p class="text-xs text-neutral-500">Marketing Director</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="bg-white p-8 rounded-2xl shadow-sm w-[400px] flex-shrink-0 flex flex-col justify-between">
+            <div>
+              <svg class="w-10 h-10 text-orbis-teal mb-6 opacity-80" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.0166 21L5.0166 18C5.0166 16.8954 5.91203 16 7.0166 16H10.0166C10.5689 16 11.0166 15.5523 11.0166 15V9C11.0166 8.44772 10.5689 8 10.0166 8H6.0166C5.46432 8 5.0166 8.44772 5.0166 9V11C5.0166 11.5523 4.56889 12 4.0166 12H3.0166V5H13.0166V15C13.0166 18.3137 10.3303 21 7.0166 21H5.0166Z" />
+              </svg>
+              <p class="text-neutral-600 font-light leading-relaxed mb-8">"Creative geniuses who listen, understand, and
+                craft captivating visuals - an agency that truly understands our needs."</p>
+            </div>
+            <div class="flex items-center gap-4">
+              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&q=80" alt="Gabrielle"
+                class="w-12 h-12 rounded-full object-cover">
+              <div>
+                <h4 class="font-medium text-sm text-neutral-900">Gabrielle Williams</h4>
+                <p class="text-xs text-neutral-500">Founder of TechStart</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="bg-white p-8 rounded-2xl shadow-sm w-[400px] flex-shrink-0 flex flex-col justify-between">
+            <div>
+              <svg class="w-10 h-10 text-orbis-teal mb-6 opacity-80" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.0166 21L5.0166 18C5.0166 16.8954 5.91203 16 7.0166 16H10.0166C10.5689 16 11.0166 15.5523 11.0166 15V9C11.0166 8.44772 10.5689 8 10.0166 8H6.0166C5.46432 8 5.0166 8.44772 5.0166 9V11C5.0166 11.5523 4.56889 12 4.0166 12H3.0166V5H13.0166V15C13.0166 18.3137 10.3303 21 7.0166 21H5.0166Z" />
+              </svg>
+              <p class="text-neutral-600 font-light leading-relaxed mb-8">"A refreshing and imaginative agency that
+                consistently delivers exceptional results - highly recommended."</p>
+            </div>
+            <div class="flex items-center gap-4">
+              <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&q=80" alt="Victoria"
+                class="w-12 h-12 rounded-full object-cover">
+              <div>
+                <h4 class="font-medium text-sm text-neutral-900">Victoria Thompson</h4>
+                <p class="text-xs text-neutral-500">Creative Lead</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial Cards (Duplicate for Loop) -->
+        <div class="flex gap-6 mx-3" aria-hidden="true">
+          <!-- Card 1 -->
+          <div class="bg-white p-8 rounded-2xl shadow-sm w-[400px] flex-shrink-0 flex flex-col justify-between">
+            <div>
+              <svg class="w-10 h-10 text-orbis-teal mb-6 opacity-80" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.0166 21L5.0166 18C5.0166 16.8954 5.91203 16 7.0166 16H10.0166C10.5689 16 11.0166 15.5523 11.0166 15V9C11.0166 8.44772 10.5689 8 10.0166 8H6.0166C5.46432 8 5.0166 8.44772 5.0166 9V11C5.0166 11.5523 4.56889 12 4.0166 12H3.0166V5H13.0166V15C13.0166 18.3137 10.3303 21 7.0166 21H5.0166Z" />
+              </svg>
+              <p class="text-neutral-600 font-light leading-relaxed mb-8">"Exceeded our expectations with innovative
+                designs that brought our vision to life - a truly remarkable creative agency."</p>
+            </div>
+            <div class="flex items-center gap-4">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&q=80" alt="Samantha"
+                class="w-12 h-12 rounded-full object-cover">
+              <div>
+                <h4 class="font-medium text-sm text-neutral-900">Samantha Johnson</h4>
+                <p class="text-xs text-neutral-500">CEO of ABC Company</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="bg-white p-8 rounded-2xl shadow-sm w-[400px] flex-shrink-0 flex flex-col justify-between">
+            <div>
+              <svg class="w-10 h-10 text-orbis-teal mb-6 opacity-80" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.0166 21L5.0166 18C5.0166 16.8954 5.91203 16 7.0166 16H10.0166C10.5689 16 11.0166 15.5523 11.0166 15V9C11.0166 8.44772 10.5689 8 10.0166 8H6.0166C5.46432 8 5.0166 8.44772 5.0166 9V11C5.0166 11.5523 4.56889 12 4.0166 12H3.0166V5H13.0166V15C13.0166 18.3137 10.3303 21 7.0166 21H5.0166Z" />
+              </svg>
+              <p class="text-neutral-600 font-light leading-relaxed mb-8">"Their ability to capture our brand essence in
+                every project is unparalleled - an invaluable creative collaborator."</p>
+            </div>
+            <div class="flex items-center gap-4">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&q=80" alt="Isabella"
+                class="w-12 h-12 rounded-full object-cover">
+              <div>
+                <h4 class="font-medium text-sm text-neutral-900">Isabella Rodriguez</h4>
+                <p class="text-xs text-neutral-500">Marketing Director</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="bg-white p-8 rounded-2xl shadow-sm w-[400px] flex-shrink-0 flex flex-col justify-between">
+            <div>
+              <svg class="w-10 h-10 text-orbis-teal mb-6 opacity-80" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.0166 21L5.0166 18C5.0166 16.8954 5.91203 16 7.0166 16H10.0166C10.5689 16 11.0166 15.5523 11.0166 15V9C11.0166 8.44772 10.5689 8 10.0166 8H6.0166C5.46432 8 5.0166 8.44772 5.0166 9V11C5.0166 11.5523 4.56889 12 4.0166 12H3.0166V5H13.0166V15C13.0166 18.3137 10.3303 21 7.0166 21H5.0166Z" />
+              </svg>
+              <p class="text-neutral-600 font-light leading-relaxed mb-8">"Creative geniuses who listen, understand, and
+                craft captivating visuals - an agency that truly understands our needs."</p>
+            </div>
+            <div class="flex items-center gap-4">
+              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&q=80" alt="Gabrielle"
+                class="w-12 h-12 rounded-full object-cover">
+              <div>
+                <h4 class="font-medium text-sm text-neutral-900">Gabrielle Williams</h4>
+                <p class="text-xs text-neutral-500">Founder of TechStart</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="bg-white p-8 rounded-2xl shadow-sm w-[400px] flex-shrink-0 flex flex-col justify-between">
+            <div>
+              <svg class="w-10 h-10 text-orbis-teal mb-6 opacity-80" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.0166 21L5.0166 18C5.0166 16.8954 5.91203 16 7.0166 16H10.0166C10.5689 16 11.0166 15.5523 11.0166 15V9C11.0166 8.44772 10.5689 8 10.0166 8H6.0166C5.46432 8 5.0166 8.44772 5.0166 9V11C5.0166 11.5523 4.56889 12 4.0166 12H3.0166V5H13.0166V15C13.0166 18.3137 10.3303 21 7.0166 21H5.0166Z" />
+              </svg>
+              <p class="text-neutral-600 font-light leading-relaxed mb-8">"A refreshing and imaginative agency that
+                consistently delivers exceptional results - highly recommended."</p>
+            </div>
+            <div class="flex items-center gap-4">
+              <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&q=80" alt="Victoria"
+                class="w-12 h-12 rounded-full object-cover">
+              <div>
+                <h4 class="font-medium text-sm text-neutral-900">Victoria Thompson</h4>
+                <p class="text-xs text-neutral-500">Creative Lead</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer class="bg-neutral-900 text-white py-16 lg:py-20">
     <div class="px-6 lg:px-12">
