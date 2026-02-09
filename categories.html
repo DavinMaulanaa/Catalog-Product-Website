@@ -166,120 +166,330 @@
     <!-- Main Content -->
     <main class="flex-1 w-full overflow-hidden">
 
-        <!-- Hero Title -->
-        <section class="min-h-[40vh] flex flex-col items-center justify-center text-center px-4 py-20 bg-white">
-            <p class="reveal-on-scroll text-xs tracking-mega mb-4 text-neutral-500">EST. 2024</p>
-            <h1 class="reveal-on-scroll delay-100 text-4xl md:text-7xl font-light tracking-widest mb-6">THE
-                T-SHIRT<br />ARCHIVE</h1>
-            <p class="reveal-on-scroll delay-200 text-sm max-w-lg mx-auto text-neutral-600 leading-relaxed">
-                Curated collections of premium cotton everyday staples. From oversized fits to vintage washes, explore
-                the categories that define our aesthetic.
-            </p>
+        <!-- SECTION 1: GREETINGS (HERO) -->
+        <section class="h-[60vh] md:h-[80vh] relative flex items-center justify-center overflow-hidden">
+            <!-- Background Image with Overlay -->
+            <div class="absolute inset-0 z-0">
+                <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=1920&q=80"
+                    alt="Categories Hero" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-neutral-900/40"></div>
+            </div>
+
+            <div class="relative z-10 text-center text-white px-6 max-w-4xl mx-auto">
+                <p class="reveal-on-scroll text-xs tracking-mega mb-4 text-white/80">EST. 2024</p>
+                <h1 class="reveal-on-scroll delay-100 text-4xl md:text-7xl font-light tracking-widest mb-6">THE ARCHIVE
+                </h1>
+                <p
+                    class="reveal-on-scroll delay-200 text-sm md:text-base font-light tracking-wide leading-relaxed max-w-2xl mx-auto text-white/90">
+                    Welcome to the complete catalog. Explore our dedicated collections of premium streetwear essentials
+                    and exclusive accessories.
+                </p>
+            </div>
         </section>
 
-        <!-- Collection 1: Oversized -->
-        <section class="py-12 md:py-24 border-t border-neutral-100">
-            <div class="max-w-[1400px] mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div class="reveal-on-scroll group overflow-hidden relative aspect-[4/5] md:aspect-square">
-                    <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=1000&auto=format&fit=crop"
-                        class="w-full h-full object-cover card-zoom-image" alt="Oversized Fit">
-                    <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500">
+        <!-- SECTION 2: T-SHIRT EXPLANATION -->
+        <section class="py-20 md:py-32 bg-white">
+            <div
+                class="max-w-[1400px] mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 items-center">
+                <div class="reveal-on-scroll order-2 md:order-1">
+                    <span class="text-xs tracking-mega text-neutral-500 block mb-4">01. PRODUCT</span>
+                    <h2 class="text-3xl md:text-5xl font-light tracking-wide mb-8 text-neutral-900">PREMIUM
+                        COTTON<br>T-SHIRTS</h2>
+                    <div class="space-y-6 text-sm text-neutral-600 leading-relaxed font-light">
+                        <p>
+                            Crafted from heavyweight 100% cotton, our t-shirts are designed to stand the test of time.
+                            The fabric is pre-shrunk and treated with a vintage wash process to ensure a soft, broken-in
+                            feel from the very first wear.
+                        </p>
+                        <p>
+                            Featuring a relaxed, boxy fit with dropped shoulders and a high ribbed collar,
+                            these tees define the modern streetwear silhouette. Available in a range of earth tones and
+                            monochromatic staples.
+                        </p>
                     </div>
                 </div>
-                <div class="reveal-on-scroll delay-100 md:pl-12 text-center md:text-left">
-                    <span class="text-xs tracking-mega text-black block mb-4">01. COLLECTION</span>
-                    <h2 class="text-3xl md:text-5xl font-light tracking-wide mb-6">THE OVERSIZED</h2>
-                    <p class="text-sm text-neutral-500 mb-8 leading-relaxed max-w-md mx-auto md:mx-0">
-                        Relaxed silhouettes for the modern streetwear look. Dropped shoulders, wider sleeves, and
-                        premium heavy-weight cotton that drapes perfectly.
-                    </p>
-                    <a href="#"
-                        class="inline-block border-b border-black pb-1 text-xs tracking-super uppercase hover:text-neutral-600 transition-colors">Shop
-                        Oversized</a>
+                <div class="reveal-on-scroll delay-100 order-1 md:order-2 relative aspect-[3/4] overflow-hidden group">
+                    <img src="img/1.png" alt="T-Shirt Detail"
+                        class="w-full h-full object-cover card-zoom-image bg-neutral-100">
                 </div>
             </div>
         </section>
 
-        <!-- Collection 2: Graphics (Alternating) -->
-        <section class="py-12 md:py-24 border-t border-neutral-100 bg-neutral-50">
-            <div class="max-w-[1400px] mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div class="order-2 md:order-1 reveal-on-scroll md:pr-12 text-center md:text-left">
-                    <span class="text-xs tracking-mega text-black block mb-4">02. COLLECTION</span>
-                    <h2 class="text-3xl md:text-5xl font-light tracking-wide mb-6">GRAPHIC LAB</h2>
-                    <p class="text-sm text-neutral-500 mb-8 leading-relaxed max-w-md mx-auto md:mx-0">
-                        Bold prints, abstract designs, and statement pieces. Our graphic collection features exclusive
-                        artwork from local Jakarta artists.
-                    </p>
-                    <a href="#"
-                        class="inline-block border-b border-black pb-1 text-xs tracking-super uppercase hover:text-neutral-600 transition-colors">Shop
-                        Graphics</a>
+        <!-- SECTION 3: PIN BUTTON EXPLANATION -->
+        <section class="py-20 md:py-32 bg-neutral-50">
+            <div
+                class="max-w-[1400px] mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 items-center">
+                <div class="reveal-on-scroll relative aspect-square overflow-hidden group">
+                    <img src="img/merchBG.png" alt="Pin Button Detail"
+                        class="w-full h-full object-cover card-zoom-image bg-neutral-200">
                 </div>
-                <div
-                    class="order-1 md:order-2 reveal-on-scroll delay-100 group overflow-hidden relative aspect-[4/5] md:aspect-square">
-                    <img src="https://images.unsplash.com/photo-1503341504253-dff4815485f1?q=80&w=1000&auto=format&fit=crop"
-                        class="w-full h-full object-cover card-zoom-image" alt="Graphic Tees">
-                </div>
-            </div>
-        </section>
-
-        <!-- Collection 3: Vintage Wash -->
-        <section class="py-12 md:py-24 border-t border-neutral-100">
-            <div class="max-w-[1400px] mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div class="reveal-on-scroll group overflow-hidden relative aspect-[4/5] md:aspect-square">
-                    <img src="https://images.unsplash.com/photo-1562157873-818bc0726f68?q=80&w=1000&auto=format&fit=crop"
-                        class="w-full h-full object-cover card-zoom-image" alt="Vintage Wash">
-                </div>
-                <div class="reveal-on-scroll delay-100 md:pl-12 text-center md:text-left">
-                    <span class="text-xs tracking-mega text-black block mb-4">03. COLLECTION</span>
-                    <h2 class="text-3xl md:text-5xl font-light tracking-wide mb-6">VINTAGE WASH</h2>
-                    <p class="text-sm text-neutral-500 mb-8 leading-relaxed max-w-md mx-auto md:mx-0">
-                        Aged to perfection. Our unique mineral wash process gives each piece a distinct, lived-in feel
-                        from day one. Soft to the touch, classic in style.
-                    </p>
-                    <a href="#"
-                        class="inline-block border-b border-black pb-1 text-xs tracking-super uppercase hover:text-neutral-600 transition-colors">Shop
-                        Vintage</a>
+                <div class="reveal-on-scroll delay-100 md:pl-12">
+                    <span class="text-xs tracking-mega text-neutral-500 block mb-4">02. ACCESSORIES</span>
+                    <h2 class="text-3xl md:text-5xl font-light tracking-wide mb-8 text-neutral-900">SIGNATURE<br>PIN
+                        BUTTONS</h2>
+                    <div class="space-y-6 text-sm text-neutral-600 leading-relaxed font-light">
+                        <p>
+                            Add a personal touch to your gear with our exclusive collection of pin buttons.
+                            Each pin features unique artwork designed in-house, reflecting the culture and spirit of
+                            Jakarta's streets.
+                        </p>
+                        <p>
+                            Made with high-quality metal components and a durable matte finish,
+                            these pins are perfect for customizing your jackets, bags, or caps. Collect them all to tell
+                            your own story.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Collection 4: Essentials (Grid) -->
-        <section class="py-20 md:py-32 bg-neutral-900 text-white">
-            <div class="max-w-[1400px] mx-auto px-6 lg:px-12 text-center">
-                <h2 class="reveal-on-scroll text-3xl md:text-5xl font-light tracking-wide mb-16">ESSENTIAL COLORS</h2>
+        <!-- SECTION 4: T-SHIRT PRODUCTS GRID -->
+        <section class="py-20 md:py-32 px-6 lg:px-12 bg-white" id="tshirt-section">
+            <div class="max-w-[1400px] mx-auto">
+                <div class="flex items-end justify-between mb-12 reveal-on-scroll">
+                    <div>
+                        <span class="text-xs tracking-mega text-neutral-500 block mb-2">COLLECTION</span>
+                        <h2 class="text-2xl md:text-4xl font-light tracking-wide text-neutral-900">T-SHIRTS</h2>
+                    </div>
+                    <button id="viewAllTeesBtn"
+                        class="text-xs border-b border-neutral-900 pb-1 hover:text-neutral-500 transition-colors uppercase tracking-widest bg-transparent cursor-pointer">View
+                        All Tees</button>
+                </div>
 
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <!-- 1 -->
-                    <a href="#" class="reveal-on-scroll group block">
-                        <div class="aspect-[3/4] bg-neutral-800 mb-4 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=800&auto=format&fit=crop"
-                                class="w-full h-full object-cover card-zoom-image opacity-80 group-hover:opacity-100 transition-opacity">
+                <div id="tshirtGrid" class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-10">
+                    <!-- Product Card 1 -->
+                    <a href="#" class="group block reveal-on-scroll tshirt-card">
+                        <div class="aspect-[3/4] bg-neutral-100 overflow-hidden mb-4 relative">
+                            <img src="img/1.png" alt="T-Shirt 1"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 border-2 border-black rounded-sm">
+                            <div
+                                class="absolute bottom-4 left-4 bg-white/90 px-3 py-1 text-[10px] tracking-widest uppercase backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                Quick View</div>
                         </div>
-                        <p class="text-xs tracking-super">WHITE</p>
+                        <p class="text-[10px] tracking-widest text-neutral-500 mb-1">T-SHIRTS</p>
+                        <h3
+                            class="text-sm font-medium text-neutral-900 mb-1 group-hover:text-neutral-500 transition-colors">
+                            Oversized Tee - Black</h3>
+                        <p class="text-sm">IDR 185,000</p>
+                        <div class="flex gap-2 mt-2 text-[10px] font-medium tracking-wider">
+                            <span class="text-green-600">S</span>
+                            <span class="text-green-600">M</span>
+                            <span class="text-green-600">L</span>
+                            <span class="text-green-600">XL</span>
+                            <span class="text-red-900">XXL</span>
+                        </div>
                     </a>
-                    <!-- 2 -->
-                    <a href="#" class="reveal-on-scroll delay-100 group block">
-                        <div class="aspect-[3/4] bg-neutral-800 mb-4 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=800&auto=format&fit=crop"
-                                class="w-full h-full object-cover card-zoom-image opacity-80 group-hover:opacity-100 transition-opacity">
+                    <!-- Product Card 2 -->
+                    <a href="#" class="group block reveal-on-scroll delay-100 tshirt-card">
+                        <div class="aspect-[3/4] bg-neutral-100 overflow-hidden mb-4 relative">
+                            <img src="img/2.png" alt="T-Shirt 2"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 border-2 border-black rounded-sm">
+                            <div
+                                class="absolute bottom-4 left-4 bg-white/90 px-3 py-1 text-[10px] tracking-widest uppercase backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                Quick View</div>
                         </div>
-                        <p class="text-xs tracking-super">BLACK</p>
+                        <p class="text-[10px] tracking-widest text-neutral-500 mb-1">T-SHIRTS</p>
+                        <h3
+                            class="text-sm font-medium text-neutral-900 mb-1 group-hover:text-neutral-500 transition-colors">
+                            Graphic Tee - White</h3>
+                        <p class="text-sm">IDR 195,000</p>
+                        <div class="flex gap-2 mt-2 text-[10px] font-medium tracking-wider">
+                            <span class="text-green-600">S</span>
+                            <span class="text-green-600">M</span>
+                            <span class="text-green-600">L</span>
+                            <span class="text-red-900">XL</span>
+                            <span class="text-red-900">XXL</span>
+                        </div>
                     </a>
-                    <!-- 3 -->
-                    <a href="#" class="reveal-on-scroll delay-200 group block">
-                        <div class="aspect-[3/4] bg-neutral-800 mb-4 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=800&auto=format&fit=crop"
-                                class="w-full h-full object-cover card-zoom-image opacity-80 group-hover:opacity-100 transition-opacity">
+                    <!-- Product Card 3 -->
+                    <a href="#" class="group block reveal-on-scroll delay-200 tshirt-card">
+                        <div class="aspect-[3/4] bg-neutral-100 overflow-hidden mb-4 relative">
+                            <img src="img/3.png" alt="T-Shirt 3"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 border-2 border-black rounded-sm">
+                            <div
+                                class="absolute bottom-4 left-4 bg-white/90 px-3 py-1 text-[10px] tracking-widest uppercase backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                Quick View</div>
                         </div>
-                        <p class="text-xs tracking-super">CHARCOAL</p>
+                        <p class="text-[10px] tracking-widest text-neutral-500 mb-1">T-SHIRTS</p>
+                        <h3
+                            class="text-sm font-medium text-neutral-900 mb-1 group-hover:text-neutral-500 transition-colors">
+                            Vintage Wash - Grey</h3>
+                        <p class="text-sm">IDR 210,000</p>
+                        <div class="flex gap-2 mt-2 text-[10px] font-medium tracking-wider">
+                            <span class="text-green-600">S</span>
+                            <span class="text-green-600">M</span>
+                            <span class="text-green-600">L</span>
+                            <span class="text-green-600">XL</span>
+                            <span class="text-green-600">XXL</span>
+                        </div>
                     </a>
-                    <!-- 4 -->
-                    <a href="#" class="reveal-on-scroll delay-300 group block">
-                        <div class="aspect-[3/4] bg-neutral-800 mb-4 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?q=80&w=800&auto=format&fit=crop"
-                                class="w-full h-full object-cover card-zoom-image opacity-80 group-hover:opacity-100 transition-opacity">
+                    <!-- Product Card 4 -->
+                    <a href="#" class="group block reveal-on-scroll delay-300 tshirt-card">
+                        <div class="aspect-[3/4] bg-neutral-100 overflow-hidden mb-4 relative">
+                            <img src="img/4.png" alt="T-Shirt 4"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 border-2 border-black rounded-sm">
+                            <div
+                                class="absolute bottom-4 left-4 bg-white/90 px-3 py-1 text-[10px] tracking-widest uppercase backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                Quick View</div>
                         </div>
-                        <p class="text-xs tracking-super">EARTH</p>
+                        <p class="text-[10px] tracking-widest text-neutral-500 mb-1">T-SHIRTS</p>
+                        <h3
+                            class="text-sm font-medium text-neutral-900 mb-1 group-hover:text-neutral-500 transition-colors">
+                            Essential Tee - Cream</h3>
+                        <p class="text-sm">IDR 185,000</p>
+                        <div class="flex gap-2 mt-2 text-[10px] font-medium tracking-wider">
+                            <span class="text-green-600">S</span>
+                            <span class="text-green-600">M</span>
+                            <span class="text-green-600">L</span>
+                            <span class="text-green-600">XL</span>
+                            <span class="text-green-600">XXL</span>
+                        </div>
+                    </a>
+
+                    <!-- HIDDEN PRODUCTS (5-8) - Will appear on click -->
+                    <!-- Product Card 5 -->
+                    <a href="#" class="group block tshirt-card tshirt-hidden hidden opacity-0 transform translate-y-8">
+                        <div class="aspect-[3/4] bg-neutral-100 overflow-hidden mb-4 relative">
+                            <img src="img/6.png" alt="T-Shirt 5"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 border-2 border-black rounded-sm">
+                            <div
+                                class="absolute bottom-4 left-4 bg-white/90 px-3 py-1 text-[10px] tracking-widest uppercase backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                Quick View</div>
+                        </div>
+                        <p class="text-[10px] tracking-widest text-neutral-500 mb-1">T-SHIRTS</p>
+                        <h3
+                            class="text-sm font-medium text-neutral-900 mb-1 group-hover:text-neutral-500 transition-colors">
+                            Relaxed Fit - Navy</h3>
+                        <p class="text-sm">IDR 195,000</p>
+                        <div class="flex gap-2 mt-2 text-[10px] font-medium tracking-wider">
+                            <span class="text-green-600">S</span>
+                            <span class="text-green-600">M</span>
+                            <span class="text-green-600">L</span>
+                            <span class="text-green-600">XL</span>
+                            <span class="text-red-900">XXL</span>
+                        </div>
+                    </a>
+                    <!-- Product Card 6 -->
+                    <a href="#" class="group block tshirt-card tshirt-hidden hidden opacity-0 transform translate-y-8">
+                        <div class="aspect-[3/4] bg-neutral-100 overflow-hidden mb-4 relative">
+                            <img src="img/7.png" alt="T-Shirt 6"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 border-2 border-black rounded-sm">
+                            <div
+                                class="absolute bottom-4 left-4 bg-white/90 px-3 py-1 text-[10px] tracking-widest uppercase backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                Quick View</div>
+                        </div>
+                        <p class="text-[10px] tracking-widest text-neutral-500 mb-1">T-SHIRTS</p>
+                        <h3
+                            class="text-sm font-medium text-neutral-900 mb-1 group-hover:text-neutral-500 transition-colors">
+                            Pocket Tee - Olive</h3>
+                        <p class="text-sm">IDR 175,000</p>
+                        <div class="flex gap-2 mt-2 text-[10px] font-medium tracking-wider">
+                            <span class="text-green-600">S</span>
+                            <span class="text-green-600">M</span>
+                            <span class="text-green-600">L</span>
+                            <span class="text-green-600">XL</span>
+                            <span class="text-green-600">XXL</span>
+                        </div>
+                    </a>
+                    <!-- Product Card 7 -->
+                    <a href="#" class="group block tshirt-card tshirt-hidden hidden opacity-0 transform translate-y-8">
+                        <div class="aspect-[3/4] bg-neutral-100 overflow-hidden mb-4 relative">
+                            <img src="img/8.png" alt="T-Shirt 7"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 border-2 border-black rounded-sm">
+                            <div
+                                class="absolute bottom-4 left-4 bg-white/90 px-3 py-1 text-[10px] tracking-widest uppercase backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                Quick View</div>
+                        </div>
+                        <p class="text-[10px] tracking-widest text-neutral-500 mb-1">T-SHIRTS</p>
+                        <h3
+                            class="text-sm font-medium text-neutral-900 mb-1 group-hover:text-neutral-500 transition-colors">
+                            Stripe Tee - Blue</h3>
+                        <p class="text-sm">IDR 220,000</p>
+                        <div class="flex gap-2 mt-2 text-[10px] font-medium tracking-wider">
+                            <span class="text-green-600">S</span>
+                            <span class="text-green-600">M</span>
+                            <span class="text-green-600">L</span>
+                            <span class="text-green-600">XL</span>
+                            <span class="text-green-600">XXL</span>
+                        </div>
+                    </a>
+                    <!-- Product Card 8 -->
+                    <a href="#" class="group block tshirt-card tshirt-hidden hidden opacity-0 transform translate-y-8">
+                        <div class="aspect-[3/4] bg-neutral-100 overflow-hidden mb-4 relative">
+                            <img src="img/9.png" alt="T-Shirt 8"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 border-2 border-black rounded-sm">
+                            <div
+                                class="absolute bottom-4 left-4 bg-white/90 px-3 py-1 text-[10px] tracking-widest uppercase backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                Quick View</div>
+                        </div>
+                        <p class="text-[10px] tracking-widest text-neutral-500 mb-1">T-SHIRTS</p>
+                        <h3
+                            class="text-sm font-medium text-neutral-900 mb-1 group-hover:text-neutral-500 transition-colors">
+                            Classic Tee - Charcoal</h3>
+                        <p class="text-sm">IDR 185,000</p>
+                        <div class="flex gap-2 mt-2 text-[10px] font-medium tracking-wider">
+                            <span class="text-green-600">S</span>
+                            <span class="text-green-600">M</span>
+                            <span class="text-green-600">L</span>
+                            <span class="text-green-600">XL</span>
+                            <span class="text-green-600">XXL</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: PIN BUTTON PRODUCTS GRID -->
+        <section class="py-20 md:py-32 px-6 lg:px-12 bg-neutral-50">
+            <div class="max-w-[1400px] mx-auto">
+                <div class="flex items-end justify-between mb-12 reveal-on-scroll">
+                    <div>
+                        <span class="text-xs tracking-mega text-neutral-500 block mb-2">COLLECTION</span>
+                        <h2 class="text-2xl md:text-4xl font-light tracking-wide text-neutral-900">PIN BUTTONS</h2>
+                    </div>
+                    <a href="#"
+                        class="text-xs border-b border-neutral-900 pb-1 hover:text-neutral-500 transition-colors uppercase tracking-widest hidden md:block">View
+                        All Pins</a>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-x-6 gap-y-10">
+                    <!-- Pin Card 2 -->
+
+                    <!-- Pin Card 3 -->
+                    <a href="#" class="group block reveal-on-scroll delay-200">
+                        <div
+                            class="aspect-square bg-white overflow-hidden mb-4 relative rounded-full border border-neutral-100 shadow-sm hover:shadow-md transition-shadow">
+                            <img src="img/merchBG.png" alt="Pin 3"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 p-2">
+                        </div>
+                        <h3
+                            class="text-sm font-medium text-center text-neutral-900 mb-1 group-hover:text-neutral-500 transition-colors">
+                            Skull Pin</h3>
+                        <p class="text-xs text-center text-neutral-500">IDR 45.000</p>
+                    </a>
+                    <!-- Pin Card 4 -->
+                    <a href="#" class="group block reveal-on-scroll delay-300">
+                        <div
+                            class="aspect-square bg-white overflow-hidden mb-4 relative rounded-full border border-neutral-100 shadow-sm hover:shadow-md transition-shadow">
+                            <img src="img/Merch-2.jpeg  " alt="Pin 4"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 p-2">
+                        </div>
+                        <h3
+                            class="text-sm font-medium text-center text-neutral-900 mb-1 group-hover:text-neutral-500 transition-colors">
+                            Rose Pin</h3>
+                        <p class="text-xs text-center text-neutral-500">IDR 45.000</p>
+                    </a>
+                    <!-- Pin Card 5 -->
+                    <a href="#" class="group block reveal-on-scroll">
+                        <div
+                            class="aspect-square bg-white overflow-hidden mb-4 relative rounded-full border border-neutral-100 shadow-sm hover:shadow-md transition-shadow">
+                            <img src="img/merchBG.png" alt="Pin 5"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 p-2">
+                        </div>
+                        <h3
+                            class="text-sm font-medium text-center text-neutral-900 mb-1 group-hover:text-neutral-500 transition-colors">
+                            Star Pin</h3>
+                        <p class="text-xs text-center text-neutral-500">IDR 45.000</p>
                     </a>
                 </div>
             </div>
@@ -288,7 +498,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-white border-t border-gray-200">
+    <footer class="bg-white border-t border-gray-200 bg-black">
         <div class="w-full mx-auto px-4 max-w-[1400px] py-12 text-center">
             <p class="text-xs text-gray-500">
                 © 2024 ORBIS TEES. Jakarta.
@@ -317,6 +527,46 @@
 
             const elements = document.querySelectorAll('.reveal-on-scroll');
             elements.forEach(el => observer.observe(el));
+
+            // View All Tees Button Handler
+            const viewAllTeesBtn = document.getElementById('viewAllTeesBtn');
+            const hiddenTshirts = document.querySelectorAll('.tshirt-hidden');
+            let teesExpanded = false;
+
+            if (viewAllTeesBtn) {
+                viewAllTeesBtn.addEventListener('click', () => {
+                    if (!teesExpanded) {
+                        // Show hidden products with staggered animation
+                        hiddenTshirts.forEach((card, index) => {
+                            card.classList.remove('hidden');
+
+                            // Staggered animation delay
+                            setTimeout(() => {
+                                card.classList.remove('opacity-0', 'translate-y-8');
+                                card.classList.add('opacity-100', 'translate-y-0');
+                                card.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+                            }, index * 150); // 150ms delay between each card
+                        });
+
+                        viewAllTeesBtn.textContent = 'Show Less';
+                        teesExpanded = true;
+                    } else {
+                        // Hide products with animation
+                        hiddenTshirts.forEach((card, index) => {
+                            card.classList.remove('opacity-100', 'translate-y-0');
+                            card.classList.add('opacity-0', 'translate-y-8');
+
+                            // Hide after animation completes
+                            setTimeout(() => {
+                                card.classList.add('hidden');
+                            }, 600);
+                        });
+
+                        viewAllTeesBtn.textContent = 'View All Tees';
+                        teesExpanded = false;
+                    }
+                });
+            }
         });
 
         // Mobile menu toggle
