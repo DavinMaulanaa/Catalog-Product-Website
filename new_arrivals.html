@@ -176,53 +176,78 @@
 <body class="min-h-screen flex flex-col bg-white text-black">
 
   <!-- Header -->
-  <header class="sticky top-0 z-50 bg-white shadow-xl">
-    <div class="flex items-center justify-between px-6 lg:px-12 h-[4.5rem] border-b border-neutral-200">
+  <header
+    class="sticky top-0 z-50 bg-white/80 backdrop-blur-md shadow-sm transition-all duration-300 border-b border-neutral-200/50">
+    <div class="flex items-center justify-between px-6 lg:px-12 h-[4.5rem]">
       <!-- Logo -->
-
-      <a href="/" class="flex items-center">
-        <img src="img/collarbone.jpg" alt="Collarbone Logo" class="h-10 w-auto object-contain">
+      <a href="/" class="flex items-center group">
+        <img src="img/collarbone.jpg" alt="Collarbone Logo"
+          class="h-10 w-auto object-contain group-hover:opacity-80 transition-opacity duration-300">
       </a>
 
       <!-- Desktop Navigation -->
-      <nav class="hidden lg:flex items-center gap-8">
-        <a href="index.html"
-          class="text-xs font-medium tracking-[0.15em] uppercase hover:text-neutral-500 transition-colors">Dashboard</a>
-        <a href="new_arrivals.html"
-          class="text-xs font-medium tracking-[0.15em] uppercase hover:text-neutral-500 transition-colors">New
-          Arrivals</a>
-        <a href="categories.html"
-          class="text-xs font-medium tracking-[0.15em] uppercase hover:text-neutral-500 transition-colors">Categories</a>
+      <nav class="hidden lg:flex items-center gap-10">
+        <a href="index.html" class="relative group py-2 block">
+          <span
+            class="text-xs font-medium tracking-[0.15em] uppercase text-neutral-900 transition-colors group-hover:text-orbis-teal">Dashboard</span>
+          <span
+            class="absolute bottom-0 left-0 w-0 h-[1.5px] bg-orbis-teal transition-all duration-300 ease-out group-hover:w-full"></span>
+        </a>
+        <a href="new_arrivals.html" class="relative group py-2 block">
+          <span
+            class="text-xs font-medium tracking-[0.15em] uppercase text-orbis-teal transition-colors group-hover:text-orbis-teal">New
+            Arrivals</span>
+          <span
+            class="absolute bottom-0 left-0 w-full h-[1.5px] bg-orbis-teal transition-all duration-300 ease-out group-hover:w-full"></span>
+        </a>
+        <a href="categories.html" class="relative group py-2 block">
+          <span
+            class="text-xs font-medium tracking-[0.15em] uppercase text-neutral-900 transition-colors group-hover:text-orbis-teal">Categories</span>
+          <span
+            class="absolute bottom-0 left-0 w-0 h-[1.5px] bg-orbis-teal transition-all duration-300 ease-out group-hover:w-full"></span>
+        </a>
       </nav>
 
-
       <!-- Mobile Menu Toggle -->
-      <button id="menuToggle" class="lg:hidden">
-        <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="4" x2="20" y1="12" y2="12" />
-          <line x1="4" x2="20" y1="6" y2="6" />
-          <line x1="4" x2="20" y1="18" y2="18" />
+      <button id="menuToggle" class="lg:hidden group p-2 hover:bg-neutral-100 rounded-full transition-colors">
+        <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+          class="group-hover:stroke-orbis-teal transition-colors">
+          <line x1="3" x2="21" y1="6" y2="6" />
+          <line x1="3" x2="21" y1="12" y2="12" />
+          <line x1="3" x2="21" y1="18" y2="18" />
         </svg>
-        <svg id="closeIcon" class="hidden" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg id="closeIcon" class="hidden" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+          fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+          class="group-hover:stroke-orbis-teal transition-colors">
           <path d="M18 6 6 18" />
           <path d="m6 6 12 12" />
         </svg>
       </button>
     </div>
-    </div>
+
     <!-- Mobile Navigation -->
     <nav id="mobileMenu"
-      class="lg:hidden hidden absolute top-full left-0 right-0 bg-white border-b border-neutral-200 animate-slide-in">
-      <div class="py-6 px-6 space-y-4">
-        <a href="/index.html"
-          class="block text-xs font-medium tracking-[0.15em] uppercase py-2 hover:text-neutral-500">Dashboard</a>
-        <a href="/new_arrivals.html"
-          class="block text-xs font-medium tracking-[0.15em] uppercase py-2 hover:text-neutral-500">New Arrivals</a>
-        <a href="/categories.html"
-          class="block text-xs font-medium tracking-[0.15em] uppercase py-2 hover:text-neutral-500">Categories</a>
-      </div>
+      class="lg:hidden hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-md border-b border-neutral-200 animate-slide-in shadow-lg">
+      <div class="py-8 px-6 space-y-6 flex flex-col items-center">
+        <a href="index.html"
+          class="text-sm font-medium tracking-[0.2em] uppercase hover:text-orbis-teal transition-colors relative group">
+          Dashboard
+          <span
+            class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-0 h-[1px] bg-orbis-teal transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="new_arrivals.html"
+          class="text-sm font-medium tracking-[0.2em] uppercase hover:text-orbis-teal transition-colors relative group">
+          New Arrivals
+          <span
+            class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-0 h-[1px] bg-orbis-teal transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="categories.html"
+          class="text-sm font-medium tracking-[0.2em] uppercase hover:text-orbis-teal transition-colors relative group">
+          Categories
+          <span
+            class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-0 h-[1px] bg-orbis-teal transition-all duration-300 group-hover:w-full"></span>
+        </a>
       </div>
     </nav>
   </header>
@@ -232,8 +257,7 @@
 
     <!-- Hero Banner -->
     <section class="relative h-[50vh] w-full overflow-hidden">
-      <img src="img/Wallpaper.jpeg"
-        alt="New Collection" class="absolute inset-0 w-full h-full object-cover">
+      <img src="img/Wallpaper.jpeg" alt="New Collection" class="absolute inset-0 w-full h-full object-cover">
       <div class="absolute inset-0 bg-black/20"></div>
       <div class="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4">
         <p class="text-xs md:text-sm tracking-mega mb-2 animate-fade-in hero-text-shadow">SEASON 04</p>
@@ -300,7 +324,7 @@
                     <span class="w-2 h-2 rounded-full bg-neutral-200 border border-neutral-200"></span>
                   </div>
                   <button
-                     class="text-[10px] uppercase tracking-widest hover:text-neutral-500 border-b border-black pb-0.5 transition-colors details-btn bg-gray-200 w-[60px]">Details</button>
+                    class="details-btn uppercase tracking-widest px-3 py-1.5 border border-neutral-900 bg-white hover:bg-neutral-900 text-neutral-900 hover:text-white transition-all duration-300 rounded-sm text-[10px] font-medium w-[60px] text-center flex items-center justify-center">Details</button>
                 </div>
               </div>
             </div>
@@ -323,29 +347,30 @@
             <!-- Front -->
             <div class="relative backface-hidden bg-white">
               <div class="relative overflow-hidden aspect-product bg-neutral-100 mb-4">
-                <img src="img/2.png"
-                  alt="Cream Oversized Hoodie" class="product-card-image w-full h-full object-cover">
+                <img src="img/2.png" alt="Cream Oversized Hoodie" class="product-card-image w-full h-full object-cover">
                 <div
                   class="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-white/90 backdrop-blur-sm">
                   <h3 class="text-xs uppercase tracking-widest text-center text-black font-medium">Cream Oversized
                     Hoodie</h3>
                 </div>
               </div>
-              <div class="flex items-start justify-between">
-                <p class="text-xs text-neutral-500 pt-0.5">Rp 750.000</p>
+              <div class="flex items-end justify-between">
+                <div>
+                  <p class="text-xs text-neutral-500 pt-0.5 mb-1">Rp 750.000</p>
+                  <div class="flex gap-2 text-[10px] font-medium tracking-wider">
+                    <span class="text-green-600">S</span>
+                    <span class="text-green-600">M</span>
+                    <span class="text-red-900">L</span>
+                    <span class="text-green-600">XL</span>
+                  </div>
+                </div>
                 <div class="flex flex-col items-end gap-2">
                   <div class="flex gap-1">
                     <span class="w-2 h-2 rounded-full bg-[#E5D0B1] border border-neutral-200"></span>
                   </div>
                   <button
-                     class="text-[10px] uppercase tracking-widest hover:text-neutral-500 border-b border-black pb-0.5 transition-colors details-btn bg-gray-200 w-[60px]">Details</button>
+                    class="details-btn uppercase tracking-widest px-3 py-1.5 border border-neutral-900 bg-white hover:bg-neutral-900 text-neutral-900 hover:text-white transition-all duration-300 rounded-sm text-[10px] font-medium w-[60px] text-center flex items-center justify-center">Details</button>
                 </div>
-              </div>
-              <div class="flex gap-2 mt-2 text-[10px] font-medium tracking-wider">
-                <span class="text-green-600">S</span>
-                <span class="text-green-600">M</span>
-                <span class="text-red-900">L</span>
-                <span class="text-green-600">XL</span>
               </div>
             </div>
             <!-- Back -->
@@ -366,30 +391,31 @@
             <!-- Front -->
             <div class="relative backface-hidden bg-white">
               <div class="relative overflow-hidden aspect-product bg-neutral-100 mb-4">
-                <img src="img/3.png"
-                  alt="Boxy Fit Tee" class="product-card-image w-full h-full object-cover">
+                <img src="img/3.png" alt="Boxy Fit Tee" class="product-card-image w-full h-full object-cover">
                 <div
                   class="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-white/90 backdrop-blur-sm">
                   <h3 class="text-xs uppercase tracking-widest text-center text-black font-medium">Boxy Fit Tee -
                     Charcoal</h3>
                 </div>
               </div>
-              <div class="flex items-start justify-between">
-                <p class="text-xs text-neutral-500 pt-0.5">Rp 490.000</p>
+              <div class="flex items-end justify-between">
+                <div>
+                  <p class="text-xs text-neutral-500 pt-0.5 mb-1">Rp 490.000</p>
+                  <div class="flex gap-2 text-[10px] font-medium tracking-wider">
+                    <span class="text-green-600">S</span>
+                    <span class="text-green-600">M</span>
+                    <span class="text-green-600">L</span>
+                    <span class="text-green-600">XL</span>
+                  </div>
+                </div>
                 <div class="flex flex-col items-end gap-2">
                   <div class="flex gap-1">
                     <span class="w-2 h-2 rounded-full bg-neutral-800 border border-neutral-200"></span>
                     <span class="w-2 h-2 rounded-full bg-neutral-500 border border-neutral-200"></span>
                   </div>
                   <button
-                      class="text-[10px] uppercase tracking-widest hover:text-neutral-500 border-b border-black pb-0.5 transition-colors details-btn bg-gray-200 w-[60px]">Details</button>
+                    class="details-btn uppercase tracking-widest px-3 py-1.5 border border-neutral-900 bg-white hover:bg-neutral-900 text-neutral-900 hover:text-white transition-all duration-300 rounded-sm text-[10px] font-medium w-[60px] text-center flex items-center justify-center">Details</button>
                 </div>
-              </div>
-              <div class="flex gap-2 mt-2 text-[10px] font-medium tracking-wider">
-                <span class="text-green-600">S</span>
-                <span class="text-green-600">M</span>
-                <span class="text-green-600">L</span>
-                <span class="text-green-600">XL</span>
               </div>
             </div>
             <!-- Back -->
@@ -410,8 +436,7 @@
             <!-- Front -->
             <div class="relative backface-hidden bg-white">
               <div class="relative overflow-hidden aspect-product bg-neutral-100 mb-4">
-                <img src="img/4.png"
-                  alt="Essential Sweatshirt" class="product-card-image w-full h-full object-cover">
+                <img src="img/4.png" alt="Essential Sweatshirt" class="product-card-image w-full h-full object-cover">
                 <div
                   class="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-white/90 backdrop-blur-sm">
                   <h3 class="text-xs uppercase tracking-widest text-center text-black font-medium">Essential Sweatshirt
@@ -421,22 +446,24 @@
                   class="absolute top-2 right-2 bg-orbis-teal text-white px-2 py-1 text-[8px] tracking-widest uppercase">
                   Selling Fast</div>
               </div>
-              <div class="flex items-start justify-between">
-                <p class="text-xs text-neutral-500 pt-0.5">Rp 650.000</p>
+              <div class="flex items-end justify-between">
+                <div>
+                  <p class="text-xs text-neutral-500 pt-0.5 mb-1">Rp 650.000</p>
+                  <div class="flex gap-2 text-[10px] font-medium tracking-wider">
+                    <span class="text-green-600">S</span>
+                    <span class="text-red-900">M</span>
+                    <span class="text-green-600">L</span>
+                    <span class="text-green-600">XL</span>
+                  </div>
+                </div>
                 <div class="flex flex-col items-end gap-2">
                   <div class="flex gap-1">
                     <span class="w-2 h-2 rounded-full bg-neutral-400 border border-neutral-200"></span>
                     <span class="w-2 h-2 rounded-full bg-black border border-neutral-200"></span>
                   </div>
                   <button
-                      class="text-[10px] uppercase tracking-widest hover:text-neutral-500 border-b border-black pb-0.5 transition-colors details-btn bg-gray-200 w-[60px]">Details</button>
+                    class="details-btn uppercase tracking-widest px-3 py-1.5 border border-neutral-900 bg-white hover:bg-neutral-900 text-neutral-900 hover:text-white transition-all duration-300 rounded-sm text-[10px] font-medium w-[60px] text-center flex items-center justify-center">Details</button>
                 </div>
-              </div>
-              <div class="flex gap-2 mt-2 text-[10px] font-medium tracking-wider">
-                <span class="text-green-600">S</span>
-                <span class="text-red-900">M</span>
-                <span class="text-green-600">L</span>
-                <span class="text-green-600">XL</span>
               </div>
             </div>
             <!-- Back -->
@@ -473,28 +500,29 @@
             <!-- Front -->
             <div class="relative backface-hidden bg-white">
               <div class="relative overflow-hidden aspect-product bg-neutral-100 mb-4">
-                <img src="img/9.png"
-                  alt="Vintage Wash Tee" class="product-card-image w-full h-full object-cover">
+                <img src="img/9.png" alt="Vintage Wash Tee" class="product-card-image w-full h-full object-cover">
                 <div
                   class="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-white/90 backdrop-blur-sm">
                   <h3 class="text-xs uppercase tracking-widest text-center text-black font-medium">Vintage Wash Tee</h3>
                 </div>
               </div>
-              <div class="flex items-start justify-between">
-                <p class="text-xs text-neutral-500 pt-0.5">Rp 450.000</p>
+              <div class="flex items-end justify-between">
+                <div>
+                  <p class="text-xs text-neutral-500 pt-0.5 mb-1">Rp 450.000</p>
+                  <div class="flex gap-2 text-[10px] font-medium tracking-wider">
+                    <span class="text-green-600">S</span>
+                    <span class="text-green-600">M</span>
+                    <span class="text-green-600">L</span>
+                    <span class="text-green-600">XL</span>
+                  </div>
+                </div>
                 <div class="flex flex-col items-end gap-2">
                   <div class="flex gap-1">
                     <span class="w-2 h-2 rounded-full bg-black border border-neutral-200"></span>
                   </div>
                   <button
-                    class="text-[10px] uppercase tracking-widest hover:text-neutral-500 border-b border-black pb-0.5 transition-colors details-btn bg-gray-200 w-[60px]">Details</button>
+                    class="details-btn uppercase tracking-widest px-3 py-1.5 border border-neutral-900 bg-white hover:bg-neutral-900 text-neutral-900 hover:text-white transition-all duration-300 rounded-sm text-[10px] font-medium w-[60px] text-center flex items-center justify-center">Details</button>
                 </div>
-              </div>
-              <div class="flex gap-2 mt-2 text-[10px] font-medium tracking-wider">
-                <span class="text-green-600">S</span>
-                <span class="text-green-600">M</span>
-                <span class="text-green-600">L</span>
-                <span class="text-green-600">XL</span>
               </div>
             </div>
             <!-- Back -->
@@ -515,30 +543,31 @@
             <!-- Front -->
             <div class="relative backface-hidden bg-white">
               <div class="relative overflow-hidden aspect-product bg-neutral-100 mb-4">
-                <img src="img/8.png"
-                  alt="Striped Tee" class="product-card-image w-full h-full object-cover">
+                <img src="img/8.png" alt="Striped Tee" class="product-card-image w-full h-full object-cover">
                 <div
                   class="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-white/90 backdrop-blur-sm">
                   <h3 class="text-xs uppercase tracking-widest text-center text-black font-medium">Striped Daily Tee
                   </h3>
                 </div>
               </div>
-              <div class="flex items-start justify-between">
-                <p class="text-xs text-neutral-500 pt-0.5">Rp 350.000</p>
+              <div class="flex items-end justify-between">
+                <div>
+                  <p class="text-xs text-neutral-500 pt-0.5 mb-1">Rp 350.000</p>
+                  <div class="flex gap-2 text-[10px] font-medium tracking-wider">
+                    <span class="text-green-600">S</span>
+                    <span class="text-green-600">M</span>
+                    <span class="text-green-600">L</span>
+                    <span class="text-red-900">XL</span>
+                  </div>
+                </div>
                 <div class="flex flex-col items-end gap-2">
                   <div class="flex gap-1">
                     <span class="w-2 h-2 rounded-full bg-white border border-neutral-200"></span>
                     <span class="w-2 h-2 rounded-full bg-blue-100 border border-neutral-200"></span>
                   </div>
                   <button
-                      class="text-[10px] uppercase tracking-widest hover:text-neutral-500 border-b border-black pb-0.5 transition-colors details-btn bg-gray-200 w-[60px]">Details</button>
+                    class="details-btn uppercase tracking-widest px-3 py-1.5 border border-neutral-900 bg-white hover:bg-neutral-900 text-neutral-900 hover:text-white transition-all duration-300 rounded-sm text-[10px] font-medium w-[60px] text-center flex items-center justify-center">Details</button>
                 </div>
-              </div>
-              <div class="flex gap-2 mt-2 text-[10px] font-medium tracking-wider">
-                <span class="text-green-600">S</span>
-                <span class="text-green-600">M</span>
-                <span class="text-green-600">L</span>
-                <span class="text-red-900">XL</span>
               </div>
             </div>
             <!-- Back -->
@@ -559,30 +588,31 @@
             <!-- Front -->
             <div class="relative backface-hidden bg-white">
               <div class="relative overflow-hidden aspect-product bg-neutral-100 mb-4">
-                <img src="img/7.png"
-                  alt="Long Sleeve" class="product-card-image w-full h-full object-cover">
+                <img src="img/7.png" alt="Long Sleeve" class="product-card-image w-full h-full object-cover">
                 <div
                   class="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-white/90 backdrop-blur-sm">
                   <h3 class="text-xs uppercase tracking-widest text-center text-black font-medium">Graphic Long Sleeve
                   </h3>
                 </div>
               </div>
-              <div class="flex items-start justify-between">
-                <p class="text-xs text-neutral-500 pt-0.5">Rp 550.000</p>
+              <div class="flex items-end justify-between">
+                <div>
+                  <p class="text-xs text-neutral-500 pt-0.5 mb-1">Rp 550.000</p>
+                  <div class="flex gap-2 text-[10px] font-medium tracking-wider">
+                    <span class="text-green-600">S</span>
+                    <span class="text-green-600">M</span>
+                    <span class="text-green-600">L</span>
+                    <span class="text-green-600">XL</span>
+                  </div>
+                </div>
                 <div class="flex flex-col items-end gap-2">
                   <div class="flex gap-1">
                     <span class="w-2 h-2 rounded-full bg-black border border-neutral-200"></span>
                     <span class="w-2 h-2 rounded-full bg-gray-600 border border-neutral-200"></span>
                   </div>
                   <button
-                    class="text-[10px] uppercase tracking-widest hover:text-neutral-500 border-b border-black pb-0.5 transition-colors details-btn">Details</button>
+                    class="details-btn uppercase tracking-widest px-3 py-1.5 border border-neutral-900 bg-white hover:bg-neutral-900 text-neutral-900 hover:text-white transition-all duration-300 rounded-sm text-[10px] font-medium w-[60px] text-center flex items-center justify-center">Details</button>
                 </div>
-              </div>
-              <div class="flex gap-2 mt-2 text-[10px] font-medium tracking-wider">
-                <span class="text-green-600">S</span>
-                <span class="text-green-600">M</span>
-                <span class="text-green-600">L</span>
-                <span class="text-green-600">XL</span>
               </div>
             </div>
             <!-- Back -->
@@ -603,29 +633,30 @@
             <!-- Front -->
             <div class="relative backface-hidden bg-white">
               <div class="relative overflow-hidden aspect-product bg-neutral-100 mb-4">
-                <img src="img/6.png"
-                  alt="Signature Tee" class="product-card-image w-full h-full object-cover">
+                <img src="img/6.png" alt="Signature Tee" class="product-card-image w-full h-full object-cover">
                 <div
                   class="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-white/90 backdrop-blur-sm">
                   <h3 class="text-xs uppercase tracking-widest text-center text-black font-medium">Signature Logo Tee
                   </h3>
                 </div>
               </div>
-              <div class="flex items-start justify-between">
-                <p class="text-xs text-neutral-500 pt-0.5">Rp 450.000</p>
+              <div class="flex items-end justify-between">
+                <div>
+                  <p class="text-xs text-neutral-500 pt-0.5 mb-1">Rp 450.000</p>
+                  <div class="flex gap-2 text-[10px] font-medium tracking-wider">
+                    <span class="text-green-600">S</span>
+                    <span class="text-green-600">M</span>
+                    <span class="text-red-900">L</span>
+                    <span class="text-red-900">XL</span>
+                  </div>
+                </div>
                 <div class="flex flex-col items-end gap-2">
                   <div class="flex gap-1">
                     <span class="w-2 h-2 rounded-full bg-white border border-neutral-200"></span>
                   </div>
                   <button
-                 class="text-[10px] uppercase tracking-widest hover:text-neutral-500 border-b border-black pb-0.5 transition-colors details-btn bg-gray-200 w-[60px]">Details</button>
+                    class="details-btn uppercase tracking-widest px-3 py-1.5 border border-neutral-900 bg-white hover:bg-neutral-900 text-neutral-900 hover:text-white transition-all duration-300 rounded-sm text-[10px] font-medium w-[60px] text-center flex items-center justify-center">Details</button>
                 </div>
-              </div>
-              <div class="flex gap-2 mt-2 text-[10px] font-medium tracking-wider">
-                <span class="text-green-600">S</span>
-                <span class="text-green-600">M</span>
-                <span class="text-red-900">L</span>
-                <span class="text-red-900">XL</span>
               </div>
             </div>
             <!-- Back -->
@@ -646,14 +677,14 @@
     </section>
   </main>
 
-    <!-- Footer -->
-    <footer class="border-t border-gray-200 bg-black">
-        <div class="w-full mx-auto px-4 max-w-[1400px] py-12 text-center">
-            <p class="text-xs text-gray-500">
-                © 2024 ORBIS TEES. Jakarta.
-            </p>
-        </div>
-    </footer>
+  <!-- Footer -->
+  <footer class="border-t border-gray-200 bg-black">
+    <div class="w-full mx-auto px-4 max-w-[1400px] py-12 text-center">
+      <p class="text-xs text-gray-500">
+        © 2024 ORBIS TEES. Jakarta.
+      </p>
+    </div>
+  </footer>
 
 
   <!-- Scripts -->

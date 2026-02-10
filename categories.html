@@ -135,48 +135,74 @@
 <body class="min-h-screen flex flex-col bg-white text-black">
 
     <!-- Header -->
-    <header class="sticky top-0 z-50 bg-white shadow-xl">
-        <div class="flex items-center justify-between px-6 lg:px-12 h-[4.5rem] border-b border-neutral-200">
-            <a href="/" class="flex items-center">
-                <img src="img/collarbone.jpg" alt="Collarbone Logo" class="h-10 w-auto object-contain">
+    <header
+        class="sticky top-0 z-50 bg-white/80 backdrop-blur-md shadow-sm transition-all duration-300 border-b border-neutral-200/50">
+        <div class="flex items-center justify-between px-6 lg:px-12 h-[4.5rem]">
+            <a href="/" class="flex items-center group">
+                <img src="img/collarbone.jpg" alt="Collarbone Logo"
+                    class="h-10 w-auto object-contain group-hover:opacity-80 transition-opacity duration-300">
             </a>
 
-            <nav class="hidden lg:flex items-center gap-8">
-                <a href="index.html"
-                    class="text-xs font-medium tracking-[0.15em] uppercase hover:text-neutral-500 transition-colors">Dashboard</a>
-                <a href="new_arrivals.html"
-                    class="text-xs font-medium tracking-[0.15em] uppercase hover:text-neutral-500 transition-colors">New
-                    Arrivals</a>
-                <a href="categories.html"
-                    class="text-xs font-medium tracking-[0.15em] uppercase hover:text-neutral-500 transition-colors">Categories</a>
+            <nav class="hidden lg:flex items-center gap-10">
+                <a href="index.html" class="relative group py-2 block">
+                    <span
+                        class="text-xs font-medium tracking-[0.15em] uppercase text-neutral-900 transition-colors group-hover:text-orbis-teal">Dashboard</span>
+                    <span
+                        class="absolute bottom-0 left-0 w-0 h-[1.5px] bg-orbis-teal transition-all duration-300 ease-out group-hover:w-full"></span>
+                </a>
+                <a href="new_arrivals.html" class="relative group py-2 block">
+                    <span
+                        class="text-xs font-medium tracking-[0.15em] uppercase text-neutral-900 transition-colors group-hover:text-orbis-teal">New
+                        Arrivals</span>
+                    <span
+                        class="absolute bottom-0 left-0 w-0 h-[1.5px] bg-orbis-teal transition-all duration-300 ease-out group-hover:w-full"></span>
+                </a>
+                <a href="categories.html" class="relative group py-2 block">
+                    <span
+                        class="text-xs font-medium tracking-[0.15em] uppercase text-orbis-teal transition-colors">Categories</span>
+                    <span
+                        class="absolute bottom-0 left-0 w-full h-[1.5px] bg-orbis-teal transition-all duration-300 ease-out"></span>
+                </a>
             </nav>
-            <button id="menuToggle" class="lg:hidden">
-                <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="4" x2="20" y1="12" y2="12" />
-                    <line x1="4" x2="20" y1="6" y2="6" />
-                    <line x1="4" x2="20" y1="18" y2="18" />
+            <button id="menuToggle" class="lg:hidden group p-2 hover:bg-neutral-100 rounded-full transition-colors">
+                <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                    class="group-hover:stroke-orbis-teal transition-colors">
+                    <line x1="3" x2="21" y1="6" y2="6" />
+                    <line x1="3" x2="21" y1="12" y2="12" />
+                    <line x1="3" x2="21" y1="18" y2="18" />
                 </svg>
-                <svg id="closeIcon" class="hidden" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round">
+                <svg id="closeIcon" class="hidden" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" class="group-hover:stroke-orbis-teal transition-colors">
                     <path d="M18 6 6 18" />
                     <path d="m6 6 12 12" />
                 </svg>
             </button>
         </div>
-        </div>
+
         <!-- Mobile Menu (Hidden by default) -->
         <nav id="mobileMenu"
-            class="lg:hidden hidden absolute top-full left-0 right-0 bg-white border-b border-neutral-200 animate-slide-in">
-            <div class="py-6 px-6 space-y-4">
+            class="lg:hidden hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-md border-b border-neutral-200 animate-slide-in shadow-lg">
+            <div class="py-8 px-6 space-y-6 flex flex-col items-center">
                 <a href="index.html"
-                    class="block text-xs font-medium tracking-[0.15em] uppercase py-2 hover:text-neutral-500">Dashboard</a>
+                    class="text-sm font-medium tracking-[0.2em] uppercase hover:text-orbis-teal transition-colors relative group">
+                    Dashboard
+                    <span
+                        class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-0 h-[1px] bg-orbis-teal transition-all duration-300 group-hover:w-full"></span>
+                </a>
                 <a href="new_arrivals.html"
-                    class="block text-xs font-medium tracking-[0.15em] uppercase py-2 hover:text-neutral-500">New
-                    Arrivals</a>
+                    class="text-sm font-medium tracking-[0.2em] uppercase hover:text-orbis-teal transition-colors relative group">
+                    New Arrivals
+                    <span
+                        class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-0 h-[1px] bg-orbis-teal transition-all duration-300 group-hover:w-full"></span>
+                </a>
                 <a href="categories.html"
-                    class="block text-xs font-medium tracking-[0.15em] uppercase py-2 hover:text-neutral-500">Categories</a>
+                    class="text-sm font-medium tracking-[0.2em] uppercase hover:text-orbis-teal transition-colors relative group">
+                    Categories
+                    <span
+                        class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-0 h-[1px] bg-orbis-teal transition-all duration-300 group-hover:w-full"></span>
+                </a>
             </div>
         </nav>
     </header>
@@ -286,17 +312,25 @@
                                 </div>
                                 <p class="text-[10px] tracking-widest text-neutral-500 mb-1">T-SHIRTS</p>
                                 <h3 class="text-sm font-medium text-neutral-900 mb-1">Oversized Tee - Black</h3>
-                                <div class="flex items-start justify-between mb-2">
-                                    <p class="text-sm">IDR 185,000</p>
-                                    <button
-                                        class="text-[10px] uppercase tracking-widest hover:text-neutral-500 border-b border-black pb-0.5 transition-colors details-btn bg-gray-200 px-2">Details</button>
-                                </div>
-                                <div class="flex gap-2 text-[10px] font-medium tracking-wider">
-                                    <span class="text-green-600">S</span>
-                                    <span class="text-green-600">M</span>
-                                    <span class="text-green-600">L</span>
-                                    <span class="text-green-600">XL</span>
-                                    <span class="text-red-900">XXL</span>
+                                <div class="flex items-end justify-between mb-2">
+                                    <div>
+                                        <p class="text-sm font-medium mb-1">IDR 185,000</p>
+                                        <div class="flex gap-2 text-[10px] font-medium tracking-wider">
+                                            <span class="text-green-600">S</span>
+                                            <span class="text-green-600">M</span>
+                                            <span class="text-green-600">L</span>
+                                            <span class="text-green-600">XL</span>
+                                            <span class="text-red-900">XXL</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col items-end gap-2">
+                                        <div class="flex gap-1">
+                                            <span class="w-3 h-3 rounded-full bg-black border border-neutral-200"
+                                                title="Black"></span>
+                                        </div>
+                                        <button
+                                            class="details-btn uppercase tracking-widest px-3 py-1.5 border border-neutral-900 bg-white hover:bg-neutral-900 text-neutral-900 hover:text-white transition-all duration-300 rounded-sm text-[10px] font-medium">Details</button>
+                                    </div>
                                 </div>
                             </div>
                             <!-- Back -->
@@ -322,17 +356,25 @@
                                 </div>
                                 <p class="text-[10px] tracking-widest text-neutral-500 mb-1">T-SHIRTS</p>
                                 <h3 class="text-sm font-medium text-neutral-900 mb-1">Graphic Tee - White</h3>
-                                <div class="flex items-start justify-between mb-2">
-                                    <p class="text-sm">IDR 195,000</p>
-                                    <button
-                                        class="text-[10px] uppercase tracking-widest hover:text-neutral-500 border-b border-black pb-0.5 transition-colors details-btn bg-gray-200 px-2">Details</button>
-                                </div>
-                                <div class="flex gap-2 text-[10px] font-medium tracking-wider">
-                                    <span class="text-green-600">S</span>
-                                    <span class="text-green-600">M</span>
-                                    <span class="text-green-600">L</span>
-                                    <span class="text-red-900">XL</span>
-                                    <span class="text-red-900">XXL</span>
+                                <div class="flex items-end justify-between mb-2">
+                                    <div>
+                                        <p class="text-sm font-medium mb-1">IDR 195,000</p>
+                                        <div class="flex gap-2 text-[10px] font-medium tracking-wider">
+                                            <span class="text-green-600">S</span>
+                                            <span class="text-green-600">M</span>
+                                            <span class="text-green-600">L</span>
+                                            <span class="text-red-900">XL</span>
+                                            <span class="text-red-900">XXL</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col items-end gap-2">
+                                        <div class="flex gap-1">
+                                            <span class="w-3 h-3 rounded-full bg-white border border-neutral-200"
+                                                title="White"></span>
+                                        </div>
+                                        <button
+                                            class="details-btn uppercase tracking-widest px-3 py-1.5 border border-neutral-900 bg-white hover:bg-neutral-900 text-neutral-900 hover:text-white transition-all duration-300 rounded-sm text-[10px] font-medium">Details</button>
+                                    </div>
                                 </div>
                             </div>
                             <!-- Back -->
@@ -358,17 +400,25 @@
                                 </div>
                                 <p class="text-[10px] tracking-widest text-neutral-500 mb-1">T-SHIRTS</p>
                                 <h3 class="text-sm font-medium text-neutral-900 mb-1">Vintage Wash - Grey</h3>
-                                <div class="flex items-start justify-between mb-2">
-                                    <p class="text-sm">IDR 210,000</p>
-                                    <button
-                                        class="text-[10px] uppercase tracking-widest hover:text-neutral-500 border-b border-black pb-0.5 transition-colors details-btn bg-gray-200 px-2">Details</button>
-                                </div>
-                                <div class="flex gap-2 text-[10px] font-medium tracking-wider">
-                                    <span class="text-green-600">S</span>
-                                    <span class="text-green-600">M</span>
-                                    <span class="text-green-600">L</span>
-                                    <span class="text-green-600">XL</span>
-                                    <span class="text-green-600">XXL</span>
+                                <div class="flex items-end justify-between mb-2">
+                                    <div>
+                                        <p class="text-sm font-medium mb-1">IDR 210,000</p>
+                                        <div class="flex gap-2 text-[10px] font-medium tracking-wider">
+                                            <span class="text-green-600">S</span>
+                                            <span class="text-green-600">M</span>
+                                            <span class="text-green-600">L</span>
+                                            <span class="text-green-600">XL</span>
+                                            <span class="text-green-600">XXL</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col items-end gap-2">
+                                        <div class="flex gap-1">
+                                            <span class="w-3 h-3 rounded-full bg-gray-400 border border-neutral-200"
+                                                title="Grey"></span>
+                                        </div>
+                                        <button
+                                            class="details-btn uppercase tracking-widest px-3 py-1.5 border border-neutral-900 bg-white hover:bg-neutral-900 text-neutral-900 hover:text-white transition-all duration-300 rounded-sm text-[10px] font-medium">Details</button>
+                                    </div>
                                 </div>
                             </div>
                             <!-- Back -->
@@ -394,17 +444,25 @@
                                 </div>
                                 <p class="text-[10px] tracking-widest text-neutral-500 mb-1">T-SHIRTS</p>
                                 <h3 class="text-sm font-medium text-neutral-900 mb-1">Essential Tee - Cream</h3>
-                                <div class="flex items-start justify-between mb-2">
-                                    <p class="text-sm">IDR 185,000</p>
-                                    <button
-                                        class="text-[10px] uppercase tracking-widest hover:text-neutral-500 border-b border-black pb-0.5 transition-colors details-btn bg-gray-200 px-2">Details</button>
-                                </div>
-                                <div class="flex gap-2 text-[10px] font-medium tracking-wider">
-                                    <span class="text-green-600">S</span>
-                                    <span class="text-green-600">M</span>
-                                    <span class="text-green-600">L</span>
-                                    <span class="text-green-600">XL</span>
-                                    <span class="text-green-600">XXL</span>
+                                <div class="flex items-end justify-between mb-2">
+                                    <div>
+                                        <p class="text-sm font-medium mb-1">IDR 185,000</p>
+                                        <div class="flex gap-2 text-[10px] font-medium tracking-wider">
+                                            <span class="text-green-600">S</span>
+                                            <span class="text-green-600">M</span>
+                                            <span class="text-green-600">L</span>
+                                            <span class="text-green-600">XL</span>
+                                            <span class="text-green-600">XXL</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col items-end gap-2">
+                                        <div class="flex gap-1">
+                                            <span class="w-3 h-3 rounded-full bg-[#E5D0B1] border border-neutral-200"
+                                                title="Cream"></span>
+                                        </div>
+                                        <button
+                                            class="details-btn uppercase tracking-widest px-3 py-1.5 border border-neutral-900 bg-white hover:bg-neutral-900 text-neutral-900 hover:text-white transition-all duration-300 rounded-sm text-[10px] font-medium">Details</button>
+                                    </div>
                                 </div>
                             </div>
                             <!-- Back -->
@@ -432,17 +490,25 @@
                                 </div>
                                 <p class="text-[10px] tracking-widest text-neutral-500 mb-1">T-SHIRTS</p>
                                 <h3 class="text-sm font-medium text-neutral-900 mb-1">Relaxed Fit - Navy</h3>
-                                <div class="flex items-start justify-between mb-2">
-                                    <p class="text-sm">IDR 195,000</p>
-                                    <button
-                                        class="text-[10px] uppercase tracking-widest hover:text-neutral-500 border-b border-black pb-0.5 transition-colors details-btn bg-gray-200 px-2">Details</button>
-                                </div>
-                                <div class="flex gap-2 text-[10px] font-medium tracking-wider">
-                                    <span class="text-green-600">S</span>
-                                    <span class="text-green-600">M</span>
-                                    <span class="text-green-600">L</span>
-                                    <span class="text-green-600">XL</span>
-                                    <span class="text-red-900">XXL</span>
+                                <div class="flex items-end justify-between mb-2">
+                                    <div>
+                                        <p class="text-sm font-medium mb-1">IDR 195,000</p>
+                                        <div class="flex gap-2 text-[10px] font-medium tracking-wider">
+                                            <span class="text-green-600">S</span>
+                                            <span class="text-green-600">M</span>
+                                            <span class="text-green-600">L</span>
+                                            <span class="text-green-600">XL</span>
+                                            <span class="text-red-900">XXL</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col items-end gap-2">
+                                        <div class="flex gap-1">
+                                            <span class="w-3 h-3 rounded-full bg-blue-900 border border-neutral-200"
+                                                title="Navy"></span>
+                                        </div>
+                                        <button
+                                            class="details-btn uppercase tracking-widest px-3 py-1.5 border border-neutral-900 bg-white hover:bg-neutral-900 text-neutral-900 hover:text-white transition-all duration-300 rounded-sm text-[10px] font-medium">Details</button>
+                                    </div>
                                 </div>
                             </div>
                             <!-- Back -->
@@ -469,17 +535,25 @@
                                 </div>
                                 <p class="text-[10px] tracking-widest text-neutral-500 mb-1">T-SHIRTS</p>
                                 <h3 class="text-sm font-medium text-neutral-900 mb-1">Pocket Tee - Olive</h3>
-                                <div class="flex items-start justify-between mb-2">
-                                    <p class="text-sm">IDR 175,000</p>
-                                    <button
-                                        class="text-[10px] uppercase tracking-widest hover:text-neutral-500 border-b border-black pb-0.5 transition-colors details-btn bg-gray-200 px-2">Details</button>
-                                </div>
-                                <div class="flex gap-2 text-[10px] font-medium tracking-wider">
-                                    <span class="text-green-600">S</span>
-                                    <span class="text-green-600">M</span>
-                                    <span class="text-green-600">L</span>
-                                    <span class="text-green-600">XL</span>
-                                    <span class="text-green-600">XXL</span>
+                                <div class="flex items-end justify-between mb-2">
+                                    <div>
+                                        <p class="text-sm font-medium mb-1">IDR 175,000</p>
+                                        <div class="flex gap-2 text-[10px] font-medium tracking-wider">
+                                            <span class="text-green-600">S</span>
+                                            <span class="text-green-600">M</span>
+                                            <span class="text-green-600">L</span>
+                                            <span class="text-green-600">XL</span>
+                                            <span class="text-green-600">XXL</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col items-end gap-2">
+                                        <div class="flex gap-1">
+                                            <span class="w-3 h-3 rounded-full bg-green-800 border border-neutral-200"
+                                                title="Olive"></span>
+                                        </div>
+                                        <button
+                                            class="details-btn uppercase tracking-widest px-3 py-1.5 border border-neutral-900 bg-white hover:bg-neutral-900 text-neutral-900 hover:text-white transition-all duration-300 rounded-sm text-[10px] font-medium">Details</button>
+                                    </div>
                                 </div>
                             </div>
                             <!-- Back -->
@@ -506,17 +580,25 @@
                                 </div>
                                 <p class="text-[10px] tracking-widest text-neutral-500 mb-1">T-SHIRTS</p>
                                 <h3 class="text-sm font-medium text-neutral-900 mb-1">Stripe Tee - Blue</h3>
-                                <div class="flex items-start justify-between mb-2">
-                                    <p class="text-sm">IDR 220,000</p>
-                                    <button
-                                        class="text-[10px] uppercase tracking-widest hover:text-neutral-500 border-b border-black pb-0.5 transition-colors details-btn bg-gray-200 px-2">Details</button>
-                                </div>
-                                <div class="flex gap-2 text-[10px] font-medium tracking-wider">
-                                    <span class="text-green-600">S</span>
-                                    <span class="text-green-600">M</span>
-                                    <span class="text-green-600">L</span>
-                                    <span class="text-green-600">XL</span>
-                                    <span class="text-green-600">XXL</span>
+                                <div class="flex items-end justify-between mb-2">
+                                    <div>
+                                        <p class="text-sm font-medium mb-1">IDR 220,000</p>
+                                        <div class="flex gap-2 text-[10px] font-medium tracking-wider">
+                                            <span class="text-green-600">S</span>
+                                            <span class="text-green-600">M</span>
+                                            <span class="text-green-600">L</span>
+                                            <span class="text-green-600">XL</span>
+                                            <span class="text-green-600">XXL</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col items-end gap-2">
+                                        <div class="flex gap-1">
+                                            <span class="w-3 h-3 rounded-full bg-blue-600 border border-neutral-200"
+                                                title="Blue"></span>
+                                        </div>
+                                        <button
+                                            class="details-btn uppercase tracking-widest px-3 py-1.5 border border-neutral-900 bg-white hover:bg-neutral-900 text-neutral-900 hover:text-white transition-all duration-300 rounded-sm text-[10px] font-medium">Details</button>
+                                    </div>
                                 </div>
                             </div>
                             <!-- Back -->
@@ -543,17 +625,25 @@
                                 </div>
                                 <p class="text-[10px] tracking-widest text-neutral-500 mb-1">T-SHIRTS</p>
                                 <h3 class="text-sm font-medium text-neutral-900 mb-1">Classic Tee - Charcoal</h3>
-                                <div class="flex items-start justify-between mb-2">
-                                    <p class="text-sm">IDR 185,000</p>
-                                    <button
-                                        class="text-[10px] uppercase tracking-widest hover:text-neutral-500 border-b border-black pb-0.5 transition-colors details-btn bg-gray-200 px-2">Details</button>
-                                </div>
-                                <div class="flex gap-2 text-[10px] font-medium tracking-wider">
-                                    <span class="text-green-600">S</span>
-                                    <span class="text-green-600">M</span>
-                                    <span class="text-green-600">L</span>
-                                    <span class="text-green-600">XL</span>
-                                    <span class="text-green-600">XXL</span>
+                                <div class="flex items-end justify-between mb-2">
+                                    <div>
+                                        <p class="text-sm font-medium mb-1">IDR 185,000</p>
+                                        <div class="flex gap-2 text-[10px] font-medium tracking-wider">
+                                            <span class="text-green-600">S</span>
+                                            <span class="text-green-600">M</span>
+                                            <span class="text-green-600">L</span>
+                                            <span class="text-green-600">XL</span>
+                                            <span class="text-green-600">XXL</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col items-end gap-2">
+                                        <div class="flex gap-1">
+                                            <span class="w-3 h-3 rounded-full bg-gray-700 border border-neutral-200"
+                                                title="Charcoal"></span>
+                                        </div>
+                                        <button
+                                            class="details-btn uppercase tracking-widest px-3 py-1.5 border border-neutral-900 bg-white hover:bg-neutral-900 text-neutral-900 hover:text-white transition-all duration-300 rounded-sm text-[10px] font-medium">Details</button>
+                                    </div>
                                 </div>
                             </div>
                             <!-- Back -->
@@ -584,7 +674,8 @@
                 <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-x-6 gap-y-10 align-center ">
                     <!-- Pin Card 3 -->
                     <article class="group cursor-pointer reveal-on-scroll delay-200 perspective-1000">
-                        <div class="relative transition-all duration-700 transform-style-3d w-full rounded-lg border-2 border-gray-200">
+                        <div
+                            class="relative transition-all duration-700 transform-style-3d w-full rounded-lg border-2 border-gray-200">
                             <!-- Front -->
                             <div class="relative backface-hidden bg-white p-2 rounded-lg ">
                                 <div
@@ -596,7 +687,7 @@
                                 <div class="flex flex-col items-center gap-1">
                                     <p class="text-xs text-center text-neutral-500">IDR 45.000</p>
                                     <button
-                                        class="text-[10px] uppercase tracking-widest hover:text-neutral-500 border-b border-black pb-0.5 transition-colors details-btn bg-gray-100 px-2 mt-1">Details</button>
+                                        class="details-btn uppercase tracking-widest px-3 py-1.5 border border-neutral-900 bg-white hover:bg-neutral-900 text-neutral-900 hover:text-white transition-all duration-300 rounded-sm text-[10px] font-medium mt-1">Details</button>
                                 </div>
                             </div>
                             <!-- Back -->
@@ -613,7 +704,8 @@
 
                     <!-- Pin Card 4 -->
                     <article class="group cursor-pointer reveal-on-scroll delay-300 perspective-1000">
-                        <div class="relative transition-all duration-700 transform-style-3d w-full rounded-lg border-2 border-gray-200">
+                        <div
+                            class="relative transition-all duration-700 transform-style-3d w-full rounded-lg border-2 border-gray-200">
                             <!-- Front -->
                             <div class="relative backface-hidden bg-white p-2 rounded-lg">
                                 <div
@@ -625,7 +717,7 @@
                                 <div class="flex flex-col items-center gap-1">
                                     <p class="text-xs text-center text-neutral-500">IDR 45.000</p>
                                     <button
-                                        class="text-[10px] uppercase tracking-widest hover:text-neutral-500 border-b border-black pb-0.5 transition-colors details-btn bg-gray-100 px-2 mt-1">Details</button>
+                                        class="details-btn uppercase tracking-widest px-3 py-1.5 border border-neutral-900 bg-white hover:bg-neutral-900 text-neutral-900 hover:text-white transition-all duration-300 rounded-sm text-[10px] font-medium mt-1">Details</button>
                                 </div>
                             </div>
                             <!-- Back -->
@@ -642,7 +734,8 @@
 
                     <!-- Pin Card 5 -->
                     <article class="group cursor-pointer reveal-on-scroll perspective-1000">
-                        <div class="relative transition-all duration-700 transform-style-3d w-full border-2 border-gray-200">
+                        <div
+                            class="relative transition-all duration-700 transform-style-3d w-full border-2 border-gray-200">
                             <!-- Front -->
                             <div class="relative backface-hidden bg-white p-2 rounded-lg">
                                 <div
@@ -654,7 +747,7 @@
                                 <div class="flex flex-col items-center gap-1">
                                     <p class="text-xs text-center text-neutral-500">IDR 45.000</p>
                                     <button
-                                        class="text-[10px] uppercase tracking-widest hover:text-neutral-500 border-b border-black pb-0.5 transition-colors details-btn bg-gray-100 px-2 mt-1">Details</button>
+                                        class="details-btn uppercase tracking-widest px-3 py-1.5 border border-neutral-900 bg-white hover:bg-neutral-900 text-neutral-900 hover:text-white transition-all duration-300 rounded-sm text-[10px] font-medium mt-1">Details</button>
                                 </div>
                             </div>
                             <!-- Back -->
