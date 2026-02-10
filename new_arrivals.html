@@ -473,10 +473,8 @@
             <div class="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors duration-500"></div>
             <div class="absolute inset-0 flex flex-col justify-center items-center text-center text-white p-6">
               <p class="text-xs tracking-mega mb-2">LIMITED EDITION</p>
-              <h2 class="text-3xl md:text-5xl font-light tracking-widest mb-6">THE MONOCHROME SERIES</h2>
-              <button
-                class="px-8 py-3 bg-white text-black text-xs uppercase tracking-widest hover:bg-transparent hover:text-white border border-black transition-colors">Explore
-                Collection</button>
+              <h2 class="text-3xl md:text-5xl font-light tracking-widest mb-6">THE EDGE SERIES</h2>
+              
             </div>
           </div>
         </div>
@@ -691,18 +689,26 @@
     document.querySelectorAll('.details-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.stopPropagation(); // Prevent any parent click events
-        const cardContainer = btn.closest('article');
-        const cardInner = cardContainer ? cardContainer.querySelector('.transform-style-3d') : null;
+        const article = btn.closest('article');
+        const cardInner = article ? article.querySelector('.transform-style-3d') : null;
 
         if (cardInner) {
-          if (cardInner.classList.contains('rotate-y-180')) {
-            cardInner.classList.remove('rotate-y-180');
-            btn.textContent = 'Details';
-          } else {
-            // Reset any other open cards if needed (optional, keeping independent for now)
+          // Animate button
+          btn.classList.add('opacity-0', 'scale-90');
+
+          // Toggle flip immediately
+          const isFlippingToBack = !cardInner.classList.contains('rotate-y-180');
+          if (isFlippingToBack) {
             cardInner.classList.add('rotate-y-180');
-            btn.textContent = 'Back';
+          } else {
+            cardInner.classList.remove('rotate-y-180');
           }
+
+          // Change text after fade out
+          setTimeout(() => {
+            btn.textContent = isFlippingToBack ? 'Back' : 'Details';
+            btn.classList.remove('opacity-0', 'scale-90');
+          }, 300);
         }
       });
     });

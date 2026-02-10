@@ -855,17 +855,22 @@
                     const cardInner = article ? article.querySelector('.transform-style-3d') : null;
 
                     if (cardInner) {
-                        if (cardInner.classList.contains('rotate-y-180')) {
-                            cardInner.classList.remove('rotate-y-180');
-                            btn.textContent = 'Details';
-                        } else {
-                            // Reset any other open cards if needed
-                            // document.querySelectorAll('.transform-style-3d').forEach(c => c.classList.remove('rotate-y-180'));
-                            // document.querySelectorAll('.details-btn').forEach(b => b.textContent = 'Details');
+                        // Animate button
+                        btn.classList.add('opacity-0', 'scale-90');
 
+                        // Toggle flip immediately
+                        const isFlippingToBack = !cardInner.classList.contains('rotate-y-180');
+                        if (isFlippingToBack) {
                             cardInner.classList.add('rotate-y-180');
-                            btn.textContent = 'Back';
+                        } else {
+                            cardInner.classList.remove('rotate-y-180');
                         }
+
+                        // Change text after fade out
+                        setTimeout(() => {
+                            btn.textContent = isFlippingToBack ? 'Back' : 'Details';
+                            btn.classList.remove('opacity-0', 'scale-90');
+                        }, 300);
                     }
                 });
             });
