@@ -111,6 +111,24 @@
         .delay-300 {
             transition-delay: 300ms;
         }
+
+        /* Flip Card Styles */
+        .perspective-1000 {
+            perspective: 1000px;
+        }
+
+        .transform-style-3d {
+            transform-style: preserve-3d;
+        }
+
+        .backface-hidden {
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+
+        .rotate-y-180 {
+            transform: rotateY(180deg);
+        }
     </style>
 </head>
 
@@ -258,239 +276,398 @@
 
                 <div id="tshirtGrid" class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-10">
                     <!-- Product Card 1 -->
-                    <a href="#" class="group block reveal-on-scroll tshirt-card">
-                        <div class="aspect-[3/4] bg-neutral-100 overflow-hidden mb-4 relative">
-                            <img src="img/1.png" alt="T-Shirt 1"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 border-2 border-black rounded-sm">
+                    <article class="group cursor-pointer reveal-on-scroll tshirt-card perspective-1000">
+                        <div class="relative transition-all duration-700 transform-style-3d w-full">
+                            <!-- Front -->
+                            <div class="relative backface-hidden bg-white">
+                                <div class="aspect-[3/4] bg-neutral-100 overflow-hidden mb-4 relative">
+                                    <img src="img/1.png" alt="T-Shirt 1"
+                                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 border-2 border-black rounded-sm">
+                                </div>
+                                <p class="text-[10px] tracking-widest text-neutral-500 mb-1">T-SHIRTS</p>
+                                <h3 class="text-sm font-medium text-neutral-900 mb-1">Oversized Tee - Black</h3>
+                                <div class="flex items-start justify-between mb-2">
+                                    <p class="text-sm">IDR 185,000</p>
+                                    <button
+                                        class="text-[10px] uppercase tracking-widest hover:text-neutral-500 border-b border-black pb-0.5 transition-colors details-btn bg-gray-200 px-2">Details</button>
+                                </div>
+                                <div class="flex gap-2 text-[10px] font-medium tracking-wider">
+                                    <span class="text-green-600">S</span>
+                                    <span class="text-green-600">M</span>
+                                    <span class="text-green-600">L</span>
+                                    <span class="text-green-600">XL</span>
+                                    <span class="text-red-900">XXL</span>
+                                </div>
+                            </div>
+                            <!-- Back -->
                             <div
-                                class="absolute bottom-4 left-4 bg-white/90 px-3 py-1 text-[10px] tracking-widest uppercase backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                Quick View</div>
+                                class="absolute top-0 left-0 w-full h-full backface-hidden rotate-y-180 bg-white border border-neutral-100 p-6 flex flex-col items-center justify-center text-center">
+                                <h3 class="text-xs font-medium uppercase tracking-widest mb-4">Oversized Tee</h3>
+                                <p class="text-xs text-neutral-500 leading-relaxed mb-6">Premium heavyweight cotton tee
+                                    with an oversized fit for maximum comfort and style.</p>
+                                <button
+                                    class="text-[10px] border-b border-black pb-0.5 hover:text-neutral-500 transition-colors uppercase tracking-widest back-btn">Back</button>
+                            </div>
                         </div>
-                        <p class="text-[10px] tracking-widest text-neutral-500 mb-1">T-SHIRTS</p>
-                        <h3
-                            class="text-sm font-medium text-neutral-900 mb-1 group-hover:text-neutral-500 transition-colors">
-                            Oversized Tee - Black</h3>
-                        <p class="text-sm">IDR 185,000</p>
-                        <div class="flex gap-2 mt-2 text-[10px] font-medium tracking-wider">
-                            <span class="text-green-600">S</span>
-                            <span class="text-green-600">M</span>
-                            <span class="text-green-600">L</span>
-                            <span class="text-green-600">XL</span>
-                            <span class="text-red-900">XXL</span>
-                        </div>
-                    </a>
+                    </article>
+
                     <!-- Product Card 2 -->
-                    <a href="#" class="group block reveal-on-scroll delay-100 tshirt-card">
-                        <div class="aspect-[3/4] bg-neutral-100 overflow-hidden mb-4 relative">
-                            <img src="img/2.png" alt="T-Shirt 2"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 border-2 border-black rounded-sm">
+                    <article class="group cursor-pointer reveal-on-scroll delay-100 tshirt-card perspective-1000">
+                        <div class="relative transition-all duration-700 transform-style-3d w-full">
+                            <!-- Front -->
+                            <div class="relative backface-hidden bg-white">
+                                <div class="aspect-[3/4] bg-neutral-100 overflow-hidden mb-4 relative">
+                                    <img src="img/2.png" alt="T-Shirt 2"
+                                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 border-2 border-black rounded-sm">
+                                </div>
+                                <p class="text-[10px] tracking-widest text-neutral-500 mb-1">T-SHIRTS</p>
+                                <h3 class="text-sm font-medium text-neutral-900 mb-1">Graphic Tee - White</h3>
+                                <div class="flex items-start justify-between mb-2">
+                                    <p class="text-sm">IDR 195,000</p>
+                                    <button
+                                        class="text-[10px] uppercase tracking-widest hover:text-neutral-500 border-b border-black pb-0.5 transition-colors details-btn bg-gray-200 px-2">Details</button>
+                                </div>
+                                <div class="flex gap-2 text-[10px] font-medium tracking-wider">
+                                    <span class="text-green-600">S</span>
+                                    <span class="text-green-600">M</span>
+                                    <span class="text-green-600">L</span>
+                                    <span class="text-red-900">XL</span>
+                                    <span class="text-red-900">XXL</span>
+                                </div>
+                            </div>
+                            <!-- Back -->
                             <div
-                                class="absolute bottom-4 left-4 bg-white/90 px-3 py-1 text-[10px] tracking-widest uppercase backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                Quick View</div>
+                                class="absolute top-0 left-0 w-full h-full backface-hidden rotate-y-180 bg-white border border-neutral-100 p-6 flex flex-col items-center justify-center text-center">
+                                <h3 class="text-xs font-medium uppercase tracking-widest mb-4">Graphic Tee</h3>
+                                <p class="text-xs text-neutral-500 leading-relaxed mb-6">Featuring exclusive artwork
+                                    printed on high-quality fabric. A statement piece for your wardrobe.</p>
+                                <button
+                                    class="text-[10px] border-b border-black pb-0.5 hover:text-neutral-500 transition-colors uppercase tracking-widest back-btn">Back</button>
+                            </div>
                         </div>
-                        <p class="text-[10px] tracking-widest text-neutral-500 mb-1">T-SHIRTS</p>
-                        <h3
-                            class="text-sm font-medium text-neutral-900 mb-1 group-hover:text-neutral-500 transition-colors">
-                            Graphic Tee - White</h3>
-                        <p class="text-sm">IDR 195,000</p>
-                        <div class="flex gap-2 mt-2 text-[10px] font-medium tracking-wider">
-                            <span class="text-green-600">S</span>
-                            <span class="text-green-600">M</span>
-                            <span class="text-green-600">L</span>
-                            <span class="text-red-900">XL</span>
-                            <span class="text-red-900">XXL</span>
-                        </div>
-                    </a>
+                    </article>
+
                     <!-- Product Card 3 -->
-                    <a href="#" class="group block reveal-on-scroll delay-200 tshirt-card">
-                        <div class="aspect-[3/4] bg-neutral-100 overflow-hidden mb-4 relative">
-                            <img src="img/3.png" alt="T-Shirt 3"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 border-2 border-black rounded-sm">
+                    <article class="group cursor-pointer reveal-on-scroll delay-200 tshirt-card perspective-1000">
+                        <div class="relative transition-all duration-700 transform-style-3d w-full">
+                            <!-- Front -->
+                            <div class="relative backface-hidden bg-white">
+                                <div class="aspect-[3/4] bg-neutral-100 overflow-hidden mb-4 relative">
+                                    <img src="img/3.png" alt="T-Shirt 3"
+                                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 border-2 border-black rounded-sm">
+                                </div>
+                                <p class="text-[10px] tracking-widest text-neutral-500 mb-1">T-SHIRTS</p>
+                                <h3 class="text-sm font-medium text-neutral-900 mb-1">Vintage Wash - Grey</h3>
+                                <div class="flex items-start justify-between mb-2">
+                                    <p class="text-sm">IDR 210,000</p>
+                                    <button
+                                        class="text-[10px] uppercase tracking-widest hover:text-neutral-500 border-b border-black pb-0.5 transition-colors details-btn bg-gray-200 px-2">Details</button>
+                                </div>
+                                <div class="flex gap-2 text-[10px] font-medium tracking-wider">
+                                    <span class="text-green-600">S</span>
+                                    <span class="text-green-600">M</span>
+                                    <span class="text-green-600">L</span>
+                                    <span class="text-green-600">XL</span>
+                                    <span class="text-green-600">XXL</span>
+                                </div>
+                            </div>
+                            <!-- Back -->
                             <div
-                                class="absolute bottom-4 left-4 bg-white/90 px-3 py-1 text-[10px] tracking-widest uppercase backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                Quick View</div>
+                                class="absolute top-0 left-0 w-full h-full backface-hidden rotate-y-180 bg-white border border-neutral-100 p-6 flex flex-col items-center justify-center text-center">
+                                <h3 class="text-xs font-medium uppercase tracking-widest mb-4">Vintage Wash</h3>
+                                <p class="text-xs text-neutral-500 leading-relaxed mb-6">Soft, garment-dyed fabric for a
+                                    vintage look and feel. Unique color treatment.</p>
+                                <button
+                                    class="text-[10px] border-b border-black pb-0.5 hover:text-neutral-500 transition-colors uppercase tracking-widest back-btn">Back</button>
+                            </div>
                         </div>
-                        <p class="text-[10px] tracking-widest text-neutral-500 mb-1">T-SHIRTS</p>
-                        <h3
-                            class="text-sm font-medium text-neutral-900 mb-1 group-hover:text-neutral-500 transition-colors">
-                            Vintage Wash - Grey</h3>
-                        <p class="text-sm">IDR 210,000</p>
-                        <div class="flex gap-2 mt-2 text-[10px] font-medium tracking-wider">
-                            <span class="text-green-600">S</span>
-                            <span class="text-green-600">M</span>
-                            <span class="text-green-600">L</span>
-                            <span class="text-green-600">XL</span>
-                            <span class="text-green-600">XXL</span>
-                        </div>
-                    </a>
+                    </article>
+
                     <!-- Product Card 4 -->
-                    <a href="#" class="group block reveal-on-scroll delay-300 tshirt-card">
-                        <div class="aspect-[3/4] bg-neutral-100 overflow-hidden mb-4 relative">
-                            <img src="img/4.png" alt="T-Shirt 4"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 border-2 border-black rounded-sm">
+                    <article class="group cursor-pointer reveal-on-scroll delay-300 tshirt-card perspective-1000">
+                        <div class="relative transition-all duration-700 transform-style-3d w-full">
+                            <!-- Front -->
+                            <div class="relative backface-hidden bg-white">
+                                <div class="aspect-[3/4] bg-neutral-100 overflow-hidden mb-4 relative">
+                                    <img src="img/4.png" alt="T-Shirt 4"
+                                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 border-2 border-black rounded-sm">
+                                </div>
+                                <p class="text-[10px] tracking-widest text-neutral-500 mb-1">T-SHIRTS</p>
+                                <h3 class="text-sm font-medium text-neutral-900 mb-1">Essential Tee - Cream</h3>
+                                <div class="flex items-start justify-between mb-2">
+                                    <p class="text-sm">IDR 185,000</p>
+                                    <button
+                                        class="text-[10px] uppercase tracking-widest hover:text-neutral-500 border-b border-black pb-0.5 transition-colors details-btn bg-gray-200 px-2">Details</button>
+                                </div>
+                                <div class="flex gap-2 text-[10px] font-medium tracking-wider">
+                                    <span class="text-green-600">S</span>
+                                    <span class="text-green-600">M</span>
+                                    <span class="text-green-600">L</span>
+                                    <span class="text-green-600">XL</span>
+                                    <span class="text-green-600">XXL</span>
+                                </div>
+                            </div>
+                            <!-- Back -->
                             <div
-                                class="absolute bottom-4 left-4 bg-white/90 px-3 py-1 text-[10px] tracking-widest uppercase backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                Quick View</div>
+                                class="absolute top-0 left-0 w-full h-full backface-hidden rotate-y-180 bg-white border border-neutral-100 p-6 flex flex-col items-center justify-center text-center">
+                                <h3 class="text-xs font-medium uppercase tracking-widest mb-4">Essential Tee</h3>
+                                <p class="text-xs text-neutral-500 leading-relaxed mb-6">A versatile staple for everyday
+                                    wear. Made from breathable cotton.</p>
+                                <button
+                                    class="text-[10px] border-b border-black pb-0.5 hover:text-neutral-500 transition-colors uppercase tracking-widest back-btn">Back</button>
+                            </div>
                         </div>
-                        <p class="text-[10px] tracking-widest text-neutral-500 mb-1">T-SHIRTS</p>
-                        <h3
-                            class="text-sm font-medium text-neutral-900 mb-1 group-hover:text-neutral-500 transition-colors">
-                            Essential Tee - Cream</h3>
-                        <p class="text-sm">IDR 185,000</p>
-                        <div class="flex gap-2 mt-2 text-[10px] font-medium tracking-wider">
-                            <span class="text-green-600">S</span>
-                            <span class="text-green-600">M</span>
-                            <span class="text-green-600">L</span>
-                            <span class="text-green-600">XL</span>
-                            <span class="text-green-600">XXL</span>
-                        </div>
-                    </a>
+                    </article>
 
                     <!-- HIDDEN PRODUCTS (5-8) - Will appear on click -->
                     <!-- Product Card 5 -->
-                    <a href="#" class="group block tshirt-card tshirt-hidden hidden opacity-0 transform translate-y-8">
-                        <div class="aspect-[3/4] bg-neutral-100 overflow-hidden mb-4 relative">
-                            <img src="img/6.png" alt="T-Shirt 5"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 border-2 border-black rounded-sm">
+                    <article
+                        class="group cursor-pointer tshirt-card tshirt-hidden hidden opacity-0 transform translate-y-8 perspective-1000">
+                        <div class="relative transition-all duration-700 transform-style-3d w-full">
+                            <!-- Front -->
+                            <div class="relative backface-hidden bg-white">
+                                <div class="aspect-[3/4] bg-neutral-100 overflow-hidden mb-4 relative">
+                                    <img src="img/6.png" alt="T-Shirt 5"
+                                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 border-2 border-black rounded-sm">
+                                </div>
+                                <p class="text-[10px] tracking-widest text-neutral-500 mb-1">T-SHIRTS</p>
+                                <h3 class="text-sm font-medium text-neutral-900 mb-1">Relaxed Fit - Navy</h3>
+                                <div class="flex items-start justify-between mb-2">
+                                    <p class="text-sm">IDR 195,000</p>
+                                    <button
+                                        class="text-[10px] uppercase tracking-widest hover:text-neutral-500 border-b border-black pb-0.5 transition-colors details-btn bg-gray-200 px-2">Details</button>
+                                </div>
+                                <div class="flex gap-2 text-[10px] font-medium tracking-wider">
+                                    <span class="text-green-600">S</span>
+                                    <span class="text-green-600">M</span>
+                                    <span class="text-green-600">L</span>
+                                    <span class="text-green-600">XL</span>
+                                    <span class="text-red-900">XXL</span>
+                                </div>
+                            </div>
+                            <!-- Back -->
                             <div
-                                class="absolute bottom-4 left-4 bg-white/90 px-3 py-1 text-[10px] tracking-widest uppercase backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                Quick View</div>
+                                class="absolute top-0 left-0 w-full h-full backface-hidden rotate-y-180 bg-white border border-neutral-100 p-6 flex flex-col items-center justify-center text-center">
+                                <h3 class="text-xs font-medium uppercase tracking-widest mb-4">Relaxed Fit</h3>
+                                <p class="text-xs text-neutral-500 leading-relaxed mb-6">Comfortable relaxed fit for
+                                    casual styling. Perfect for any occasion.</p>
+                                <button
+                                    class="text-[10px] border-b border-black pb-0.5 hover:text-neutral-500 transition-colors uppercase tracking-widest back-btn">Back</button>
+                            </div>
                         </div>
-                        <p class="text-[10px] tracking-widest text-neutral-500 mb-1">T-SHIRTS</p>
-                        <h3
-                            class="text-sm font-medium text-neutral-900 mb-1 group-hover:text-neutral-500 transition-colors">
-                            Relaxed Fit - Navy</h3>
-                        <p class="text-sm">IDR 195,000</p>
-                        <div class="flex gap-2 mt-2 text-[10px] font-medium tracking-wider">
-                            <span class="text-green-600">S</span>
-                            <span class="text-green-600">M</span>
-                            <span class="text-green-600">L</span>
-                            <span class="text-green-600">XL</span>
-                            <span class="text-red-900">XXL</span>
-                        </div>
-                    </a>
+                    </article>
+
                     <!-- Product Card 6 -->
-                    <a href="#" class="group block tshirt-card tshirt-hidden hidden opacity-0 transform translate-y-8">
-                        <div class="aspect-[3/4] bg-neutral-100 overflow-hidden mb-4 relative">
-                            <img src="img/7.png" alt="T-Shirt 6"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 border-2 border-black rounded-sm">
+                    <article
+                        class="group cursor-pointer tshirt-card tshirt-hidden hidden opacity-0 transform translate-y-8 perspective-1000">
+                        <div class="relative transition-all duration-700 transform-style-3d w-full">
+                            <!-- Front -->
+                            <div class="relative backface-hidden bg-white">
+                                <div class="aspect-[3/4] bg-neutral-100 overflow-hidden mb-4 relative">
+                                    <img src="img/7.png" alt="T-Shirt 6"
+                                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 border-2 border-black rounded-sm">
+                                </div>
+                                <p class="text-[10px] tracking-widest text-neutral-500 mb-1">T-SHIRTS</p>
+                                <h3 class="text-sm font-medium text-neutral-900 mb-1">Pocket Tee - Olive</h3>
+                                <div class="flex items-start justify-between mb-2">
+                                    <p class="text-sm">IDR 175,000</p>
+                                    <button
+                                        class="text-[10px] uppercase tracking-widest hover:text-neutral-500 border-b border-black pb-0.5 transition-colors details-btn bg-gray-200 px-2">Details</button>
+                                </div>
+                                <div class="flex gap-2 text-[10px] font-medium tracking-wider">
+                                    <span class="text-green-600">S</span>
+                                    <span class="text-green-600">M</span>
+                                    <span class="text-green-600">L</span>
+                                    <span class="text-green-600">XL</span>
+                                    <span class="text-green-600">XXL</span>
+                                </div>
+                            </div>
+                            <!-- Back -->
                             <div
-                                class="absolute bottom-4 left-4 bg-white/90 px-3 py-1 text-[10px] tracking-widest uppercase backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                Quick View</div>
+                                class="absolute top-0 left-0 w-full h-full backface-hidden rotate-y-180 bg-white border border-neutral-100 p-6 flex flex-col items-center justify-center text-center">
+                                <h3 class="text-xs font-medium uppercase tracking-widest mb-4">Pocket Tee</h3>
+                                <p class="text-xs text-neutral-500 leading-relaxed mb-6">Classic tee with a functional
+                                    chest pocket. Simple and practical.</p>
+                                <button
+                                    class="text-[10px] border-b border-black pb-0.5 hover:text-neutral-500 transition-colors uppercase tracking-widest back-btn">Back</button>
+                            </div>
                         </div>
-                        <p class="text-[10px] tracking-widest text-neutral-500 mb-1">T-SHIRTS</p>
-                        <h3
-                            class="text-sm font-medium text-neutral-900 mb-1 group-hover:text-neutral-500 transition-colors">
-                            Pocket Tee - Olive</h3>
-                        <p class="text-sm">IDR 175,000</p>
-                        <div class="flex gap-2 mt-2 text-[10px] font-medium tracking-wider">
-                            <span class="text-green-600">S</span>
-                            <span class="text-green-600">M</span>
-                            <span class="text-green-600">L</span>
-                            <span class="text-green-600">XL</span>
-                            <span class="text-green-600">XXL</span>
-                        </div>
-                    </a>
+                    </article>
+
                     <!-- Product Card 7 -->
-                    <a href="#" class="group block tshirt-card tshirt-hidden hidden opacity-0 transform translate-y-8">
-                        <div class="aspect-[3/4] bg-neutral-100 overflow-hidden mb-4 relative">
-                            <img src="img/8.png" alt="T-Shirt 7"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 border-2 border-black rounded-sm">
+                    <article
+                        class="group cursor-pointer tshirt-card tshirt-hidden hidden opacity-0 transform translate-y-8 perspective-1000">
+                        <div class="relative transition-all duration-700 transform-style-3d w-full">
+                            <!-- Front -->
+                            <div class="relative backface-hidden bg-white">
+                                <div class="aspect-[3/4] bg-neutral-100 overflow-hidden mb-4 relative">
+                                    <img src="img/8.png" alt="T-Shirt 7"
+                                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 border-2 border-black rounded-sm">
+                                </div>
+                                <p class="text-[10px] tracking-widest text-neutral-500 mb-1">T-SHIRTS</p>
+                                <h3 class="text-sm font-medium text-neutral-900 mb-1">Stripe Tee - Blue</h3>
+                                <div class="flex items-start justify-between mb-2">
+                                    <p class="text-sm">IDR 220,000</p>
+                                    <button
+                                        class="text-[10px] uppercase tracking-widest hover:text-neutral-500 border-b border-black pb-0.5 transition-colors details-btn bg-gray-200 px-2">Details</button>
+                                </div>
+                                <div class="flex gap-2 text-[10px] font-medium tracking-wider">
+                                    <span class="text-green-600">S</span>
+                                    <span class="text-green-600">M</span>
+                                    <span class="text-green-600">L</span>
+                                    <span class="text-green-600">XL</span>
+                                    <span class="text-green-600">XXL</span>
+                                </div>
+                            </div>
+                            <!-- Back -->
                             <div
-                                class="absolute bottom-4 left-4 bg-white/90 px-3 py-1 text-[10px] tracking-widest uppercase backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                Quick View</div>
+                                class="absolute top-0 left-0 w-full h-full backface-hidden rotate-y-180 bg-white border border-neutral-100 p-6 flex flex-col items-center justify-center text-center">
+                                <h3 class="text-xs font-medium uppercase tracking-widest mb-4">Stripe Tee</h3>
+                                <p class="text-xs text-neutral-500 leading-relaxed mb-6">Timeless striped pattern in
+                                    soft cotton. Adds a pop of visual interest.</p>
+                                <button
+                                    class="text-[10px] border-b border-black pb-0.5 hover:text-neutral-500 transition-colors uppercase tracking-widest back-btn">Back</button>
+                            </div>
                         </div>
-                        <p class="text-[10px] tracking-widest text-neutral-500 mb-1">T-SHIRTS</p>
-                        <h3
-                            class="text-sm font-medium text-neutral-900 mb-1 group-hover:text-neutral-500 transition-colors">
-                            Stripe Tee - Blue</h3>
-                        <p class="text-sm">IDR 220,000</p>
-                        <div class="flex gap-2 mt-2 text-[10px] font-medium tracking-wider">
-                            <span class="text-green-600">S</span>
-                            <span class="text-green-600">M</span>
-                            <span class="text-green-600">L</span>
-                            <span class="text-green-600">XL</span>
-                            <span class="text-green-600">XXL</span>
-                        </div>
-                    </a>
+                    </article>
+
                     <!-- Product Card 8 -->
-                    <a href="#" class="group block tshirt-card tshirt-hidden hidden opacity-0 transform translate-y-8">
-                        <div class="aspect-[3/4] bg-neutral-100 overflow-hidden mb-4 relative">
-                            <img src="img/9.png" alt="T-Shirt 8"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 border-2 border-black rounded-sm">
+                    <article
+                        class="group cursor-pointer tshirt-card tshirt-hidden hidden opacity-0 transform translate-y-8 perspective-1000">
+                        <div class="relative transition-all duration-700 transform-style-3d w-full">
+                            <!-- Front -->
+                            <div class="relative backface-hidden bg-white">
+                                <div class="aspect-[3/4] bg-neutral-100 overflow-hidden mb-4 relative">
+                                    <img src="img/9.png" alt="T-Shirt 8"
+                                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 border-2 border-black rounded-sm">
+                                </div>
+                                <p class="text-[10px] tracking-widest text-neutral-500 mb-1">T-SHIRTS</p>
+                                <h3 class="text-sm font-medium text-neutral-900 mb-1">Classic Tee - Charcoal</h3>
+                                <div class="flex items-start justify-between mb-2">
+                                    <p class="text-sm">IDR 185,000</p>
+                                    <button
+                                        class="text-[10px] uppercase tracking-widest hover:text-neutral-500 border-b border-black pb-0.5 transition-colors details-btn bg-gray-200 px-2">Details</button>
+                                </div>
+                                <div class="flex gap-2 text-[10px] font-medium tracking-wider">
+                                    <span class="text-green-600">S</span>
+                                    <span class="text-green-600">M</span>
+                                    <span class="text-green-600">L</span>
+                                    <span class="text-green-600">XL</span>
+                                    <span class="text-green-600">XXL</span>
+                                </div>
+                            </div>
+                            <!-- Back -->
                             <div
-                                class="absolute bottom-4 left-4 bg-white/90 px-3 py-1 text-[10px] tracking-widest uppercase backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                Quick View</div>
+                                class="absolute top-0 left-0 w-full h-full backface-hidden rotate-y-180 bg-white border border-neutral-100 p-6 flex flex-col items-center justify-center text-center">
+                                <h3 class="text-xs font-medium uppercase tracking-widest mb-4">Classic Tee</h3>
+                                <p class="text-xs text-neutral-500 leading-relaxed mb-6">The perfect everyday t-shirt.
+                                    Soft, durable, and fits just right.</p>
+                                <button
+                                    class="text-[10px] border-b border-black pb-0.5 hover:text-neutral-500 transition-colors uppercase tracking-widest back-btn">Back</button>
+                            </div>
                         </div>
-                        <p class="text-[10px] tracking-widest text-neutral-500 mb-1">T-SHIRTS</p>
-                        <h3
-                            class="text-sm font-medium text-neutral-900 mb-1 group-hover:text-neutral-500 transition-colors">
-                            Classic Tee - Charcoal</h3>
-                        <p class="text-sm">IDR 185,000</p>
-                        <div class="flex gap-2 mt-2 text-[10px] font-medium tracking-wider">
-                            <span class="text-green-600">S</span>
-                            <span class="text-green-600">M</span>
-                            <span class="text-green-600">L</span>
-                            <span class="text-green-600">XL</span>
-                            <span class="text-green-600">XXL</span>
-                        </div>
-                    </a>
+                    </article>
                 </div>
             </div>
         </section>
 
         <!-- SECTION 5: PIN BUTTON PRODUCTS GRID -->
         <section class="py-20 md:py-32 px-6 lg:px-12 bg-neutral-50">
-            <div class="max-w-[1400px] mx-auto">
+            <div class="max-w-[1400px] align-center mx-auto">
                 <div class="flex items-end justify-between mb-12 reveal-on-scroll">
                     <div>
                         <span class="text-xs tracking-mega text-neutral-500 block mb-2">COLLECTION</span>
                         <h2 class="text-2xl md:text-4xl font-light tracking-wide text-neutral-900">PIN BUTTONS</h2>
                     </div>
-                    <a href="#"
-                        class="text-xs border-b border-neutral-900 pb-1 hover:text-neutral-500 transition-colors uppercase tracking-widest hidden md:block">View
-                        All Pins</a>
                 </div>
 
-                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-x-6 gap-y-10">
-                    <!-- Pin Card 2 -->
-
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-x-6 gap-y-10 align-center ">
                     <!-- Pin Card 3 -->
-                    <a href="#" class="group block reveal-on-scroll delay-200">
-                        <div
-                            class="aspect-square bg-white overflow-hidden mb-4 relative rounded-full border border-neutral-100 shadow-sm hover:shadow-md transition-shadow">
-                            <img src="img/merchBG.png" alt="Pin 3"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 p-2">
+                    <article class="group cursor-pointer reveal-on-scroll delay-200 perspective-1000">
+                        <div class="relative transition-all duration-700 transform-style-3d w-full rounded-lg border-2 border-gray-200">
+                            <!-- Front -->
+                            <div class="relative backface-hidden bg-white p-2 rounded-lg ">
+                                <div
+                                    class="aspect-square bg-white overflow-hidden mb-4 relative rounded-full border border-neutral-100 shadow-sm hover:shadow-md transition-shadow">
+                                    <img src="img/merchBG.png" alt="Pin 3"
+                                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 p-2">
+                                </div>
+                                <h3 class="text-sm font-medium text-center text-neutral-900 mb-1">Skull Pin</h3>
+                                <div class="flex flex-col items-center gap-1">
+                                    <p class="text-xs text-center text-neutral-500">IDR 45.000</p>
+                                    <button
+                                        class="text-[10px] uppercase tracking-widest hover:text-neutral-500 border-b border-black pb-0.5 transition-colors details-btn bg-gray-100 px-2 mt-1">Details</button>
+                                </div>
+                            </div>
+                            <!-- Back -->
+                            <div
+                                class="absolute top-0 left-0 w-full h-full backface-hidden rotate-y-180 bg-white border border-neutral-100 p-4 flex flex-col items-center justify-center text-center rounded-lg shadow-sm">
+                                <h3 class="text-xs font-medium uppercase tracking-widest mb-2">Skull Pin</h3>
+                                <p class="text-[10px] text-neutral-500 leading-relaxed mb-4">Metal pin button with a
+                                    unique skull design. Perfect for customizing your gear.</p>
+                                <button
+                                    class="text-[10px] border-b border-black pb-0.5 hover:text-neutral-500 transition-colors uppercase tracking-widest back-btn">Back</button>
+                            </div>
                         </div>
-                        <h3
-                            class="text-sm font-medium text-center text-neutral-900 mb-1 group-hover:text-neutral-500 transition-colors">
-                            Skull Pin</h3>
-                        <p class="text-xs text-center text-neutral-500">IDR 45.000</p>
-                    </a>
+                    </article>
+
                     <!-- Pin Card 4 -->
-                    <a href="#" class="group block reveal-on-scroll delay-300">
-                        <div
-                            class="aspect-square bg-white overflow-hidden mb-4 relative rounded-full border border-neutral-100 shadow-sm hover:shadow-md transition-shadow">
-                            <img src="img/Merch-2.jpeg  " alt="Pin 4"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 p-2">
+                    <article class="group cursor-pointer reveal-on-scroll delay-300 perspective-1000">
+                        <div class="relative transition-all duration-700 transform-style-3d w-full rounded-lg border-2 border-gray-200">
+                            <!-- Front -->
+                            <div class="relative backface-hidden bg-white p-2 rounded-lg">
+                                <div
+                                    class="aspect-square bg-white overflow-hidden mb-4 relative rounded-full border border-neutral-100 shadow-sm hover:shadow-md transition-shadow">
+                                    <img src="img/Merch-2.jpeg  " alt="Pin 4"
+                                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 p-2">
+                                </div>
+                                <h3 class="text-sm font-medium text-center text-neutral-900 mb-1">Rose Pin</h3>
+                                <div class="flex flex-col items-center gap-1">
+                                    <p class="text-xs text-center text-neutral-500">IDR 45.000</p>
+                                    <button
+                                        class="text-[10px] uppercase tracking-widest hover:text-neutral-500 border-b border-black pb-0.5 transition-colors details-btn bg-gray-100 px-2 mt-1">Details</button>
+                                </div>
+                            </div>
+                            <!-- Back -->
+                            <div
+                                class="absolute top-0 left-0 w-full h-full backface-hidden rotate-y-180 bg-white border border-neutral-100 p-4 flex flex-col items-center justify-center text-center rounded-lg shadow-sm">
+                                <h3 class="text-xs font-medium uppercase tracking-widest mb-2">Rose Pin</h3>
+                                <p class="text-[10px] text-neutral-500 leading-relaxed mb-4">Elegant rose design pin
+                                    button. Adds a touch of floral style.</p>
+                                <button
+                                    class="text-[10px] border-b border-black pb-0.5 hover:text-neutral-500 transition-colors uppercase tracking-widest back-btn">Back</button>
+                            </div>
                         </div>
-                        <h3
-                            class="text-sm font-medium text-center text-neutral-900 mb-1 group-hover:text-neutral-500 transition-colors">
-                            Rose Pin</h3>
-                        <p class="text-xs text-center text-neutral-500">IDR 45.000</p>
-                    </a>
+                    </article>
+
                     <!-- Pin Card 5 -->
-                    <a href="#" class="group block reveal-on-scroll">
-                        <div
-                            class="aspect-square bg-white overflow-hidden mb-4 relative rounded-full border border-neutral-100 shadow-sm hover:shadow-md transition-shadow">
-                            <img src="img/merchBG.png" alt="Pin 5"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 p-2">
+                    <article class="group cursor-pointer reveal-on-scroll perspective-1000">
+                        <div class="relative transition-all duration-700 transform-style-3d w-full border-2 border-gray-200">
+                            <!-- Front -->
+                            <div class="relative backface-hidden bg-white p-2 rounded-lg">
+                                <div
+                                    class="aspect-square bg-white overflow-hidden mb-4 relative rounded-full border border-neutral-100 shadow-sm hover:shadow-md transition-shadow">
+                                    <img src="img/merchBG.png" alt="Pin 5"
+                                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 p-2">
+                                </div>
+                                <h3 class="text-sm font-medium text-center text-neutral-900 mb-1">Star Pin</h3>
+                                <div class="flex flex-col items-center gap-1">
+                                    <p class="text-xs text-center text-neutral-500">IDR 45.000</p>
+                                    <button
+                                        class="text-[10px] uppercase tracking-widest hover:text-neutral-500 border-b border-black pb-0.5 transition-colors details-btn bg-gray-100 px-2 mt-1">Details</button>
+                                </div>
+                            </div>
+                            <!-- Back -->
+                            <div
+                                class="absolute top-0 left-0 w-full h-full backface-hidden rotate-y-180 bg-white border border-neutral-100 p-4 flex flex-col items-center justify-center text-center rounded-lg shadow-sm">
+                                <h3 class="text-xs font-medium uppercase tracking-widest mb-2">Star Pin</h3>
+                                <p class="text-[10px] text-neutral-500 leading-relaxed mb-4">Classic star design pin
+                                    button. A simple yet bold statement.</p>
+                                <button
+                                    class="text-[10px] border-b border-black pb-0.5 hover:text-neutral-500 transition-colors uppercase tracking-widest back-btn">Back</button>
+                            </div>
                         </div>
-                        <h3
-                            class="text-sm font-medium text-center text-neutral-900 mb-1 group-hover:text-neutral-500 transition-colors">
-                            Star Pin</h3>
-                        <p class="text-xs text-center text-neutral-500">IDR 45.000</p>
-                    </a>
+                    </article>
                 </div>
             </div>
         </section>
@@ -603,6 +780,29 @@
                 }
             });
         }
+
+        // Flip Card Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.details-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const cardInner = btn.closest('.transform-style-3d');
+                    if (cardInner) {
+                        cardInner.classList.add('rotate-y-180');
+                    }
+                });
+            });
+
+            document.querySelectorAll('.back-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const cardInner = btn.closest('.transform-style-3d');
+                    if (cardInner) {
+                        cardInner.classList.remove('rotate-y-180');
+                    }
+                });
+            });
+        });
     </script>
 
 </body>
