@@ -170,6 +170,91 @@
     .rotate-y-180 {
       transform: rotateY(180deg);
     }
+
+    /* ===== TikTok-Style Image Slider ===== */
+    .product-slider {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      touch-action: pan-y;
+    }
+
+    .product-slider-track {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      will-change: transform;
+    }
+
+    .product-slider-track.is-dragging {
+      transition: none;
+    }
+
+    .product-slider-slide {
+      min-width: 100%;
+      width: 100%;
+      height: 100%;
+      flex-shrink: 0;
+    }
+
+    .product-slider-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+
+    /* Dot Indicators */
+    .slider-dots {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 6px;
+      z-index: 10;
+      padding: 4px 8px;
+      border-radius: 20px;
+      background: rgba(0, 0, 0, 0.25);
+      backdrop-filter: blur(4px);
+    }
+
+    .slider-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.45);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: none;
+      padding: 0;
+    }
+
+    .slider-dot.active {
+      background: #ffffff;
+      transform: scale(1.3);
+      box-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+    }
+
+    /* Slide counter (optional TikTok style) */
+    .slider-counter {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 10;
+      font-size: 11px;
+      font-weight: 500;
+      color: white;
+      background: rgba(0, 0, 0, 0.35);
+      backdrop-filter: blur(4px);
+      padding: 2px 8px;
+      border-radius: 10px;
+      letter-spacing: 0.05em;
+    }
   </style>
 </head>
 
@@ -306,10 +391,19 @@
           <!-- Image flip container -->
           <div class="perspective-1000 mb-4">
             <div class="relative transition-all duration-700 transform-style-3d w-full aspect-[3/4]">
-              <!-- Front (image only) -->
-              <div class="absolute inset-0 backface-hidden bg-neutral-100 overflow-hidden">
-                <img src="img/7_DEPAN.png" alt="Essential Oversized Tee"
-                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 border-2 border-black rounded-sm">
+              <!-- Front (Slider) -->
+              <div
+                class="absolute inset-0 backface-hidden bg-neutral-100 overflow-hidden rounded-sm border-2 border-black">
+                <div class="product-slider" data-slider>
+                  <div class="product-slider-track">
+                    <div class="product-slider-slide"><img src="img/7_DEPAN.png" alt="Essential Oversized Tee - Front">
+                    </div>
+                    <div class="product-slider-slide"><img src="img/7_BELAKANG.png"
+                        alt="Essential Oversized Tee - Back"></div>
+                  </div>
+                  <div class="slider-dots"></div>
+                  <div class="slider-counter">1 / 2</div>
+                </div>
               </div>
               <!-- Back -->
               <div
@@ -318,7 +412,6 @@
                 <p class="text-xs text-neutral-500 leading-relaxed mb-6">Signature oversized fit tee crafted from
                   heavyweight cotton jersey. Features dropped shoulders and a ribbed crewneck for a relaxed, modern
                   silhouette.</p>
-
               </div>
             </div>
           </div>
@@ -351,16 +444,24 @@
         <article class="group cursor-pointer blur-in delay-100">
           <div class="perspective-1000 mb-4">
             <div class="relative transition-all duration-700 transform-style-3d w-full aspect-[3/4]">
-              <div class="absolute inset-0 backface-hidden bg-neutral-100 overflow-hidden">
-                <img src="img/5_DEPAN.png" alt="Cream Oversized Hoodie"
-                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 border-2 border-black rounded-sm">
+              <div
+                class="absolute inset-0 backface-hidden bg-neutral-100 overflow-hidden rounded-sm border-2 border-black">
+                <div class="product-slider" data-slider>
+                  <div class="product-slider-track">
+                    <div class="product-slider-slide"><img src="img/5_DEPAN.png" alt="Cream Oversized Hoodie - Front">
+                    </div>
+                    <div class="product-slider-slide"><img src="img/5_BELAKANG.png" alt="Cream Oversized Hoodie - Back">
+                    </div>
+                  </div>
+                  <div class="slider-dots"></div>
+                  <div class="slider-counter">1 / 2</div>
+                </div>
               </div>
               <div
                 class="absolute inset-0 backface-hidden rotate-y-180 bg-white border border-neutral-100 p-6 flex flex-col items-center justify-center text-center rounded-sm">
                 <h3 class="text-xs font-medium uppercase tracking-widest mb-4">Cream Oversized Hoodie</h3>
                 <p class="text-xs text-neutral-500 leading-relaxed mb-6">Premium heavyweight fleece hoodie in a
                   relaxed oversized cut. Double-layered hood and kangaroo pocket for maximum comfort and style.</p>
-
               </div>
             </div>
           </div>
@@ -390,16 +491,22 @@
         <article class="group cursor-pointer blur-in delay-200">
           <div class="perspective-1000 mb-4">
             <div class="relative transition-all duration-700 transform-style-3d w-full aspect-[3/4]">
-              <div class="absolute inset-0 backface-hidden bg-neutral-100 overflow-hidden">
-                <img src="img/4.png" alt="Boxy Fit Tee"
-                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 border-2 border-black rounded-sm">
+              <div
+                class="absolute inset-0 backface-hidden bg-neutral-100 overflow-hidden rounded-sm border-2 border-black">
+                <div class="product-slider" data-slider>
+                  <div class="product-slider-track">
+                    <div class="product-slider-slide"><img src="img/4.png" alt="Boxy Fit Tee - Front"></div>
+                    <div class="product-slider-slide"><img src="img/3_DEPAN.png" alt="Boxy Fit Tee - Alt"></div>
+                  </div>
+                  <div class="slider-dots"></div>
+                  <div class="slider-counter">1 / 2</div>
+                </div>
               </div>
               <div
                 class="absolute inset-0 backface-hidden rotate-y-180 bg-white border border-neutral-100 p-6 flex flex-col items-center justify-center text-center rounded-sm">
                 <h3 class="text-xs font-medium uppercase tracking-widest mb-4">Boxy Fit Tee</h3>
                 <p class="text-xs text-neutral-500 leading-relaxed mb-6">Boxy silhouette tee with a cropped length.
                   Garment-dyed for a vintage feel and soft hand-touch. Perfect for layering.</p>
-
               </div>
             </div>
           </div>
@@ -429,16 +536,22 @@
         <article class="group cursor-pointer blur-in delay-300">
           <div class="perspective-1000 mb-4">
             <div class="relative transition-all duration-700 transform-style-3d w-full aspect-[3/4]">
-              <div class="absolute inset-0 backface-hidden bg-neutral-100 overflow-hidden">
-                <img src="img/1.png" alt="Essential Sweatshirt"
-                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 border-2 border-black rounded-sm">
+              <div
+                class="absolute inset-0 backface-hidden bg-neutral-100 overflow-hidden rounded-sm border-2 border-black">
+                <div class="product-slider" data-slider>
+                  <div class="product-slider-track">
+                    <div class="product-slider-slide"><img src="img/1.png" alt="Essential Sweatshirt - Front"></div>
+                    <div class="product-slider-slide"><img src="img/2_DEPAN.png" alt="Essential Sweatshirt - Alt"></div>
+                  </div>
+                  <div class="slider-dots"></div>
+                  <div class="slider-counter">1 / 2</div>
+                </div>
               </div>
               <div
                 class="absolute inset-0 backface-hidden rotate-y-180 bg-white border border-neutral-100 p-6 flex flex-col items-center justify-center text-center rounded-sm">
                 <h3 class="text-xs font-medium uppercase tracking-widest mb-4">Essential Sweatshirt</h3>
                 <p class="text-xs text-neutral-500 leading-relaxed mb-6">Classic crewneck sweatshirt reimagined with a
                   modern loose fit. Constructed from French Terry cotton with durable ribbed trims.</p>
-
               </div>
             </div>
           </div>
@@ -474,7 +587,7 @@
             <div class="absolute inset-0 flex flex-col justify-center items-center text-center text-white p-6">
               <p class="text-xs tracking-mega mb-2">LIMITED EDITION</p>
               <h2 class="text-3xl md:text-5xl font-light tracking-widest mb-6">THE EDGE SERIES</h2>
-              
+
             </div>
           </div>
         </div>
@@ -483,16 +596,22 @@
         <article class="group cursor-pointer blur-in">
           <div class="perspective-1000 mb-4">
             <div class="relative transition-all duration-700 transform-style-3d w-full aspect-[3/4]">
-              <div class="absolute inset-0 backface-hidden bg-neutral-100 overflow-hidden">
-                <img src="img/1.png" alt="Vintage Wash Tee"
-                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 border-2 border-black rounded-sm">
+              <div
+                class="absolute inset-0 backface-hidden bg-neutral-100 overflow-hidden rounded-sm border-2 border-black">
+                <div class="product-slider" data-slider>
+                  <div class="product-slider-track">
+                    <div class="product-slider-slide"><img src="img/3_DEPAN.png" alt="Vintage Wash Tee - Front"></div>
+                    <div class="product-slider-slide"><img src="img/3_BELAKANG.png" alt="Vintage Wash Tee - Back"></div>
+                  </div>
+                  <div class="slider-dots"></div>
+                  <div class="slider-counter">1 / 2</div>
+                </div>
               </div>
               <div
                 class="absolute inset-0 backface-hidden rotate-y-180 bg-white border border-neutral-100 p-6 flex flex-col items-center justify-center text-center rounded-sm">
                 <h3 class="text-xs font-medium uppercase tracking-widest mb-4">Vintage Wash Tee</h3>
                 <p class="text-xs text-neutral-500 leading-relaxed mb-6">Achieve the perfect lived-in look with our
                   Vintage Wash Tee. Softened fabric and unique color treatments make each piece unique.</p>
-
               </div>
             </div>
           </div>
@@ -522,16 +641,22 @@
         <article class="group cursor-pointer blur-in delay-100">
           <div class="perspective-1000 mb-4">
             <div class="relative transition-all duration-700 transform-style-3d w-full aspect-[3/4]">
-              <div class="absolute inset-0 backface-hidden bg-neutral-100 overflow-hidden">
-                <img src="img/8.png" alt="Striped Tee"
-                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 border-2 border-black rounded-sm">
+              <div
+                class="absolute inset-0 backface-hidden bg-neutral-100 overflow-hidden rounded-sm border-2 border-black">
+                <div class="product-slider" data-slider>
+                  <div class="product-slider-track">
+                    <div class="product-slider-slide"><img src="img/8.png" alt="Striped Tee - Front"></div>
+                    <div class="product-slider-slide"><img src="img/2_DEPAN.png" alt="Striped Tee - Alt"></div>
+                  </div>
+                  <div class="slider-dots"></div>
+                  <div class="slider-counter">1 / 2</div>
+                </div>
               </div>
               <div
                 class="absolute inset-0 backface-hidden rotate-y-180 bg-white border border-neutral-100 p-6 flex flex-col items-center justify-center text-center rounded-sm">
                 <h3 class="text-xs font-medium uppercase tracking-widest mb-4">Striped Daily Tee</h3>
                 <p class="text-xs text-neutral-500 leading-relaxed mb-6">A versatile staple for any wardrobe. This
                   striped tee features a comfortable regular fit and is made from breathable cotton.</p>
-
               </div>
             </div>
           </div>
@@ -562,16 +687,23 @@
         <article class="group cursor-pointer blur-in delay-200">
           <div class="perspective-1000 mb-4">
             <div class="relative transition-all duration-700 transform-style-3d w-full aspect-[3/4]">
-              <div class="absolute inset-0 backface-hidden bg-neutral-100 overflow-hidden">
-                <img src="img/9.png" alt="Long Sleeve"
-                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 border-2 border-black rounded-sm">
+              <div
+                class="absolute inset-0 backface-hidden bg-neutral-100 overflow-hidden rounded-sm border-2 border-black">
+                <div class="product-slider" data-slider>
+                  <div class="product-slider-track">
+                    <div class="product-slider-slide"><img src="img/9.png" alt="Graphic Long Sleeve - Front"></div>
+                    <div class="product-slider-slide"><img src="img/2_BELAKANG.png" alt="Graphic Long Sleeve - Alt">
+                    </div>
+                  </div>
+                  <div class="slider-dots"></div>
+                  <div class="slider-counter">1 / 2</div>
+                </div>
               </div>
               <div
                 class="absolute inset-0 backface-hidden rotate-y-180 bg-white border border-neutral-100 p-6 flex flex-col items-center justify-center text-center rounded-sm">
                 <h3 class="text-xs font-medium uppercase tracking-widest mb-4">Graphic Long Sleeve</h3>
                 <p class="text-xs text-neutral-500 leading-relaxed mb-6">Statement long sleeve tee featuring bold
                   graphic prints. Perfect for transitional weather and layering under jackets.</p>
-
               </div>
             </div>
           </div>
@@ -602,16 +734,22 @@
         <article class="group cursor-pointer blur-in delay-300">
           <div class="perspective-1000 mb-4">
             <div class="relative transition-all duration-700 transform-style-3d w-full aspect-[3/4]">
-              <div class="absolute inset-0 backface-hidden bg-neutral-100 overflow-hidden">
-                <img src="img/4.png" alt="Signature Tee"
-                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 border-2 border-black rounded-sm">
+              <div
+                class="absolute inset-0 backface-hidden bg-neutral-100 overflow-hidden rounded-sm border-2 border-black">
+                <div class="product-slider" data-slider>
+                  <div class="product-slider-track">
+                    <div class="product-slider-slide"><img src="img/4.png" alt="Signature Logo Tee - Front"></div>
+                    <div class="product-slider-slide"><img src="img/1.png" alt="Signature Logo Tee - Alt"></div>
+                  </div>
+                  <div class="slider-dots"></div>
+                  <div class="slider-counter">1 / 2</div>
+                </div>
               </div>
               <div
                 class="absolute inset-0 backface-hidden rotate-y-180 bg-white border border-neutral-100 p-6 flex flex-col items-center justify-center text-center rounded-sm">
                 <h3 class="text-xs font-medium uppercase tracking-widest mb-4">Signature Logo Tee</h3>
                 <p class="text-xs text-neutral-500 leading-relaxed mb-6">Our iconic logo tee. Clean, minimal, and
                   essential. Made from 100% organic cotton for everyday comfort.</p>
-
               </div>
             </div>
           </div>
@@ -655,6 +793,141 @@
 
   <!-- Scripts -->
   <script>
+    // ===== TikTok-Style Product Slider =====
+    class ProductSlider {
+      constructor(el) {
+        this.el = el;
+        this.track = el.querySelector('.product-slider-track');
+        this.slides = el.querySelectorAll('.product-slider-slide');
+        this.dotsContainer = el.querySelector('.slider-dots');
+        this.counter = el.querySelector('.slider-counter');
+        this.currentIndex = 0;
+        this.totalSlides = this.slides.length;
+        this.isDragging = false;
+        this.startX = 0;
+        this.currentTranslate = 0;
+        this.prevTranslate = 0;
+        this.animationID = null;
+
+        this.init();
+      }
+
+      init() {
+        // Create dots
+        for (let i = 0; i < this.totalSlides; i++) {
+          const dot = document.createElement('button');
+          dot.classList.add('slider-dot');
+          if (i === 0) dot.classList.add('active');
+          dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+          dot.addEventListener('click', (e) => {
+            e.stopPropagation();
+            this.goToSlide(i);
+          });
+          this.dotsContainer.appendChild(dot);
+        }
+
+        // Touch events
+        this.el.addEventListener('touchstart', this.touchStart.bind(this), { passive: true });
+        this.el.addEventListener('touchmove', this.touchMove.bind(this), { passive: false });
+        this.el.addEventListener('touchend', this.touchEnd.bind(this));
+
+        // Mouse events (for desktop)
+        this.el.addEventListener('mousedown', this.touchStart.bind(this));
+        this.el.addEventListener('mousemove', this.touchMove.bind(this));
+        this.el.addEventListener('mouseup', this.touchEnd.bind(this));
+        this.el.addEventListener('mouseleave', () => {
+          if (this.isDragging) this.touchEnd();
+        });
+
+        // Prevent context menu on long press
+        this.el.addEventListener('contextmenu', (e) => e.preventDefault());
+      }
+
+      getPositionX(event) {
+        return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
+      }
+
+      touchStart(event) {
+        this.isDragging = true;
+        this.startX = this.getPositionX(event);
+        this.track.classList.add('is-dragging');
+        this.animationID = requestAnimationFrame(this.animation.bind(this));
+      }
+
+      touchMove(event) {
+        if (!this.isDragging) return;
+        const currentX = this.getPositionX(event);
+        const diff = currentX - this.startX;
+        this.currentTranslate = this.prevTranslate + diff;
+
+        // Prevent default to stop page scrolling while swiping horizontally
+        if (Math.abs(diff) > 5) {
+          event.preventDefault();
+        }
+      }
+
+      touchEnd() {
+        this.isDragging = false;
+        cancelAnimationFrame(this.animationID);
+        this.track.classList.remove('is-dragging');
+
+        const movedBy = this.currentTranslate - this.prevTranslate;
+        const threshold = this.el.offsetWidth * 0.15; // 15% swipe threshold
+
+        if (movedBy < -threshold && this.currentIndex < this.totalSlides - 1) {
+          this.currentIndex++;
+        } else if (movedBy > threshold && this.currentIndex > 0) {
+          this.currentIndex--;
+        }
+
+        this.setPositionByIndex();
+        this.updateDots();
+        this.updateCounter();
+      }
+
+      animation() {
+        this.setSliderPosition();
+        if (this.isDragging) {
+          requestAnimationFrame(this.animation.bind(this));
+        }
+      }
+
+      setSliderPosition() {
+        this.track.style.transform = `translateX(${this.currentTranslate}px)`;
+      }
+
+      setPositionByIndex() {
+        this.currentTranslate = this.currentIndex * -this.el.offsetWidth;
+        this.prevTranslate = this.currentTranslate;
+        this.track.style.transform = `translateX(${this.currentTranslate}px)`;
+      }
+
+      goToSlide(index) {
+        this.currentIndex = index;
+        this.setPositionByIndex();
+        this.updateDots();
+        this.updateCounter();
+      }
+
+      updateDots() {
+        const dots = this.dotsContainer.querySelectorAll('.slider-dot');
+        dots.forEach((dot, i) => {
+          dot.classList.toggle('active', i === this.currentIndex);
+        });
+      }
+
+      updateCounter() {
+        if (this.counter) {
+          this.counter.textContent = `${this.currentIndex + 1} / ${this.totalSlides}`;
+        }
+      }
+    }
+
+    // Initialize all sliders
+    document.querySelectorAll('[data-slider]').forEach(slider => {
+      new ProductSlider(slider);
+    });
+
     // Navigation
     const menuToggle = document.getElementById('menuToggle');
     const mobileMenu = document.getElementById('mobileMenu');
@@ -685,18 +958,15 @@
     document.querySelectorAll('.blur-in').forEach(el => observer.observe(el));
 
     // Flip Card Interaction
-    // Flip Card Logic - Combined Details/Back Button
     document.querySelectorAll('.details-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
-        e.stopPropagation(); // Prevent any parent click events
+        e.stopPropagation();
         const article = btn.closest('article');
         const cardInner = article ? article.querySelector('.transform-style-3d') : null;
 
         if (cardInner) {
-          // Animate button
           btn.classList.add('opacity-0', 'scale-90');
 
-          // Toggle flip immediately
           const isFlippingToBack = !cardInner.classList.contains('rotate-y-180');
           if (isFlippingToBack) {
             cardInner.classList.add('rotate-y-180');
@@ -704,7 +974,6 @@
             cardInner.classList.remove('rotate-y-180');
           }
 
-          // Change text after fade out
           setTimeout(() => {
             btn.textContent = isFlippingToBack ? 'Back' : 'Details';
             btn.classList.remove('opacity-0', 'scale-90');
