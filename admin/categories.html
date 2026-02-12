@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collarbone Admin — Categories</title>
+    <meta name="description" content="Manage product categories">
+    <link rel="icon" type="image/png" href="../img/collarbone.jpg">
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+    <div class="admin-layout">
+        <div class="sidebar-overlay"></div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="../img/collarbone.jpg" alt="Collarbone" class="sidebar-logo">
+                <div class="sidebar-brand">
+                    <h2>Collarbone</h2><span>Admin Panel</span>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <span class="sidebar-nav-label">Main</span>
+                <a href="index.html" class="sidebar-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <rect x="3" y="3" width="7" height="9" rx="1" />
+                        <rect x="14" y="3" width="7" height="5" rx="1" />
+                        <rect x="14" y="12" width="7" height="9" rx="1" />
+                        <rect x="3" y="16" width="7" height="5" rx="1" />
+                    </svg>
+                    Dashboard
+                </a>
+                <a href="new_arrivals.html" class="sidebar-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                        <line x1="3" y1="6" x2="21" y2="6" />
+                        <path d="M16 10a4 4 0 0 1-8 0" />
+                    </svg>
+                    New Arrivals <span class="badge">8</span>
+                </a>
+                <a href="categories.html" class="sidebar-link active">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M12 2 2 7l10 5 10-5-10-5z" />
+                        <path d="M2 17l10 5 10-5" />
+                        <path d="M2 12l10 5 10-5" />
+                    </svg>
+                    Categories <span class="badge">2</span>
+                </a>
+                <span class="sidebar-nav-label">Content</span>
+                <a href="#" class="sidebar-link" onclick="showToast('Hero slider managed from Dashboard page','info')">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <rect x="2" y="7" width="20" height="15" rx="2" ry="2" />
+                        <polyline points="17 2 12 7 7 2" />
+                    </svg>
+                    Hero Slider
+                </a>
+                <span class="sidebar-nav-label">Settings</span>
+                <a href="#" class="sidebar-link" onclick="showToast('Settings coming soon','info')">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="3" />
+                        <path
+                            d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
+                    </svg>
+                    Settings
+                </a>
+                <a href="../categories.html" class="sidebar-link" style="margin-top:auto;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                        <polyline points="15 3 21 3 21 9" />
+                        <line x1="10" y1="14" x2="21" y2="3" />
+                    </svg>
+                    View Live Site
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="sidebar-footer-avatar">CB</div>
+                <div class="sidebar-footer-info"><span class="name">Collarbone</span><span
+                        class="role">Administrator</span></div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <header class="topbar">
+                <div class="topbar-left">
+                    <button class="mobile-menu-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="3" x2="21" y1="6" y2="6" />
+                            <line x1="3" x2="21" y1="12" y2="12" />
+                            <line x1="3" x2="21" y1="18" y2="18" />
+                        </svg>
+                    </button>
+                    <div>
+                        <h1 class="topbar-title">Categories</h1>
+                        <div class="topbar-breadcrumb"><a href="index.html">Admin</a><span
+                                class="separator">›</span><span>Categories</span></div>
+                    </div>
+                </div>
+                <div class="topbar-right">
+                    <div class="topbar-search">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8" />
+                            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                        </svg>
+                        <input type="text" placeholder="Search categories…">
+                    </div>
+                </div>
+            </header>
+
+            <div class="page-content">
+                <!-- Stats -->
+                <div class="stats-grid">
+                    <div class="stat-card slide-in-up stagger-1">
+                        <div class="stat-card-header">
+                            <div class="stat-card-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 2 2 7l10 5 10-5-10-5z" />
+                                    <path d="M2 17l10 5 10-5" />
+                                    <path d="M2 12l10 5 10-5" />
+                                </svg></div>
+                        </div>
+                        <div class="stat-card-value">2</div>
+                        <div class="stat-card-label">Total Categories</div>
+                    </div>
+                    <div class="stat-card slide-in-up stagger-2">
+                        <div class="stat-card-header">
+                            <div class="stat-card-icon teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M20.38 3.46L16 2 12 5.5 8 2 3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z" />
+                                </svg></div>
+                        </div>
+                        <div class="stat-card-value">6</div>
+                        <div class="stat-card-label">T-Shirt Products</div>
+                    </div>
+                    <div class="stat-card slide-in-up stagger-3">
+                        <div class="stat-card-header">
+                            <div class="stat-card-icon yellow"><svg viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <path d="m4.93 4.93 14.14 14.14" />
+                                </svg></div>
+                        </div>
+                        <div class="stat-card-value">4</div>
+                        <div class="stat-card-label">Pin Button Products</div>
+                    </div>
+                    <div class="stat-card slide-in-up stagger-4">
+                        <div class="stat-card-header">
+                            <div class="stat-card-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                    <polyline points="22 4 12 14.01 9 11.01" />
+                                </svg></div>
+                        </div>
+                        <div class="stat-card-value">10</div>
+                        <div class="stat-card-label">Total Products</div>
+                    </div>
+                </div>
+
+                <!-- Category Cards -->
+                <div class="section-header slide-in-up" style="animation-delay:0.2s;opacity:0;">
+                    <div>
+                        <h2 class="section-title">Category Overview</h2>
+                        <p class="section-subtitle">Manage your product categories</p>
+                    </div>
+                    <button class="btn btn-primary btn-sm" onclick="openModal('addCategoryModal')">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="5" x2="12" y2="19" />
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                        </svg>
+                        Add Category
+                    </button>
+                </div>
+
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:32px;" class="slide-in-up"
+                    id="category-cards-grid">
+                    <!-- T-Shirts Category Card -->
+                    <div class="card" style="animation-delay:0.25s;">
+                        <div class="card-header">
+                            <div style="display:flex;align-items:center;gap:10px;">
+                                <div class="stat-card-icon teal" style="width:36px;height:36px;"><svg
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;">
+                                        <path
+                                            d="M20.38 3.46L16 2 12 5.5 8 2 3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z" />
+                                    </svg></div>
+                                <div>
+                                    <h3 class="card-title">T-Shirts</h3><span
+                                        style="font-size:11px;color:var(--text-muted);">6 products</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-secondary btn-sm" onclick="editCategory('tshirts')">Edit</button>
+                        </div>
+                        <div class="card-body" style="padding:16px 24px;">
+                            <p style="font-size:12px;color:var(--text-secondary);line-height:1.6;margin-bottom:12px;">
+                                Koleksi kaos yang didesain dengan material terbaik. Mulai dari oversized fit, boxy fit,
+                                hingga regular — setiap potong diciptakan untuk gaya urban.</p>
+                            <div style="display:flex;gap:8px;">
+                                <span class="status-badge active"><span class="dot"></span>6 Active</span>
+                                <span class="status-badge archived"><span class="dot"></span>0 Draft</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Pin Buttons Category Card -->
+                    <div class="card" style="animation-delay:0.3s;">
+                        <div class="card-header">
+                            <div style="display:flex;align-items:center;gap:10px;">
+                                <div class="stat-card-icon yellow" style="width:36px;height:36px;"><svg
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <path d="m4.93 4.93 14.14 14.14" />
+                                    </svg></div>
+                                <div>
+                                    <h3 class="card-title">Pin Buttons</h3><span
+                                        style="font-size:11px;color:var(--text-muted);">4 products</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-secondary btn-sm" onclick="editCategory('pins')">Edit</button>
+                        </div>
+                        <div class="card-body" style="padding:16px 24px;">
+                            <p style="font-size:12px;color:var(--text-secondary);line-height:1.6;margin-bottom:12px;">
+                                Aksesori pin kecil yang bisa dipasang di topi, jaket, atau tas. Masing-masing pin
+                                menampilkan desain unik Collarbone.</p>
+                            <div style="display:flex;gap:8px;">
+                                <span class="status-badge active"><span class="dot"></span>4 Active</span>
+                                <span class="status-badge archived"><span class="dot"></span>0 Draft</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- T-Shirts Products Table -->
+                <div class="data-table-wrapper slide-in-up" style="animation-delay:0.35s;opacity:0;margin-bottom:24px;">
+                    <div class="data-table-toolbar">
+                        <div class="data-table-toolbar-left">
+                            <h2 class="card-title">T-Shirt Products</h2><span
+                                style="font-size:11px;color:var(--text-muted);">6 items</span>
+                        </div>
+                        <div class="data-table-toolbar-right">
+                            <button class="btn btn-primary btn-sm" onclick="openModal('addTshirtModal')">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="12" y1="5" x2="12" y2="19" />
+                                    <line x1="5" y1="12" x2="19" y2="12" />
+                                </svg>
+                                Add T-Shirt
+                            </button>
+                        </div>
+                    </div>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Price</th>
+                                <th>Sizes</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr data-product-id="ts-1">
+                                <td>
+                                    <div class="table-product"><img src="../img/2_DEPAN.png" class="table-product-img">
+                                        <div class="table-product-info"><span class="table-product-name">Straight Edge -
+                                                Black</span><span class="table-product-cat">Oversized</span></div>
+                                    </div>
+                                </td>
+                                <td style="font-weight:500;">Rp 180.000</td>
+                                <td>
+                                    <div class="size-tags"><span class="size-tag available">S</span><span
+                                            class="size-tag available">M</span><span
+                                            class="size-tag available">L</span><span
+                                            class="size-tag available">XL</span></div>
+                                </td>
+                                <td><span class="status-badge active"><span class="dot"></span>Active</span></td>
+                                <td>
+                                    <div class="table-actions"><button class="btn-icon" onclick="editProduct('ts-1')"
+                                            title="Edit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+                                                <path d="M18.5 2.5a2.12 2.12 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+                                            </svg></button><button class="btn-icon danger"
+                                            onclick="deleteProduct('ts-1','Straight Edge - Black')" title="Delete"><svg
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <polyline points="3 6 5 6 21 6" />
+                                                <path
+                                                    d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                                            </svg></button></div>
+                                </td>
+                            </tr>
+                            <tr data-product-id="ts-2">
+                                <td>
+                                    <div class="table-product"><img src="../img/3_DEPAN.png" class="table-product-img">
+                                        <div class="table-product-info"><span class="table-product-name">Straight Edge -
+                                                Green</span><span class="table-product-cat">Oversized</span></div>
+                                    </div>
+                                </td>
+                                <td style="font-weight:500;">Rp 850.000</td>
+                                <td>
+                                    <div class="size-tags"><span class="size-tag available">S</span><span
+                                            class="size-tag available">M</span><span
+                                            class="size-tag available">L</span><span class="size-tag out">XL</span>
+                                    </div>
+                                </td>
+                                <td><span class="status-badge active"><span class="dot"></span>Active</span></td>
+                                <td>
+                                    <div class="table-actions"><button class="btn-icon" onclick="editProduct('ts-2')"
+                                            title="Edit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+                                                <path d="M18.5 2.5a2.12 2.12 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+                                            </svg></button><button class="btn-icon danger"
+                                            onclick="deleteProduct('ts-2','Straight Edge - Green')" title="Delete"><svg
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <polyline points="3 6 5 6 21 6" />
+                                                <path
+                                                    d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                                            </svg></button></div>
+                                </td>
+                            </tr>
+                            <tr data-product-id="ts-3">
+                                <td>
+                                    <div class="table-product"><img src="../img/5_DEPAN.png" class="table-product-img">
+                                        <div class="table-product-info"><span class="table-product-name">Adalah
+                                                Pokonya</span><span class="table-product-cat">Regular Fit</span></div>
+                                    </div>
+                                </td>
+                                <td style="font-weight:500;">Rp 320.000</td>
+                                <td>
+                                    <div class="size-tags"><span class="size-tag available">M</span><span
+                                            class="size-tag available">L</span><span
+                                            class="size-tag available">XL</span></div>
+                                </td>
+                                <td><span class="status-badge active"><span class="dot"></span>Active</span></td>
+                                <td>
+                                    <div class="table-actions"><button class="btn-icon" onclick="editProduct('ts-3')"
+                                            title="Edit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+                                                <path d="M18.5 2.5a2.12 2.12 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+                                            </svg></button><button class="btn-icon danger"
+                                            onclick="deleteProduct('ts-3','Adalah Pokonya')" title="Delete"><svg
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <polyline points="3 6 5 6 21 6" />
+                                                <path
+                                                    d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                                            </svg></button></div>
+                                </td>
+                            </tr>
+                            <tr data-product-id="ts-4">
+                                <td>
+                                    <div class="table-product"><img src="../img/7_DEPAN.png" class="table-product-img">
+                                        <div class="table-product-info"><span class="table-product-name">Essential
+                                                Oversized Tee</span><span class="table-product-cat">Oversized</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td style="font-weight:500;">Rp 450.000</td>
+                                <td>
+                                    <div class="size-tags"><span class="size-tag available">S</span><span
+                                            class="size-tag available">M</span><span
+                                            class="size-tag available">L</span><span
+                                            class="size-tag available">XL</span></div>
+                                </td>
+                                <td><span class="status-badge active"><span class="dot"></span>Active</span></td>
+                                <td>
+                                    <div class="table-actions"><button class="btn-icon" onclick="editProduct('ts-4')"
+                                            title="Edit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+                                                <path d="M18.5 2.5a2.12 2.12 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+                                            </svg></button><button class="btn-icon danger"
+                                            onclick="deleteProduct('ts-4','Essential Oversized Tee')"
+                                            title="Delete"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <polyline points="3 6 5 6 21 6" />
+                                                <path
+                                                    d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                                            </svg></button></div>
+                                </td>
+                            </tr>
+                            <tr data-product-id="ts-5">
+                                <td>
+                                    <div class="table-product"><img src="../img/4.png" class="table-product-img">
+                                        <div class="table-product-info"><span class="table-product-name">Boxy Fit Tee -
+                                                Charcoal</span><span class="table-product-cat">Boxy Fit</span></div>
+                                    </div>
+                                </td>
+                                <td style="font-weight:500;">Rp 490.000</td>
+                                <td>
+                                    <div class="size-tags"><span class="size-tag available">S</span><span
+                                            class="size-tag available">M</span><span class="size-tag available">L</span>
+                                    </div>
+                                </td>
+                                <td><span class="status-badge active"><span class="dot"></span>Active</span></td>
+                                <td>
+                                    <div class="table-actions"><button class="btn-icon" onclick="editProduct('ts-5')"
+                                            title="Edit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+                                                <path d="M18.5 2.5a2.12 2.12 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+                                            </svg></button><button class="btn-icon danger"
+                                            onclick="deleteProduct('ts-5','Boxy Fit Tee')" title="Delete"><svg
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <polyline points="3 6 5 6 21 6" />
+                                                <path
+                                                    d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                                            </svg></button></div>
+                                </td>
+                            </tr>
+                            <tr data-product-id="ts-6">
+                                <td>
+                                    <div class="table-product"><img src="../img/1.png" class="table-product-img">
+                                        <div class="table-product-info"><span class="table-product-name">Classic Crew
+                                                Tee</span><span class="table-product-cat">Regular Fit</span></div>
+                                    </div>
+                                </td>
+                                <td style="font-weight:500;">Rp 280.000</td>
+                                <td>
+                                    <div class="size-tags"><span class="size-tag available">S</span><span
+                                            class="size-tag available">M</span><span class="size-tag out">L</span><span
+                                            class="size-tag out">XL</span></div>
+                                </td>
+                                <td><span class="status-badge draft"><span class="dot"></span>Low Stock</span></td>
+                                <td>
+                                    <div class="table-actions"><button class="btn-icon" onclick="editProduct('ts-6')"
+                                            title="Edit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+                                                <path d="M18.5 2.5a2.12 2.12 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+                                            </svg></button><button class="btn-icon danger"
+                                            onclick="deleteProduct('ts-6','Classic Crew Tee')" title="Delete"><svg
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <polyline points="3 6 5 6 21 6" />
+                                                <path
+                                                    d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                                            </svg></button></div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Pin Button Products Table -->
+                <div class="data-table-wrapper slide-in-up" style="animation-delay:0.4s;opacity:0;">
+                    <div class="data-table-toolbar">
+                        <div class="data-table-toolbar-left">
+                            <h2 class="card-title">Pin Button Products</h2><span
+                                style="font-size:11px;color:var(--text-muted);">4 items</span>
+                        </div>
+                        <div class="data-table-toolbar-right">
+                            <button class="btn btn-primary btn-sm" onclick="openModal('addPinModal')">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="12" y1="5" x2="12" y2="19" />
+                                    <line x1="5" y1="12" x2="19" y2="12" />
+                                </svg>
+                                Add Pin Button
+                            </button>
+                        </div>
+                    </div>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Price</th>
+                                <th>Variants</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr data-product-id="pb-1">
+                                <td>
+                                    <div class="table-product"><img src="../img/Merch-3.jpeg" class="table-product-img">
+                                        <div class="table-product-info"><span class="table-product-name">Bundling Pin
+                                                Set</span><span class="table-product-cat">4-in-1 Pack</span></div>
+                                    </div>
+                                </td>
+                                <td style="font-weight:500;">Rp 20.000</td>
+                                <td><span style="font-size:12px;color:var(--text-secondary);">4 designs</span></td>
+                                <td><span class="status-badge active"><span class="dot"></span>Active</span></td>
+                                <td>
+                                    <div class="table-actions"><button class="btn-icon" onclick="editProduct('pb-1')"
+                                            title="Edit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+                                                <path d="M18.5 2.5a2.12 2.12 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+                                            </svg></button><button class="btn-icon danger"
+                                            onclick="deleteProduct('pb-1','Bundling Pin Set')" title="Delete"><svg
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <polyline points="3 6 5 6 21 6" />
+                                                <path
+                                                    d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                                            </svg></button></div>
+                                </td>
+                            </tr>
+                            <tr data-product-id="pb-2">
+                                <td>
+                                    <div class="table-product"><img src="../img/Merch-2.jpeg" class="table-product-img">
+                                        <div class="table-product-info"><span class="table-product-name">Collarbone Logo
+                                                Pin</span><span class="table-product-cat">Single</span></div>
+                                    </div>
+                                </td>
+                                <td style="font-weight:500;">Rp 15.000</td>
+                                <td><span style="font-size:12px;color:var(--text-secondary);">1 design</span></td>
+                                <td><span class="status-badge active"><span class="dot"></span>Active</span></td>
+                                <td>
+                                    <div class="table-actions"><button class="btn-icon" onclick="editProduct('pb-2')"
+                                            title="Edit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+                                                <path d="M18.5 2.5a2.12 2.12 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+                                            </svg></button><button class="btn-icon danger"
+                                            onclick="deleteProduct('pb-2','Collarbone Logo Pin')" title="Delete"><svg
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <polyline points="3 6 5 6 21 6" />
+                                                <path
+                                                    d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                                            </svg></button></div>
+                                </td>
+                            </tr>
+                            <tr data-product-id="pb-3">
+                                <td>
+                                    <div class="table-product"><img src="../img/Merch-1.jpeg" class="table-product-img">
+                                        <div class="table-product-info"><span class="table-product-name">Skull Art
+                                                Pin</span><span class="table-product-cat">Single</span></div>
+                                    </div>
+                                </td>
+                                <td style="font-weight:500;">Rp 15.000</td>
+                                <td><span style="font-size:12px;color:var(--text-secondary);">1 design</span></td>
+                                <td><span class="status-badge active"><span class="dot"></span>Active</span></td>
+                                <td>
+                                    <div class="table-actions"><button class="btn-icon" onclick="editProduct('pb-3')"
+                                            title="Edit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+                                                <path d="M18.5 2.5a2.12 2.12 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+                                            </svg></button><button class="btn-icon danger"
+                                            onclick="deleteProduct('pb-3','Skull Art Pin')" title="Delete"><svg
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <polyline points="3 6 5 6 21 6" />
+                                                <path
+                                                    d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                                            </svg></button></div>
+                                </td>
+                            </tr>
+                            <tr data-product-id="pb-4">
+                                <td>
+                                    <div class="table-product"><img src="../img/Merch-4.jpeg" class="table-product-img">
+                                        <div class="table-product-info"><span class="table-product-name">Abstract Series
+                                                Pin</span><span class="table-product-cat">Single</span></div>
+                                    </div>
+                                </td>
+                                <td style="font-weight:500;">Rp 15.000</td>
+                                <td><span style="font-size:12px;color:var(--text-secondary);">1 design</span></td>
+                                <td><span class="status-badge active"><span class="dot"></span>Active</span></td>
+                                <td>
+                                    <div class="table-actions"><button class="btn-icon" onclick="editProduct('pb-4')"
+                                            title="Edit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+                                                <path d="M18.5 2.5a2.12 2.12 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+                                            </svg></button><button class="btn-icon danger"
+                                            onclick="deleteProduct('pb-4','Abstract Series Pin')" title="Delete"><svg
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <polyline points="3 6 5 6 21 6" />
+                                                <path
+                                                    d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                                            </svg></button></div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div id="addCategoryModal" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 class="modal-title">Add Category</h2><button class="modal-close"
+                    onclick="closeModal('addCategoryModal')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 6 6 18" />
+                        <path d="m6 6 12 12" />
+                    </svg></button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group"><label class="form-label">Category Name</label><input type="text"
+                        class="form-input" placeholder="e.g. Hoodies"></div>
+                <div class="form-group"><label class="form-label">Description</label><textarea class="form-input"
+                        placeholder="Describe this category…"></textarea></div>
+                <div class="form-group"><label class="form-label">Section Image</label>
+                    <div class="image-upload-area"><input type="file" accept="image/*" style="display:none;"><svg
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                            <circle cx="8.5" cy="8.5" r="1.5" />
+                            <polyline points="21 15 16 10 5 21" />
+                        </svg>
+                        <p><span>Click to upload</span> or drag and drop</p>
+                    </div>
+                    <div class="image-preview-grid"></div>
+                </div>
+            </div>
+            <div class="modal-footer"><button class="btn btn-secondary"
+                    onclick="closeModal('addCategoryModal')">Cancel</button><button class="btn btn-primary"
+                    onclick="showToast('Category created!','success'); closeModal('addCategoryModal')">Create
+                    Category</button></div>
+        </div>
+    </div>
+
+    <div id="addTshirtModal" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 class="modal-title">Add T-Shirt</h2><button class="modal-close"
+                    onclick="closeModal('addTshirtModal')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 6 6 18" />
+                        <path d="m6 6 12 12" />
+                    </svg></button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group"><label class="form-label">Product Name</label><input type="text"
+                        class="form-input" placeholder="e.g. Oversized Graphic Tee"></div>
+                <div class="form-row">
+                    <div class="form-group"><label class="form-label">Fit Type</label><select class="form-select">
+                            <option>Oversized</option>
+                            <option>Boxy Fit</option>
+                            <option>Regular Fit</option>
+                        </select></div>
+                    <div class="form-group"><label class="form-label">Price (Rp)</label><input type="text"
+                            class="form-input" placeholder="e.g. 450.000"></div>
+                </div>
+                <div class="form-group"><label class="form-label">Description</label><textarea class="form-input"
+                        placeholder="Product description…"></textarea></div>
+                <div class="form-group"><label class="form-label">Images</label>
+                    <div class="image-upload-area"><input type="file" accept="image/*" multiple
+                            style="display:none;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                            <circle cx="8.5" cy="8.5" r="1.5" />
+                            <polyline points="21 15 16 10 5 21" />
+                        </svg>
+                        <p><span>Click to upload</span> front & back images</p>
+                    </div>
+                    <div class="image-preview-grid"></div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group"><label class="form-label">Sizes</label><input type="text" class="form-input"
+                            placeholder="S, M, L, XL"></div>
+                    <div class="form-group"><label class="form-label">Colors (Hex)</label><input type="text"
+                            class="form-input" placeholder="#000, #fff"></div>
+                </div>
+            </div>
+            <div class="modal-footer"><button class="btn btn-secondary"
+                    onclick="closeModal('addTshirtModal')">Cancel</button><button class="btn btn-primary"
+                    onclick="showToast('T-Shirt added!','success'); closeModal('addTshirtModal')">Add Product</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="addPinModal" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 class="modal-title">Add Pin Button</h2><button class="modal-close"
+                    onclick="closeModal('addPinModal')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 6 6 18" />
+                        <path d="m6 6 12 12" />
+                    </svg></button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group"><label class="form-label">Product Name</label><input type="text"
+                        class="form-input" placeholder="e.g. Limited Edition Pin"></div>
+                <div class="form-row">
+                    <div class="form-group"><label class="form-label">Type</label><select class="form-select">
+                            <option>Single</option>
+                            <option>Bundle (4-in-1)</option>
+                        </select></div>
+                    <div class="form-group"><label class="form-label">Price (Rp)</label><input type="text"
+                            class="form-input" placeholder="e.g. 15.000"></div>
+                </div>
+                <div class="form-group"><label class="form-label">Description</label><textarea class="form-input"
+                        placeholder="Pin description…"></textarea></div>
+                <div class="form-group"><label class="form-label">Product Image</label>
+                    <div class="image-upload-area"><input type="file" accept="image/*" style="display:none;"><svg
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                            <circle cx="8.5" cy="8.5" r="1.5" />
+                            <polyline points="21 15 16 10 5 21" />
+                        </svg>
+                        <p><span>Click to upload</span> or drag and drop</p>
+                    </div>
+                    <div class="image-preview-grid"></div>
+                </div>
+            </div>
+            <div class="modal-footer"><button class="btn btn-secondary"
+                    onclick="closeModal('addPinModal')">Cancel</button><button class="btn btn-primary"
+                    onclick="showToast('Pin Button added!','success'); closeModal('addPinModal')">Add Product</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="editProductModal" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 class="modal-title">Edit Product</h2><button class="modal-close"
+                    onclick="closeModal('editProductModal')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 6 6 18" />
+                        <path d="m6 6 12 12" />
+                    </svg></button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group"><label class="form-label">Product Name</label><input type="text"
+                        class="form-input" value="Product Name"></div>
+                <div class="form-row">
+                    <div class="form-group"><label class="form-label">Category</label><select class="form-select">
+                            <option>T-Shirts</option>
+                            <option>Pin Buttons</option>
+                        </select></div>
+                    <div class="form-group"><label class="form-label">Price (Rp)</label><input type="text"
+                            class="form-input" value="450.000"></div>
+                </div>
+                <div class="form-group"><label class="form-label">Description</label><textarea
+                        class="form-input">Product description here...</textarea></div>
+                <div class="form-row">
+                    <div class="form-group"><label class="form-label">Sizes</label><input type="text" class="form-input"
+                            value="S, M, L, XL"></div>
+                    <div class="form-group"><label class="form-label">Status</label><select class="form-select">
+                            <option selected>Active</option>
+                            <option>Draft</option>
+                            <option>Archived</option>
+                        </select></div>
+                </div>
+            </div>
+            <div class="modal-footer"><button class="btn btn-danger btn-sm"
+                    onclick="showToast('Product deleted','error'); closeModal('editProductModal')">Delete</button><button
+                    class="btn btn-secondary" onclick="closeModal('editProductModal')">Cancel</button><button
+                    class="btn btn-primary"
+                    onclick="showToast('Product updated!','success'); closeModal('editProductModal')">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="editCategoryModal" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 class="modal-title">Edit Category</h2><button class="modal-close"
+                    onclick="closeModal('editCategoryModal')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 6 6 18" />
+                        <path d="m6 6 12 12" />
+                    </svg></button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group"><label class="form-label">Category Name</label><input type="text"
+                        class="form-input" value="T-Shirts"></div>
+                <div class="form-group"><label class="form-label">Description</label><textarea
+                        class="form-input">Koleksi kaos yang didesain dengan material terbaik.</textarea></div>
+                <div class="form-group"><label class="form-label">Section Heading</label><input type="text"
+                        class="form-input" value="Bukan Sekadar Kaos"></div>
+            </div>
+            <div class="modal-footer"><button class="btn btn-secondary"
+                    onclick="closeModal('editCategoryModal')">Cancel</button><button class="btn btn-primary"
+                    onclick="showToast('Category updated!','success'); closeModal('editCategoryModal')">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+
+</html>

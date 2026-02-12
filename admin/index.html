@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collarbone Admin — Dashboard</title>
+    <meta name="description" content="Collarbone Admin Dashboard - Manage your streetwear catalog">
+    <link rel="icon" type="image/png" href="../img/collarbone.jpg">
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+    <div class="admin-layout">
+
+        <!-- Sidebar Overlay (Mobile) -->
+        <div class="sidebar-overlay"></div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="../img/collarbone.jpg" alt="Collarbone" class="sidebar-logo">
+                <div class="sidebar-brand">
+                    <h2>Collarbone</h2>
+                    <span>Admin Panel</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <span class="sidebar-nav-label">Main</span>
+
+                <a href="index.html" class="sidebar-link active">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <rect x="3" y="3" width="7" height="9" rx="1" />
+                        <rect x="14" y="3" width="7" height="5" rx="1" />
+                        <rect x="14" y="12" width="7" height="9" rx="1" />
+                        <rect x="3" y="16" width="7" height="5" rx="1" />
+                    </svg>
+                    Dashboard
+                </a>
+
+                <a href="new_arrivals.html" class="sidebar-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                        <line x1="3" y1="6" x2="21" y2="6" />
+                        <path d="M16 10a4 4 0 0 1-8 0" />
+                    </svg>
+                    New Arrivals
+                    <span class="badge">8</span>
+                </a>
+
+                <a href="categories.html" class="sidebar-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M12 2 2 7l10 5 10-5-10-5z" />
+                        <path d="M2 17l10 5 10-5" />
+                        <path d="M2 12l10 5 10-5" />
+                    </svg>
+                    Categories
+                    <span class="badge">2</span>
+                </a>
+
+                <span class="sidebar-nav-label">Content</span>
+
+                <a href="#" class="sidebar-link" onclick="showToast('Hero slider managed from Dashboard page','info')">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <rect x="2" y="7" width="20" height="15" rx="2" ry="2" />
+                        <polyline points="17 2 12 7 7 2" />
+                    </svg>
+                    Hero Slider
+                </a>
+
+                <a href="#" class="sidebar-link" onclick="showToast('Testimonials managed from Dashboard page','info')">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                    </svg>
+                    Testimonials
+                </a>
+
+                <span class="sidebar-nav-label">Settings</span>
+
+                <a href="#" class="sidebar-link" onclick="showToast('Settings coming soon','info')">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="3" />
+                        <path
+                            d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+                    </svg>
+                    Settings
+                </a>
+
+                <a href="../index.html" class="sidebar-link" style="margin-top:auto;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                        <polyline points="15 3 21 3 21 9" />
+                        <line x1="10" y1="14" x2="21" y2="3" />
+                    </svg>
+                    View Live Site
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="sidebar-footer-avatar">CB</div>
+                <div class="sidebar-footer-info">
+                    <span class="name">Collarbone</span>
+                    <span class="role">Administrator</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="main-content">
+
+            <!-- Top Bar -->
+            <header class="topbar">
+                <div class="topbar-left">
+                    <button class="mobile-menu-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="3" x2="21" y1="6" y2="6" />
+                            <line x1="3" x2="21" y1="12" y2="12" />
+                            <line x1="3" x2="21" y1="18" y2="18" />
+                        </svg>
+                    </button>
+                    <div>
+                        <h1 class="topbar-title">Dashboard</h1>
+                        <div class="topbar-breadcrumb">
+                            <a href="#">Admin</a>
+                            <span class="separator">›</span>
+                            <span>Dashboard</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="topbar-right">
+                    <div class="topbar-search">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8" />
+                            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                        </svg>
+                        <input type="text" placeholder="Search…">
+                    </div>
+                    <button class="topbar-btn" onclick="showToast('No new notifications','info')">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+                        </svg>
+                        <span class="notification-dot"></span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Page Content -->
+            <div class="page-content">
+
+                <!-- Stats Cards -->
+                <div class="stats-grid">
+                    <!-- Total Products -->
+                    <div class="stat-card slide-in-up stagger-1">
+                        <div class="stat-card-header">
+                            <div class="stat-card-icon teal">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                                    <line x1="3" y1="6" x2="21" y2="6" />
+                                    <path d="M16 10a4 4 0 0 1-8 0" />
+                                </svg>
+                            </div>
+                            <span class="stat-card-trend up">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                                </svg>
+                                +12%
+                            </span>
+                        </div>
+                        <div class="stat-card-value">16</div>
+                        <div class="stat-card-label">Total Products</div>
+                    </div>
+
+                    <!-- Categories -->
+                    <div class="stat-card slide-in-up stagger-2">
+                        <div class="stat-card-header">
+                            <div class="stat-card-icon blue">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 2 2 7l10 5 10-5-10-5z" />
+                                    <path d="M2 17l10 5 10-5" />
+                                    <path d="M2 12l10 5 10-5" />
+                                </svg>
+                            </div>
+                            <span class="stat-card-trend up">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                                </svg>
+                                +2
+                            </span>
+                        </div>
+                        <div class="stat-card-value">2</div>
+                        <div class="stat-card-label">Categories</div>
+                    </div>
+
+                    <!-- In Stock -->
+                    <div class="stat-card slide-in-up stagger-3">
+                        <div class="stat-card-header">
+                            <div class="stat-card-icon green">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                    <polyline points="22 4 12 14.01 9 11.01" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="stat-card-value">13</div>
+                        <div class="stat-card-label">In Stock Items</div>
+                    </div>
+
+                    <!-- Hero Slides -->
+                    <div class="stat-card slide-in-up stagger-4">
+                        <div class="stat-card-header">
+                            <div class="stat-card-icon yellow">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="7" width="20" height="15" rx="2" ry="2" />
+                                    <polyline points="17 2 12 7 7 2" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="stat-card-value">3</div>
+                        <div class="stat-card-label">Hero Slides</div>
+                    </div>
+                </div>
+
+                <!-- Two Column Layout -->
+                <div class="two-col">
+
+                    <!-- Left: Sales Chart + Recent Products -->
+                    <div>
+                        <!-- Sales Overview Chart -->
+                        <div class="chart-placeholder slide-in-up" style="animation-delay:0.25s; opacity:0;">
+                            <div class="section-header" style="margin-bottom:16px;">
+                                <div>
+                                    <h2 class="card-title">Sales Overview</h2>
+                                    <p class="section-subtitle">Monthly product views</p>
+                                </div>
+                                <button class="btn btn-secondary btn-sm">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                        <polyline points="7 10 12 15 17 10" />
+                                        <line x1="12" y1="15" x2="12" y2="3" />
+                                    </svg>
+                                    Export
+                                </button>
+                            </div>
+                            <div class="chart-bars">
+                                <div class="chart-bar" style="height:40%;" data-height="40%"></div>
+                                <div class="chart-bar" style="height:65%;" data-height="65%"></div>
+                                <div class="chart-bar" style="height:45%;" data-height="45%"></div>
+                                <div class="chart-bar" style="height:80%;" data-height="80%"></div>
+                                <div class="chart-bar" style="height:55%;" data-height="55%"></div>
+                                <div class="chart-bar" style="height:70%;" data-height="70%"></div>
+                                <div class="chart-bar" style="height:90%;" data-height="90%"></div>
+                                <div class="chart-bar" style="height:60%;" data-height="60%"></div>
+                                <div class="chart-bar" style="height:75%;" data-height="75%"></div>
+                                <div class="chart-bar" style="height:85%;" data-height="85%"></div>
+                                <div class="chart-bar" style="height:95%;" data-height="95%"></div>
+                                <div class="chart-bar" style="height:78%;" data-height="78%"></div>
+                            </div>
+                            <div class="chart-labels">
+                                <div class="chart-label">Jan</div>
+                                <div class="chart-label">Feb</div>
+                                <div class="chart-label">Mar</div>
+                                <div class="chart-label">Apr</div>
+                                <div class="chart-label">May</div>
+                                <div class="chart-label">Jun</div>
+                                <div class="chart-label">Jul</div>
+                                <div class="chart-label">Aug</div>
+                                <div class="chart-label">Sep</div>
+                                <div class="chart-label">Oct</div>
+                                <div class="chart-label">Nov</div>
+                                <div class="chart-label">Dec</div>
+                            </div>
+                        </div>
+
+                        <!-- Hero Slider Management -->
+                        <div class="card slide-in-up" style="animation-delay:0.3s; opacity:0;">
+                            <div class="card-header">
+                                <h2 class="card-title">Hero Slider</h2>
+                                <button class="btn btn-primary btn-sm" onclick="openModal('addSlideModal')">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="12" y1="5" x2="12" y2="19" />
+                                        <line x1="5" y1="12" x2="19" y2="12" />
+                                    </svg>
+                                    Add Slide
+                                </button>
+                            </div>
+                            <div class="card-body" style="padding:0;">
+                                <table class="data-table">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Preview</th>
+                                            <th>Label</th>
+                                            <th>Title</th>
+                                            <th>Status</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td style="color:var(--text-muted);">1</td>
+                                            <td>
+                                                <img src="../img/baju.jpg" alt="Slide 1" class="table-product-img">
+                                            </td>
+                                            <td><span style="font-size:11px;color:var(--text-secondary);">NEW
+                                                    ARRIVALS</span></td>
+                                            <td>Straight Edge</td>
+                                            <td><span class="status-badge active"><span class="dot"></span>Active</span>
+                                            </td>
+                                            <td>
+                                                <div class="table-actions">
+                                                    <button class="btn-icon" onclick="editSlide(1)" title="Edit">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                            stroke-width="2" stroke-linecap="round"
+                                                            stroke-linejoin="round">
+                                                            <path
+                                                                d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+                                                            <path
+                                                                d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+                                                        </svg>
+                                                    </button>
+                                                    <button class="btn-icon danger" onclick="deleteSlide(1)"
+                                                        title="Delete">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                            stroke-width="2" stroke-linecap="round"
+                                                            stroke-linejoin="round">
+                                                            <polyline points="3 6 5 6 21 6" />
+                                                            <path
+                                                                d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="color:var(--text-muted);">2</td>
+                                            <td>
+                                                <img src="../img/7.png" alt="Slide 2" class="table-product-img"
+                                                    style="background:var(--bg-input);object-fit:contain;">
+                                            </td>
+                                            <td><span
+                                                    style="font-size:11px;color:var(--text-secondary);">COLLECTION</span>
+                                            </td>
+                                            <td>Gatau mau di isi apa</td>
+                                            <td><span class="status-badge active"><span class="dot"></span>Active</span>
+                                            </td>
+                                            <td>
+                                                <div class="table-actions">
+                                                    <button class="btn-icon" onclick="editSlide(2)" title="Edit">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                            stroke-width="2" stroke-linecap="round"
+                                                            stroke-linejoin="round">
+                                                            <path
+                                                                d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+                                                            <path
+                                                                d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+                                                        </svg>
+                                                    </button>
+                                                    <button class="btn-icon danger" onclick="deleteSlide(2)"
+                                                        title="Delete">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                            stroke-width="2" stroke-linecap="round"
+                                                            stroke-linejoin="round">
+                                                            <polyline points="3 6 5 6 21 6" />
+                                                            <path
+                                                                d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="color:var(--text-muted);">3</td>
+                                            <td>
+                                                <img src="../img/MerchBG.png" alt="Slide 3" class="table-product-img">
+                                            </td>
+                                            <td><span
+                                                    style="font-size:11px;color:var(--text-secondary);">ACCESSORIES</span>
+                                            </td>
+                                            <td>Button Pins</td>
+                                            <td><span class="status-badge active"><span class="dot"></span>Active</span>
+                                            </td>
+                                            <td>
+                                                <div class="table-actions">
+                                                    <button class="btn-icon" onclick="editSlide(3)" title="Edit">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                            stroke-width="2" stroke-linecap="round"
+                                                            stroke-linejoin="round">
+                                                            <path
+                                                                d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+                                                            <path
+                                                                d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+                                                        </svg>
+                                                    </button>
+                                                    <button class="btn-icon danger" onclick="deleteSlide(3)"
+                                                        title="Delete">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                            stroke-width="2" stroke-linecap="round"
+                                                            stroke-linejoin="round">
+                                                            <polyline points="3 6 5 6 21 6" />
+                                                            <path
+                                                                d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Activity + Quick Actions -->
+                    <div>
+                        <!-- Quick Actions -->
+                        <div class="card slide-in-up" style="animation-delay:0.2s; opacity:0; margin-bottom:24px;">
+                            <div class="card-header">
+                                <h2 class="card-title">Quick Actions</h2>
+                            </div>
+                            <div class="card-body" style="display:flex; flex-direction:column; gap:10px;">
+                                <a href="new_arrivals.html" class="btn btn-primary"
+                                    style="justify-content:center; text-transform:uppercase; letter-spacing:0.1em;">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="12" y1="5" x2="12" y2="19" />
+                                        <line x1="5" y1="12" x2="19" y2="12" />
+                                    </svg>
+                                    Add New Product
+                                </a>
+                                <a href="categories.html" class="btn btn-secondary"
+                                    style="justify-content:center; text-transform:uppercase; letter-spacing:0.1em;">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M12 2 2 7l10 5 10-5-10-5z" />
+                                        <path d="M2 17l10 5 10-5" />
+                                        <path d="M2 12l10 5 10-5" />
+                                    </svg>
+                                    Manage Categories
+                                </a>
+                                <a href="../index.html" class="btn btn-secondary"
+                                    style="justify-content:center; text-transform:uppercase; letter-spacing:0.1em;">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                        <polyline points="15 3 21 3 21 9" />
+                                        <line x1="10" y1="14" x2="21" y2="3" />
+                                    </svg>
+                                    View Live Site
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Activity Feed -->
+                        <div class="card slide-in-up" style="animation-delay:0.35s; opacity:0;">
+                            <div class="card-header">
+                                <h2 class="card-title">Recent Activity</h2>
+                                <button class="btn btn-ghost btn-sm">View All</button>
+                            </div>
+                            <div class="card-body">
+                                <div class="activity-list">
+                                    <div class="activity-item">
+                                        <div class="activity-dot teal"></div>
+                                        <div>
+                                            <div class="activity-text"><strong>Essential Oversized Tee</strong> was
+                                                added to New Arrivals
+                                            </div>
+                                            <div class="activity-time">2 hours ago</div>
+                                        </div>
+                                    </div>
+                                    <div class="activity-item">
+                                        <div class="activity-dot green"></div>
+                                        <div>
+                                            <div class="activity-text">Slide <strong>"Straight Edge"</strong> updated
+                                                with new image</div>
+                                            <div class="activity-time">5 hours ago</div>
+                                        </div>
+                                    </div>
+                                    <div class="activity-item">
+                                        <div class="activity-dot yellow"></div>
+                                        <div>
+                                            <div class="activity-text"><strong>Pin Buttons</strong> category prices were
+                                                updated</div>
+                                            <div class="activity-time">1 day ago</div>
+                                        </div>
+                                    </div>
+                                    <div class="activity-item">
+                                        <div class="activity-dot teal"></div>
+                                        <div>
+                                            <div class="activity-text">New testimonial from <strong>Raka
+                                                    Pratama</strong> was added</div>
+                                            <div class="activity-time">2 days ago</div>
+                                        </div>
+                                    </div>
+                                    <div class="activity-item">
+                                        <div class="activity-dot green"></div>
+                                        <div>
+                                            <div class="activity-text">Hero slider <strong>"Button Pins"</strong> was
+                                                created</div>
+                                            <div class="activity-time">3 days ago</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Featured Products Table -->
+                <div class="data-table-wrapper slide-in-up" style="animation-delay:0.4s; opacity:0; margin-top:24px;">
+                    <div class="data-table-toolbar">
+                        <div class="data-table-toolbar-left">
+                            <h2 class="card-title">Featured Products (Index Page)</h2>
+                        </div>
+                        <div class="data-table-toolbar-right">
+                            <button class="btn btn-primary btn-sm" onclick="openModal('addProductModal')">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="12" y1="5" x2="12" y2="19" />
+                                    <line x1="5" y1="12" x2="19" y2="12" />
+                                </svg>
+                                Add Product
+                            </button>
+                        </div>
+                    </div>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Category</th>
+                                <th>Price</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr data-product-id="1">
+                                <td>
+                                    <div class="table-product">
+                                        <img src="../img/2_DEPAN.png" alt="Product" class="table-product-img">
+                                        <div class="table-product-info">
+                                            <span class="table-product-name">Straight Edge - Black</span>
+                                            <span class="table-product-cat">Featured</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span style="font-size:12px;">T-Shirts</span></td>
+                                <td><span style="font-weight:500;">IDR 180,000</span></td>
+                                <td><span class="status-badge active"><span class="dot"></span>Active</span></td>
+                                <td>
+                                    <div class="table-actions">
+                                        <button class="btn-icon" onclick="editProduct(1)" title="Edit">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+                                                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+                                            </svg>
+                                        </button>
+                                        <button class="btn-icon danger"
+                                            onclick="deleteProduct(1, 'Straight Edge - Black')" title="Delete">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <polyline points="3 6 5 6 21 6" />
+                                                <path
+                                                    d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr data-product-id="2">
+                                <td>
+                                    <div class="table-product">
+                                        <img src="../img/3_DEPAN.png" alt="Product" class="table-product-img">
+                                        <div class="table-product-info">
+                                            <span class="table-product-name">Straight Edge - Green</span>
+                                            <span class="table-product-cat">Featured</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span style="font-size:12px;">T-Shirts</span></td>
+                                <td><span style="font-weight:500;">IDR 850,000</span></td>
+                                <td><span class="status-badge active"><span class="dot"></span>Active</span></td>
+                                <td>
+                                    <div class="table-actions">
+                                        <button class="btn-icon" onclick="editProduct(2)" title="Edit">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+                                                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+                                            </svg>
+                                        </button>
+                                        <button class="btn-icon danger"
+                                            onclick="deleteProduct(2, 'Straight Edge - Green')" title="Delete">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <polyline points="3 6 5 6 21 6" />
+                                                <path
+                                                    d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr data-product-id="3">
+                                <td>
+                                    <div class="table-product">
+                                        <img src="../img/5_DEPAN.png" alt="Product" class="table-product-img">
+                                        <div class="table-product-info">
+                                            <span class="table-product-name">Adalah Pokonya</span>
+                                            <span class="table-product-cat">Featured</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span style="font-size:12px;">T-Shirts</span></td>
+                                <td><span style="font-weight:500;">IDR 320,000</span></td>
+                                <td><span class="status-badge active"><span class="dot"></span>Active</span></td>
+                                <td>
+                                    <div class="table-actions">
+                                        <button class="btn-icon" onclick="editProduct(3)" title="Edit">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+                                                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+                                            </svg>
+                                        </button>
+                                        <button class="btn-icon danger" onclick="deleteProduct(3, 'Adalah Pokonya')"
+                                            title="Delete">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <polyline points="3 6 5 6 21 6" />
+                                                <path
+                                                    d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr data-product-id="4">
+                                <td>
+                                    <div class="table-product">
+                                        <img src="../img/Merch-3.jpeg" alt="Product" class="table-product-img">
+                                        <div class="table-product-info">
+                                            <span class="table-product-name">Bundling Pin Button</span>
+                                            <span class="table-product-cat">Featured</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span style="font-size:12px;">Pin Button</span></td>
+                                <td><span style="font-weight:500;">IDR 20,000</span></td>
+                                <td><span class="status-badge active"><span class="dot"></span>Active</span></td>
+                                <td>
+                                    <div class="table-actions">
+                                        <button class="btn-icon" onclick="editProduct(4)" title="Edit">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+                                                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+                                            </svg>
+                                        </button>
+                                        <button class="btn-icon danger"
+                                            onclick="deleteProduct(4, 'Bundling Pin Button')" title="Delete">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <polyline points="3 6 5 6 21 6" />
+                                                <path
+                                                    d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Testimonials Section -->
+                <div class="card slide-in-up" style="animation-delay:0.45s; opacity:0; margin-top:24px;">
+                    <div class="card-header">
+                        <h2 class="card-title">Testimonials</h2>
+                        <button class="btn btn-primary btn-sm" onclick="openModal('addTestimonialModal')">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="12" y1="5" x2="12" y2="19" />
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                            </svg>
+                            Add
+                        </button>
+                    </div>
+                    <div class="card-body" style="padding:0;">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Person</th>
+                                    <th>Review</th>
+                                    <th>Role</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="table-product">
+                                            <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=80&q=60"
+                                                alt="Raka" class="table-product-img" style="border-radius:50%;">
+                                            <span class="table-product-name">Raka Pratama</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span style="font-size:12px;color:var(--text-secondary);">Gokil sih ini
+                                            cuttingan
+                                            oversized-nya!...</span>
+                                    </td>
+                                    <td><span style="font-size:12px;">Mahasiswa</span></td>
+                                    <td>
+                                        <div class="table-actions">
+                                            <button class="btn-icon" title="Edit">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path
+                                                        d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+                                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+                                                </svg>
+                                            </button>
+                                            <button class="btn-icon danger" title="Delete">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <polyline points="3 6 5 6 21 6" />
+                                                    <path
+                                                        d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="table-product">
+                                            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=80&q=60"
+                                                alt="Salsabila" class="table-product-img" style="border-radius:50%;">
+                                            <span class="table-product-name">Salsabila Putri</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span style="font-size:12px;color:var(--text-secondary);">Jujurly kaget banget
+                                            sama
+                                            kualitasnya!...</span>
+                                    </td>
+                                    <td><span style="font-size:12px;">Content Creator</span></td>
+                                    <td>
+                                        <div class="table-actions">
+                                            <button class="btn-icon" title="Edit">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path
+                                                        d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+                                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+                                                </svg>
+                                            </button>
+                                            <button class="btn-icon danger" title="Delete">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <polyline points="3 6 5 6 21 6" />
+                                                    <path
+                                                        d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="table-product">
+                                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=60"
+                                                alt="Desta" class="table-product-img" style="border-radius:50%;">
+                                            <span class="table-product-name">Desta Mahendra</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span style="font-size:12px;color:var(--text-secondary);">Vibes-nya dapet banget
+                                            bro...</span>
+                                    </td>
+                                    <td><span style="font-size:12px;">Musician</span></td>
+                                    <td>
+                                        <div class="table-actions">
+                                            <button class="btn-icon" title="Edit">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path
+                                                        d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+                                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+                                                </svg>
+                                            </button>
+                                            <button class="btn-icon danger" title="Delete">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <polyline points="3 6 5 6 21 6" />
+                                                    <path
+                                                        d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="table-product">
+                                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&q=60"
+                                                alt="Indah" class="table-product-img" style="border-radius:50%;">
+                                            <span class="table-product-name">Indah Kusuma</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span style="font-size:12px;color:var(--text-secondary);">Sumpah ini hidden gem
+                                            banget!...</span>
+                                    </td>
+                                    <td><span style="font-size:12px;">Fashion Blogger</span></td>
+                                    <td>
+                                        <div class="table-actions">
+                                            <button class="btn-icon" title="Edit">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path
+                                                        d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+                                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+                                                </svg>
+                                            </button>
+                                            <button class="btn-icon danger" title="Delete">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <polyline points="3 6 5 6 21 6" />
+                                                    <path
+                                                        d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- MODALS -->
+
+    <!-- Add Slide Modal -->
+    <div id="addSlideModal" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 class="modal-title">Add Hero Slide</h2>
+                <button class="modal-close" onclick="closeModal('addSlideModal')">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M18 6 6 18" />
+                        <path d="m6 6 12 12" />
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="form-label">Slide Label</label>
+                    <input type="text" class="form-input" placeholder="e.g. NEW ARRIVALS">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Slide Title</label>
+                    <input type="text" class="form-input" placeholder="e.g. Straight Edge">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Background Image</label>
+                    <div class="image-upload-area">
+                        <input type="file" accept="image/*" style="display:none;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                            <circle cx="8.5" cy="8.5" r="1.5" />
+                            <polyline points="21 15 16 10 5 21" />
+                        </svg>
+                        <p><span>Click to upload</span> or drag and drop</p>
+                    </div>
+                    <div class="image-preview-grid"></div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Button Link</label>
+                    <input type="text" class="form-input" placeholder="e.g. new_arrivals.html">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('addSlideModal')">Cancel</button>
+                <button class="btn btn-primary"
+                    onclick="showToast('Hero slide added successfully!','success'); closeModal('addSlideModal')">Add
+                    Slide</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Product Modal -->
+    <div id="addProductModal" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 class="modal-title">Add Featured Product</h2>
+                <button class="modal-close" onclick="closeModal('addProductModal')">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M18 6 6 18" />
+                        <path d="m6 6 12 12" />
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="form-label">Product Name</label>
+                    <input type="text" class="form-input" placeholder="e.g. Straight Edge - Black Edition">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Category</label>
+                        <select class="form-select">
+                            <option>T-Shirts</option>
+                            <option>Pin Button</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Price (IDR)</label>
+                        <input type="text" class="form-input" placeholder="e.g. 180,000">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Product Image</label>
+                    <div class="image-upload-area">
+                        <input type="file" accept="image/*" style="display:none;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                            <circle cx="8.5" cy="8.5" r="1.5" />
+                            <polyline points="21 15 16 10 5 21" />
+                        </svg>
+                        <p><span>Click to upload</span> or drag and drop</p>
+                    </div>
+                    <div class="image-preview-grid"></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('addProductModal')">Cancel</button>
+                <button class="btn btn-primary"
+                    onclick="showToast('Product added to Featured!','success'); closeModal('addProductModal')">Add
+                    Product</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Testimonial Modal -->
+    <div id="addTestimonialModal" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 class="modal-title">Add Testimonial</h2>
+                <button class="modal-close" onclick="closeModal('addTestimonialModal')">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M18 6 6 18" />
+                        <path d="m6 6 12 12" />
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Name</label>
+                        <input type="text" class="form-input" placeholder="e.g. Raka Pratama">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Role / Title</label>
+                        <input type="text" class="form-input" placeholder="e.g. Mahasiswa">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Review Text</label>
+                    <textarea class="form-input" placeholder="Write the testimonial text..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Profile Photo</label>
+                    <div class="image-upload-area">
+                        <input type="file" accept="image/*" style="display:none;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                            <circle cx="8.5" cy="8.5" r="1.5" />
+                            <polyline points="21 15 16 10 5 21" />
+                        </svg>
+                        <p><span>Click to upload</span> or drag and drop</p>
+                    </div>
+                    <div class="image-preview-grid"></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('addTestimonialModal')">Cancel</button>
+                <button class="btn btn-primary"
+                    onclick="showToast('Testimonial added!','success'); closeModal('addTestimonialModal')">Add
+                    Testimonial</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+
+</html>
